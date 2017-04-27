@@ -16,76 +16,57 @@ extension Bool: Value {
 		}
 	}
 	
-	public var asBool: Bool? {
-		get {
-			return self
-		}
+	public func asBool() throws -> Bool {
+		
+		return self
 	}
 	
-	public var asInt: Int? {
-		get {
-			return self ? 1 : 0
-		}
+	public func asChar() throws -> CChar {
+		
+		return CChar(self ? 1 : 0)
 	}
 	
-	public var asDate: Date? {
-		get {
-			return Date(timeIntervalSince1904: asDouble!)
-		}
+	public func asInt() throws -> Int {
+		
+		return self ? 1 : 0
 	}
 	
-	public var asDirection: Direction? {
-		get {
-			return Direction(rawValue: asInt!)
-		}
+	public func asDouble() throws -> Double {
+		
+		return doubleAssumingIntValue()
 	}
 	
-	public var asOSType: OSType? {
-		get {
-			return asInt!.asOSType
-		}
+	public func asDate() throws -> Date {
+		
+		return dateAssumingDoubleValue()
 	}
 	
-	public var asEnum: Enum? {
-		get {
-			return asInt!.asEnum
+	public func asDirection() throws -> Direction {
+		
+		do {
+			return directionAssumingIntValue()
 		}
+		catch { throw error }
 	}
 	
-	public var asString: String? {
-		get {
-			return self ? "true" : "false"
-		}
+	public func asEnumValue() throws -> EnumValue {
+		
+		return enumValueAssumingIntValue()
 	}
 	
-	public var asAddress: Address? {
-		get {
-			return nil //TODO
-		}
+	public func asOSType() throws -> OSType {
+		
+		return osTypeAssumingIntValue()
 	}
 	
-	public var asBinary: Data? {
-		get {
-			return nil //TODO
-		}
+	public func asString() throws -> String {
+		
+		return self ? "true" : "false"
 	}
 	
-	public var asDouble: Double? {
-		get {
-			return Double(asInt!)
-		}
-	}
-	
-	public var asList: List? {
-		get {
-			return List(value: self)
-		}
-	}
-	
-	public var asRecord: Record? {
-		get {
-			return nil //TODO
-		}
+	public func asList() throws -> List {
+		
+		return listWithValue()
 	}
 	
 	public func unaryMinusValue() throws -> Value {

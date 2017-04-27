@@ -16,82 +16,52 @@ extension CChar: Value {
 		}
 	}
 	
-	public var asBool: Bool? {
-		get {
-			return self != 0
-		}
+	func asBool() throws -> Bool {
+		
+		return boolAssumingIntValue()
 	}
 	
-	public var asCChar: CChar? {
-		get {
-			return self
-		}
+	func asChar() throws -> CChar {
+		
+		return self
 	}
 	
-	public var asInt: Int? {
-		get {
-			return Int(self)
-		}
-	}
-
-	public var asDate: Date? {
-		get {
-			return nil // TODO
-		}
+	func asInt() throws -> Int {
+		
+		return Int(self)
 	}
 	
-	public var asDirection: Direction? {
-		get {
-			return nil //TODO
-		}
+	func asDouble() throws -> Double {
+		
+		return doubleAssumingIntValue()
 	}
 	
-	public var asOSType: OSType? {
-		get {
-			return nil //TODO
-		}
+	func asDate() throws -> Date {
+		
+		return dateAssumingDoubleValue()
 	}
 	
-	public var asEnum: Enum? {
-		get {
-			return nil //TODO
+	func asDirection() throws -> Direction {
+		
+		do {
+			return try directionAssumingIntValue()
 		}
+		catch { throw error }
 	}
 	
-	public var asString: String? {
-		get {
-			return nil //TODO
-		}
+	func asEnumValue() throws -> EnumValue {
+		
+		return enumValueAssumingIntValue()
 	}
 	
-	public var asAddress: Address? {
-		get {
-			return nil //TODO
-		}
+	func asString() throws -> String {
+		
+		return stringAssumingInterpolation()
 	}
 	
-	public var asBinary: Data? {
-		get {
-			return nil //TODO
-		}
-	}
-	
-	public var asDouble: Double? {
-		get {
-			return nil //TODO
-		}
-	}
-	
-	public var asList: List? {
-		get {
-			return nil //TODO
-		}
-	}
-	
-	public var asRecord: Record? {
-		get {
-			return nil //TODO
-		}
+	func asList() throws -> List {
+		
+		return listWithValue()
 	}
 	
 	public func unaryMinusValue() throws -> Value {

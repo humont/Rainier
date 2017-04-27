@@ -16,78 +16,56 @@ extension Double: Value {
 		}
 	}
 	
-	public var asBool: Bool? {
-		get {
-			return self != 0.0
-		}
+	func asBool() throws -> Bool {
+		
+		return boolAssumingIntValue()
 	}
 	
-	public var asInt: Int? {
-		get {
-			return Int(self)
-		}
+	func asChar() throws -> CChar {
+		
+		return charAssumingIntValue()
 	}
 	
-	public var asDate: Date? {
-		get {
-			return nil // TODO
-		}
+	func asInt() throws -> Int {
+		
+		return Int(self)
 	}
 	
-	public var asDirection: Direction? {
-		get {
-			return nil //Checked: “Can’t coerce a double value to a direction.”
-		}
+	func asDouble() throws -> Double {
+		
+		return self
 	}
 	
-	public var asOSType: OSType? {
-		get {
-			return nil //TODO
-		}
+	func asDate() throws -> Date {
+		
+		return dateAssumingDoubleValue()
 	}
 	
-	public var asEnum: Enum? {
-		get {
-			return nil //TODO
-		}
+	func asDirection() throws -> Direction {
+		
+		throw LangError(.coercionNotPossible) //Checked: “Can’t coerce a double value to a direction.”
 	}
 	
-	public var asString: String? {
-		get {
-			return "\(self)"
-		}
+	func asOSType() throws -> OSType {
+		
+		return osTypeAssumingIntValue()
 	}
 	
-	public var asAddress: Address? {
-		get {
-			return nil //TODO
-		}
+	func asEnumValue() throws -> EnumValue {
+		
+		return enumValueAssumingIntValue()
 	}
 	
-	public var asBinary: Data? {
-		get {
-			return nil //TODO
-		}
+	func asString() throws -> String {
+		
+		return stringAssumingInterpolation()
 	}
 	
-	public var asDouble: Double? {
-		get {
-			return self
-		}
+	func asList() throws -> List {
+		
+		return listWithValue()
 	}
-	
-	public var asList: List? {
-		get {
-			return nil //TODO
-		}
-	}
-	
-	public var asRecord: Record? {
-		get {
-			return nil //TODO
-		}
-	}
-	
+
 	public func unaryMinusValue() throws -> Value {
 		
 		return 0 - self
