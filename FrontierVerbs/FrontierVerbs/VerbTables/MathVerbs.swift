@@ -40,42 +40,11 @@ struct MathVerbs: VerbTable {
 
 private extension MathVerbs {
 	
-	static func compareValues<T:Comparable>(_ v1: T, _ v2: T) -> ComparisonResult {
-		
-		if v1 == v2 {
-			return .orderedSame
-		}
-		return v1 < v2 ? .orderedAscending : .orderedDescending
-	}
-	
-	static func compareTwoValues(_ value1: Value, _ value2: Value) throws -> ComparisonResult {
-		
-		let coercionType = value1.commonCoercionType(with: value2)
-		
-		switch coercionType {
-			
-		case .none:
-			return .orderedSame
-			
-		case .bool, .char, .int, .direction:
-			return compareValues(value1.asInt!, value2.asInt!)
-			
-		case .date, .double:
-			return compareValues(value1.asDouble!, value2.asDouble!)
-			
-		case .string:
-			return compareValues(value1.asString!, value2.asString!)
-			
-		default:
-			throw LangError(.coercionNotPossible)
-		}
-	}
-	
 	static func mathMin(_ params: VerbParams) throws -> Value {
 		
 		do {
 			let (value1, value2) = try params.binaryParams()
-			let comparisonResult = try compareTwoValues(value1, value2)
+			let comparisonResult = try value1.compareTo(value2)
 			
 			if comparisonResult == .orderedSame || comparisonResult == .orderedAscending {
 				return value1
@@ -89,7 +58,7 @@ private extension MathVerbs {
 		
 		do {
 			let (value1, value2) = try params.binaryParams()
-			let comparisonResult = try compareTwoValues(value1, value2)
+			let comparisonResult = try value1.compareTo(value2)
 			
 			if comparisonResult == .orderedAscending {
 				return value2
@@ -103,9 +72,7 @@ private extension MathVerbs {
 		
 		do {
 			let value = try params.singleParam()
-			guard let d = value.asDouble else {
-				throw LangError(.coercionNotPossible)
-			}
+			let d = try value.asDouble()
 			return sqrt(d)
 		}
 		catch { throw error }
