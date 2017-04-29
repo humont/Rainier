@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		847CDC1B1EB4EF63004E0849 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDC1A1EB4EF63004E0849 /* Tokenizer.swift */; };
 		849023F11E9EC3C5002D1BA7 /* UserTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849023E71E9EC3C5002D1BA7 /* UserTalk.framework */; };
 		849023F61E9EC3C5002D1BA7 /* UserTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849023F51E9EC3C5002D1BA7 /* UserTalkTests.swift */; };
 		849023F81E9EC3C5002D1BA7 /* UserTalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 849023EA1E9EC3C5002D1BA7 /* UserTalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		847CDC1A1EB4EF63004E0849 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tokenizer.swift; path = UserTalk/Parser/Tokenizer.swift; sourceTree = "<group>"; };
 		849023E71E9EC3C5002D1BA7 /* UserTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		849023EA1E9EC3C5002D1BA7 /* UserTalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserTalk.h; path = UserTalk/UserTalk.h; sourceTree = "<group>"; };
 		849023EB1E9EC3C5002D1BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = UserTalk/Info.plist; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		847CDC1C1EB4F24C004E0849 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				847CDC1A1EB4EF63004E0849 /* Tokenizer.swift */,
+			);
+			name = Parser;
+			sourceTree = "<group>";
+		};
 		849023DD1E9EC3C5002D1BA7 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 				84F908B41EB1A4BD00001B96 /* CodeTreeNode.swift */,
 				84F908B51EB1A4BD00001B96 /* CodeTreeNodeType.swift */,
 				84F908B01EAEF71500001B96 /* ParamInfo.swift */,
+				847CDC1C1EB4F24C004E0849 /* Parser */,
 				849023EB1E9EC3C5002D1BA7 /* Info.plist */,
 				849023F41E9EC3C5002D1BA7 /* UserTalkTests */,
 				849023E81E9EC3C5002D1BA7 /* Products */,
@@ -216,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84F908B61EB1A4BD00001B96 /* CodeTreeNode.swift in Sources */,
+				847CDC1B1EB4EF63004E0849 /* Tokenizer.swift in Sources */,
 				84F908AF1EADAC7C00001B96 /* LangEvaluator.swift in Sources */,
 				84F908B71EB1A4BD00001B96 /* CodeTreeNodeType.swift in Sources */,
 				84F908B11EAEF71500001B96 /* ParamInfo.swift in Sources */,
