@@ -8,9 +8,7 @@
 
 import Foundation
 
-public typealias OperationParamInfo = (Bool, Bool) //evalParam1, evalParam2
-
-public enum CodeTreeType: Int {
+public enum CodeTreeNodeType: Int {
 	
 	// "Op" is added at the end of some names, so as not to conflict with Swift keywords.
 	
@@ -32,8 +30,8 @@ public enum CodeTreeType: Int {
 	case lessThan
 	case greaterThanEquals
 	case lessThanEquals
-	case or
-	case and
+	case orOr
+	case andAnd
 	case incrementPre
 	case incrementPost
 	case decrementPre
@@ -48,7 +46,7 @@ public enum CodeTreeType: Int {
 	case proc
 	case local
 	case module
-	case dotOp
+	case dot
 	case array
 	case addressOf
 	case dereference

@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import FrontierData
 
 // TODO: move this and CodeTreeType into UserTalk.framework, since that’s the only place they're used
 
 public class CodeTreeNode {
 	
-	public let nodeType: CodeTreeType
+	public let nodeType: CodeTreeNodeType
 	public let value: Value?
 	public let lineNumber: Int?
 	public let characterIndex: Int?
@@ -23,7 +24,7 @@ public class CodeTreeNode {
 	public let param4: CodeTreeNode?
 	public let ctParams: Int
 
-	public init(nodeType: CodeTreeType, value: Value?, lineNumber: Int?, characterIndex: Int?, link: CodeTreeNode?, param1: CodeTreeNode?, param2: CodeTreeNode?, param3: CodeTreeNode?, param4: CodeTreeNode?) {
+	public init(nodeType: CodeTreeNodeType, value: Value?, lineNumber: Int?, characterIndex: Int?, link: CodeTreeNode?, param1: CodeTreeNode?, param2: CodeTreeNode?, param3: CodeTreeNode?, param4: CodeTreeNode?) {
 		
 		self.nodeType = nodeType
 		self.value = value
@@ -48,6 +49,9 @@ public class CodeTreeNode {
 		}
 		else if let _ = param1 {
 			ct = 1
+		}
+		else {
+			ct = 0
 		}
 		self.ctParams = ct
 	}

@@ -14,7 +14,7 @@
 		84F908AF1EADAC7C00001B96 /* LangEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F908AE1EADAC7C00001B96 /* LangEvaluator.swift */; };
 		84F908B11EAEF71500001B96 /* ParamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F908B01EAEF71500001B96 /* ParamInfo.swift */; };
 		84F908B61EB1A4BD00001B96 /* CodeTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F908B41EB1A4BD00001B96 /* CodeTreeNode.swift */; };
-		84F908B71EB1A4BD00001B96 /* CodeTreeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F908B51EB1A4BD00001B96 /* CodeTreeType.swift */; };
+		84F908B71EB1A4BD00001B96 /* CodeTreeNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F908B51EB1A4BD00001B96 /* CodeTreeNodeType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,7 @@
 		84F908AE1EADAC7C00001B96 /* LangEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LangEvaluator.swift; path = UserTalk/LangEvaluator.swift; sourceTree = "<group>"; };
 		84F908B01EAEF71500001B96 /* ParamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParamInfo.swift; path = UserTalk/ParamInfo.swift; sourceTree = "<group>"; };
 		84F908B41EB1A4BD00001B96 /* CodeTreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeTreeNode.swift; path = UserTalk/CodeTreeNode.swift; sourceTree = "<group>"; };
-		84F908B51EB1A4BD00001B96 /* CodeTreeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeTreeType.swift; path = UserTalk/CodeTreeType.swift; sourceTree = "<group>"; };
+		84F908B51EB1A4BD00001B96 /* CodeTreeNodeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CodeTreeNodeType.swift; path = UserTalk/CodeTreeNodeType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 				849023EA1E9EC3C5002D1BA7 /* UserTalk.h */,
 				84F908AE1EADAC7C00001B96 /* LangEvaluator.swift */,
 				84F908B41EB1A4BD00001B96 /* CodeTreeNode.swift */,
-				84F908B51EB1A4BD00001B96 /* CodeTreeType.swift */,
+				84F908B51EB1A4BD00001B96 /* CodeTreeNodeType.swift */,
 				84F908B01EAEF71500001B96 /* ParamInfo.swift */,
 				849023EB1E9EC3C5002D1BA7 /* Info.plist */,
 				849023F41E9EC3C5002D1BA7 /* UserTalkTests */,
@@ -217,7 +217,7 @@
 			files = (
 				84F908B61EB1A4BD00001B96 /* CodeTreeNode.swift in Sources */,
 				84F908AF1EADAC7C00001B96 /* LangEvaluator.swift in Sources */,
-				84F908B71EB1A4BD00001B96 /* CodeTreeType.swift in Sources */,
+				84F908B71EB1A4BD00001B96 /* CodeTreeNodeType.swift in Sources */,
 				84F908B11EAEF71500001B96 /* ParamInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

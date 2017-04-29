@@ -25,9 +25,9 @@ private enum OperationParamInfo {
 	}
 }
 
-extension CodeTreeType {
+extension CodeTreeNodeType {
 	
-	private static let operationParamInfo: [CodeTreeType: OperationParamInfo] = [
+	private static let operationParamInfo: [CodeTreeNodeType: OperationParamInfo] = [
 		.noop: .evaluateNone,
 		.add: .evaluateBoth,
 		.subtract: .evaluateBoth,
@@ -46,8 +46,8 @@ extension CodeTreeType {
 		.lessThan: .evaluateBoth,
 		.greaterThanEquals: .evaluateBoth,
 		.lessThanEquals: .evaluateBoth,
-		.or: .evaluateFirst,
-		.and: .evaluateFirst,
+		.orOr: .evaluateFirst,
+		.andAnd: .evaluateFirst,
 		.incrementPre: .evaluateNone,
 		.incrementPost: .evaluateNone,
 		.decrementPre: .evaluateNone,
@@ -62,7 +62,7 @@ extension CodeTreeType {
 		.proc: .evaluateNone,
 		.local: .evaluateNone,
 		.module: .evaluateNone,
-		.dotOp: .evaluateNone,
+		.dot: .evaluateNone,
 		.array: .evaluateNone,
 		.addressOf: .evaluateNone,
 		.dereference: .evaluateNone,
@@ -94,7 +94,7 @@ extension CodeTreeType {
 
 	private var paramInfo: OperationParamInfo {
 		get {
-			return CodeTreeType.operationParamInfo[self]!
+			return CodeTreeNodeType.operationParamInfo[self]!
 		}
 	}
 	

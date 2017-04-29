@@ -39,7 +39,7 @@ public protocol Value {
 	func beginsWith(_ otherValue: Value) throws -> Bool
 	func endsWith(_ otherValue: Value) throws -> Bool
 	func contains(_ otherValue: Value) throws -> Bool
-	func modValue(_ otherValue: Value) throws -> Value
+	func mod(_ otherValue: Value) throws -> Value
 	func add(_ otherValue: Value) throws -> Value
 	func subtract(_ otherValue: Value) throws -> Value
 	func divide(_ otherValue: Value) throws -> Value
@@ -212,7 +212,7 @@ public extension Value {
 		catch { throw error }
 	}
 	
-	func modValue(_ otherValue: Value) throws -> Value {
+	func mod(_ otherValue: Value) throws -> Value {
 		
 		return 0 // TODO
 	}

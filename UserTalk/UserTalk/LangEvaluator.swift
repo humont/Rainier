@@ -20,7 +20,7 @@ public class LangEvaluator {
 	
 	public func runCode(codeTreeNode: CodeTreeNode, context: HashTable?) throws -> Value {
 		
-		guard let firstNode = codeTreeNode.param1? else {
+		guard let firstNode = codeTreeNode.param1 else {
 			return false //TODO: empty script error, perhaps
 		}
 		
@@ -58,7 +58,7 @@ public class LangEvaluator {
 				}
 			}
 		}
-		catch let e = LangError {
+		catch let e as LangError {
 			if let _ = e.lineNumber {
 				throw e
 			}
@@ -102,7 +102,7 @@ public class LangEvaluator {
 			case .noop:
 				return true
 				
-			case local:
+			case .local:
 				return addLocals(node)
 				
 			case .module:
@@ -115,19 +115,19 @@ public class LangEvaluator {
 				return dotValue(node)
 				
 			case .addressOf:
-				return addressOfValue(node.param1)
+				return addressOfValue(node.param1!)
 				
 			case .dereference:
-				return dereferenceValue(node.param1)
+				return dereferenceValue(node.param1!)
 				
 			case .array:
 				return arrayValue(node)
 				
 			case .const:
 				return copyValue(node)
-			
+				
 			case .assign:
-				if !assignValue(node.param1, val2) {
+				if !assignValue(node.param1!, val2) {
 					return false
 				}
 				if val2.valueType == .external || !needAssignmentResult(node) {
@@ -136,22 +136,22 @@ public class LangEvaluator {
 				return copyValue(val2)
 				
 			case .function:
-				return functionValue(node.param1, node.param2)
+				return functionValue(node.param1!, node.param2!)
 				
 			case .add:
-				return val1.add(val2)
+				return try val1.add(val2)
 				
 			case .subtract:
-				return val1.subtract(val2)
+				return try val1.subtract(val2)
 				
-			case unary:
-				return val1.unaryMinusValue()
+			case .unary:
+				return try val1.unaryMinusValue()
 				
 			case .multiply:
-				return val1.multiply(val2)
+				return try val1.multiply(val2)
 				
 			case .divide:
-				return val1.divide(val2)
+				return try val1.divide(val2)
 				
 			case .addValue:
 				return modifyAssignValue(node.param1, val2, .add, needAssignmentResult(node))
@@ -160,40 +160,40 @@ public class LangEvaluator {
 				return modifyAssignValue(node.param1, val2, .subtract, needAssignmentResult(node))
 				
 			case .multiplyValue:
-				return modifyAssignValue(node.param1, val2, .multiply, needAssignmentResult(node))
+				return modifyAssignValue(node.param1!, val2, .multiply, needAssignmentResult(node))
 				
 			case .divideValue:
-				return modifyAssignValue(node.param1, val2, .divide, needAssignmentResult(node))
+				return modifyAssignValue(node.param1!, val2, .divide, needAssignmentResult(node))
 				
 			case .mod:
-				return val1.mod(val2)
+				return try val1.mod(val2)
 				
 			case .not:
-				return val1.not()
+				return try val1.not()
 				
 			case .equals:
-				return val1.isEqualTo(val2)
+				return try val1.equals(val2)
 				
 			case .notEquals:
-				return !(val1.isEqualTo(val2))
+				return try !(val1.equals(val2))
 				
 			case .greaterThan:
-				return val1.greaterThan(val2)
+				return try val1.greaterThan(val2)
 				
 			case .lessThan:
-				return val1.lessThan(val2)
+				return try val1.lessThan(val2)
 				
 			case .greaterThanEquals:
-				return val1.greaterThanEqual(val2)
+				return try val1.greaterThanEqual(val2)
 				
 			case .lessThanEquals:
-				return val1.lessThanEqual(val2)
+				return try val1.lessThanEqual(val2)
 				
 			case .beginsWith:
-				return val1.beginsWith(val2)
+				return try val1.beginsWith(val2)
 				
 			case .contains:
-				return val1.contains(val2)
+				return try val1.contains(val2)
 				
 			case .orOr:
 				return orOrValue(val1, node.param2!)
@@ -220,17 +220,17 @@ public class LangEvaluator {
 				return val1
 				
 			case .bundle:
-				return evaluateList(h.param1)
+				return try evaluateList(node.param1!)
 				
-			case .ifOp: {
-				let fl = val1.asBool
-				if let ifNode = fl ? node.param2 ? node.param3 {
-					return evaluateList(ifNode)
+			case .ifOp: //{
+				let fl = try val1.asBool()
+				if let ifNode = fl ? node.param2 : node.param3 {
+					return try evaluateList(ifNode)
 				}
 				else {
 					return true
 				}
-				}
+				//}
 				
 			case .caseOp:
 				return evaluateCase(node)
@@ -248,16 +248,16 @@ public class LangEvaluator {
 				return evaluateForLoop(node, val1, val2, -1)
 				
 			case .incrPre:
-				return incrementValue(true, true, node.param1)
+				return incrementValue(true, true, node.param1!)
 				
 			case .incrPost:
-				return incrementValue(true, false, node.param1)
+				return incrementValue(true, false, node.param1!)
 				
 			case .decrPre:
-				return incrementValue(false, true, node.param1)
+				return incrementValue(false, true, node.param1!)
 				
 			case .decrPost:
-				return incrementValue(false, false, node.param1)
+				return incrementValue(false, false, node.param1!)
 				
 			case .tryOp:
 				return evaluateTry(node)
@@ -269,10 +269,10 @@ public class LangEvaluator {
 				throw langError(.badFieldOperation)
 				
 			case .list:
-				return makeListValue(node.param1)
+				return makeListValue(node.param1!)
 				
 			case .record:
-				return makeRecordValue(node.param1, false)
+				return makeRecordValue(node.param1!, false)
 				
 			case .forInLoop:
 				return evaluateForInLoop(node, val1)
@@ -284,7 +284,7 @@ public class LangEvaluator {
 			throw langError(.unexpectedOpCode)
 		}
 			
-		catch let e = LangError {
+		catch let e as LangError {
 			if let _ = e.lineNumber {
 				throw e
 			}
@@ -301,7 +301,7 @@ public class LangEvaluator {
 private extension LangEvaluator {
 	
 	func langError(_ errorType: LangError.LangErrorType) -> LangError {
-	
+		
 		return LangError(errorType, lineNumber: lineNumber, characterIndex: characterIndex)
 	}
 	
@@ -316,3 +316,128 @@ private extension LangEvaluator {
 		errorNode = node
 	}
 }
+
+private extension LangEvaluator {
+	
+	func addLocals(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func addHandler(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func idvalue(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func dotValue(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func addressOfValue(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func dereferenceValue(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func arrayValue(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func copyValue(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func assignValue(_ node: CodeTreeNode, _ value: Value) -> Bool {
+		
+		return true
+	}
+	
+	func needAssignmentResult(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func functionValue(_ node: CodeTreeNode, _ node2: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func orOrValue(_ value: Value, _ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func andAndValue(_ value: Value, _ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func evaluateWith(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func evaluateCase(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func evaluateLoop(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func evaluateFileLoop(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func evaluateForLoop(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func incrementValue(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func evaluateTry(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func makeListValue(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func makeRecordValue(_ node: CodeTreeNode) -> Bool {
+		
+		return true
+	}
+	
+	func evaluateForInLoop(_ node: CodeTreeNode, _ value: Value) -> Bool {
+		
+		return true
+	}
+	
+	func modifyAssignValue(_ node: CodeTreeNode, _ value: Value, _ operation: CodeTreeNodeType, _ needResult: Bool) -> Bool {
+		
+		return true
+	}
+	
+}
+
