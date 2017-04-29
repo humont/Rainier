@@ -89,7 +89,7 @@ public class LangEvaluator {
 			
 			if ctParams > 1 && op.shouldEvaluateParam2 {
 				
-				let result = try evaluateTree(node.param2!)
+				val2 = try evaluateTree(node.param2!)
 				if flreturn {
 					return true
 				}
@@ -124,7 +124,7 @@ public class LangEvaluator {
 				return arrayValue(node)
 				
 			case .const:
-				return copyValue(node)
+				return copyValue(node.value!)
 				
 			case .assign:
 				if !assignValue(node.param1!, val2) {
@@ -154,10 +154,10 @@ public class LangEvaluator {
 				return try val1.divide(val2)
 				
 			case .addValue:
-				return modifyAssignValue(node.param1, val2, .add, needAssignmentResult(node))
+				return modifyAssignValue(node.param1!, val2, .add, needAssignmentResult(node))
 				
 			case .subtractValue:
-				return modifyAssignValue(node.param1, val2, .subtract, needAssignmentResult(node))
+				return modifyAssignValue(node.param1!, val2, .subtract, needAssignmentResult(node))
 				
 			case .multiplyValue:
 				return modifyAssignValue(node.param1!, val2, .multiply, needAssignmentResult(node))
@@ -247,17 +247,17 @@ public class LangEvaluator {
 			case .forDownLoop:
 				return evaluateForLoop(node, val1, val2, -1)
 				
-			case .incrPre:
-				return incrementValue(true, true, node.param1!)
+			case .incrementPre:
+				return try incrementValue(node.param1!, increment: true, pre: true)
 				
-			case .incrPost:
-				return incrementValue(true, false, node.param1!)
+			case .incrementPost:
+				return try incrementValue(node.param1!, increment: true, pre: false)
 				
-			case .decrPre:
-				return incrementValue(false, true, node.param1!)
+			case .decrementPre:
+				return try incrementValue(node.param1!, increment: false, pre: true)
 				
-			case .decrPost:
-				return incrementValue(false, false, node.param1!)
+			case .decrementPost:
+				return try incrementValue(node.param1!, increment: false, pre: false)
 				
 			case .tryOp:
 				return evaluateTry(node)
@@ -269,10 +269,10 @@ public class LangEvaluator {
 				throw langError(.badFieldOperation)
 				
 			case .list:
-				return makeListValue(node.param1!)
+				return makeList(node.param1!)
 				
 			case .record:
-				return makeRecordValue(node.param1!, false)
+				return makeRecord(node.param1!)
 				
 			case .forInLoop:
 				return evaluateForInLoop(node, val1)
@@ -354,7 +354,7 @@ private extension LangEvaluator {
 		return true
 	}
 	
-	func copyValue(_ node: CodeTreeNode) -> Bool {
+	func copyValue(_ value: Value) -> Bool {
 		
 		return true
 	}
@@ -404,12 +404,12 @@ private extension LangEvaluator {
 		return true
 	}
 	
-	func evaluateForLoop(_ node: CodeTreeNode) -> Bool {
+	func evaluateForLoop(_ node: CodeTreeNode, _ val1: Value, _ val2: Value, _ increment: Int) -> Value {
 		
 		return true
 	}
 	
-	func incrementValue(_ node: CodeTreeNode) -> Bool {
+	func incrementValue(_ node: CodeTreeNode, increment: Bool, pre: Bool) throws -> Value {
 		
 		return true
 	}
@@ -419,12 +419,12 @@ private extension LangEvaluator {
 		return true
 	}
 	
-	func makeListValue(_ node: CodeTreeNode) -> Bool {
+	func makeList(_ node: CodeTreeNode) -> Bool {
 		
 		return true
 	}
 	
-	func makeRecordValue(_ node: CodeTreeNode) -> Bool {
+	func makeRecord(_ node: CodeTreeNode) -> Bool {
 		
 		return true
 	}
