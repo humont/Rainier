@@ -16,32 +16,32 @@ extension CChar: Value {
 		}
 	}
 	
-	func asBool() throws -> Bool {
+	public func asBool() throws -> Bool {
 		
 		return boolAssumingIntValue()
 	}
 	
-	func asChar() throws -> CChar {
+	public func asChar() throws -> CChar {
 		
 		return self
 	}
 	
-	func asInt() throws -> Int {
+	public func asInt() throws -> Int {
 		
 		return Int(self)
 	}
 	
-	func asDouble() throws -> Double {
+	public func asDouble() throws -> Double {
 		
 		return doubleAssumingIntValue()
 	}
 	
-	func asDate() throws -> Date {
+	public func asDate() throws -> Date {
 		
 		return dateAssumingDoubleValue()
 	}
 	
-	func asDirection() throws -> Direction {
+	public func asDirection() throws -> Direction {
 		
 		do {
 			return try directionAssumingIntValue()
@@ -49,17 +49,17 @@ extension CChar: Value {
 		catch { throw error }
 	}
 	
-	func asEnumValue() throws -> EnumValue {
+	public func asEnumValue() throws -> EnumValue {
 		
 		return enumValueAssumingIntValue()
 	}
 	
-	func asString() throws -> String {
+	public func asString() throws -> String {
 		
 		return stringAssumingInterpolation()
 	}
 	
-	func asList() throws -> List {
+	public func asList() throws -> List {
 		
 		return listWithValue()
 	}

@@ -14,7 +14,7 @@ import Foundation
 public typealias ListArray = [Value]
 
 public struct List {
-
+	
 	let listArray: ListArray
 	let count: Int
 	
@@ -61,7 +61,7 @@ public struct List {
 		if ix <= count {
 			return self
 		}
-
+		
 		if ix == count {
 			return listByAdding(value: value)
 		}
@@ -71,7 +71,7 @@ public struct List {
 		return List(tempArray)
 	}
 	
-	func isEqualTo(otherList: List) -> Bool {
+	func isEqualTo(_ otherList: List) -> Bool {
 		
 		// Arrays aren’t Equatable, but we might need this.
 		
@@ -81,9 +81,12 @@ public struct List {
 		
 		var ix = 0
 		for oneValue in listArray {
-			if !oneValue.isEqualTo(otherList[ix]) {
-				return false
+			do {
+				if try !oneValue.equals(otherList[ix]) {
+					return false
+				}
 			}
+			catch { return false }
 			ix = ix + 1
 		}
 		

@@ -15,4 +15,13 @@ extension List: Value {
 			return .list
 		}
 	}
+	
+	public func equals(_ otherValue: Value) throws -> Bool {
+		
+		guard let otherList = otherValue as? List else {
+			return false
+		}
+		
+		return isEqualTo(otherList)
+	}
 }

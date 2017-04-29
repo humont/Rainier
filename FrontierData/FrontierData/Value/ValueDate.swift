@@ -20,6 +20,10 @@ extension Date: Value {
 		}
 	}
 	
+	public func asDouble() throws -> Double {
+		
+		return timeIntervalSince1904
+	}
 	public init(timeIntervalSince1904: TimeInterval) {
 		
 		self.init(timeIntervalSince1970: timeIntervalSince1904 - unixEpochMinusOldMacEpoch)
@@ -29,7 +33,8 @@ extension Date: Value {
 private extension Date {
 	
 	var timeIntervalSince1904: TimeInterval {
-		
-		return timeIntervalSince1970 + unixEpochMinusOldMacEpoch
+		get {
+			return timeIntervalSince1970 + unixEpochMinusOldMacEpoch
+		}
 	}
 }

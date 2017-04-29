@@ -15,4 +15,9 @@ extension String: Value {
 			return .string
 		}
 	}
+	
+	public func asString() throws -> String {
+		
+		return self
+	}
 }

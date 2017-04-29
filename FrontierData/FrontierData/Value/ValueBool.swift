@@ -27,8 +27,8 @@ extension Bool: Value {
 	}
 	
 	public func asInt() throws -> Int {
-		
-		return self ? 1 : 0
+		let n = self ? 1 : 0
+		return n
 	}
 	
 	public func asDouble() throws -> Double {
@@ -44,7 +44,7 @@ extension Bool: Value {
 	public func asDirection() throws -> Direction {
 		
 		do {
-			return directionAssumingIntValue()
+			return try directionAssumingIntValue()
 		}
 		catch { throw error }
 	}

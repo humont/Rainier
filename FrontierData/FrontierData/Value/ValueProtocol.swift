@@ -44,7 +44,7 @@ public protocol Value {
 	func subtract(_ otherValue: Value) throws -> Value
 	func divide(_ otherValue: Value) throws -> Value
 	func multiply(_ otherValue: Value) throws -> Value
-
+	
 	// Comparisons
 	
 	func compareTo(_ otherValue: Value) throws -> ComparisonResult
@@ -69,7 +69,7 @@ public extension Value {
 		throw LangError(.coercionNotPossible)
 	}
 	
-	func asInt() throws -> Bool {
+	func asInt() throws -> Int {
 		
 		throw LangError(.coercionNotPossible)
 	}
@@ -129,46 +129,15 @@ public extension Value {
 		throw LangError(.coercionNotPossible)
 	}
 	
-	static func commonCoercionType(with otherValue: Value) -> ValueType {
+	func commonCoercionType(with otherValue: Value) -> ValueType {
 		
 		return valueType.commonCoercionType(otherValueType: otherValue.valueType)
 	}
-
-	static func compareValues<T:Comparable>(_ v1: T, _ v2: T) -> ComparisonResult {
-		
-		if v1 == v2 {
-			return .orderedSame
-		}
-		return v1 < v2 ? .orderedAscending : .orderedDescending
-	}
 	
-	static func compareTwoValues(_ value1: Value, _ value2: Value) throws -> ComparisonResult {
-		
-		let coercionType = value1.commonCoercionType(with: value2)
-		
-		switch coercionType {
-			
-		case .none:
-			return .orderedSame
-			
-		case .bool, .char, .int, .direction:
-			return compareValues(value1.asInt!, value2.asInt!)
-			
-		case .date, .double:
-			return compareValues(value1.asDouble!, value2.asDouble!)
-			
-		case .string:
-			return compareValues(value1.asString!, value2.asString!)
-			
-		default:
-			throw LangError(.coercionNotPossible)
-		}
-	}
-
 	func compareTo(_ otherValue: Value) throws -> ComparisonResult {
 		
 		do {
-			return try Value.compareTwoValues(self, otherValue)
+			return try compareTwoValues(self, otherValue)
 		}
 		catch { throw error }
 	}
@@ -219,7 +188,7 @@ public extension Value {
 	func lessThanEqual(_ otherValue: Value) throws -> Bool {
 		
 		do {
-			let comparisonResult = compareTo(otherValue)
+			let comparisonResult = try compareTo(otherValue)
 			return comparisonResult == .orderedAscending || comparisonResult == .orderedSame
 		}
 		catch { throw error }
@@ -228,7 +197,7 @@ public extension Value {
 	func greaterThan(_ otherValue: Value) throws -> Bool {
 		
 		do {
-			let comparisonResult = compareTo(otherValue)
+			let comparisonResult = try compareTo(otherValue)
 			return comparisonResult == .orderedDescending
 		}
 		catch { throw error }
@@ -237,7 +206,7 @@ public extension Value {
 	func greaterThanEqual(_ otherValue: Value) throws -> Bool {
 		
 		do {
-			let comparisonResult = compareTo(otherValue)
+			let comparisonResult = try compareTo(otherValue)
 			return comparisonResult == .orderedDescending || comparisonResult == .orderedSame
 		}
 		catch { throw error }
@@ -280,7 +249,7 @@ internal extension Value {
 	
 	func charAssumingIntValue() -> CChar {
 		
-		return try! Char(asInt())
+		return try! CChar(asInt())
 	}
 	
 	func doubleAssumingIntValue() -> Double {
@@ -296,7 +265,7 @@ internal extension Value {
 	func directionAssumingIntValue() throws -> Direction {
 		
 		do {
-			if let d = Direction(rawValue: asInt()) {
+			if let d = try Direction(rawValue: asInt()) {
 				return d
 			}
 			throw LangError(.coercionNotPossible)
@@ -313,7 +282,7 @@ internal extension Value {
 		
 		return EnumValue(osType: osTypeAssumingIntValue())
 	}
-
+	
 	func stringAssumingInterpolation() -> String {
 		
 		return "\(self)"
@@ -325,3 +294,36 @@ internal extension Value {
 	}
 }
 
+private func compareValues<T:Comparable>(_ v1: T, _ v2: T) -> ComparisonResult {
+	
+	if v1 == v2 {
+		return .orderedSame
+	}
+	return v1 < v2 ? .orderedAscending : .orderedDescending
+}
+
+private func compareTwoValues(_ value1: Value, _ value2: Value) throws -> ComparisonResult {
+	
+	let coercionType = value1.commonCoercionType(with: value2)
+	
+	do {
+		switch coercionType {
+			
+		case .none:
+			return .orderedSame
+			
+		case .bool, .char, .int, .direction:
+			return try compareValues(value1.asInt(), value2.asInt())
+			
+		case .date, .double:
+			return try compareValues(value1.asDouble(), value2.asDouble())
+			
+		case .string:
+			return try compareValues(value1.asString(), value2.asString())
+			
+		default:
+			throw LangError(.coercionNotPossible)
+		}
+	}
+	catch { throw error }
+}

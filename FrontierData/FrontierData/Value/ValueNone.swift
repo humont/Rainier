@@ -16,27 +16,27 @@ extension NSNull: Value {
 		}
 	}
 	
-	func asBool() throws -> Bool {
+	public func asBool() throws -> Bool {
 		
 		return false
 	}
 	
-	func asChar() throws -> CChar {
+	public func asChar() throws -> CChar {
 		
 		return CChar(0)
 	}
 	
-	func asInt() throws -> Int {
+	public func asInt() throws -> Int {
 		
 		return 0
 	}
 
-	func asDouble() throws -> Double {
+	public func asDouble() throws -> Double {
 		
 		return doubleAssumingIntValue()
 	}
 
-	func asDirection() throws -> Direction {
+	public func asDirection() throws -> Direction {
 		
 		do {
 			return try directionAssumingIntValue()

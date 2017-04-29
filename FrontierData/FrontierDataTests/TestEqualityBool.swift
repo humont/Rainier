@@ -13,58 +13,61 @@ class TestEqualityBool: XCTestCase {
 
     func testBoolEquality() {
  
-		XCTAssertTrue(true.isEqualTo(true))
-		XCTAssertTrue(false.isEqualTo(false))
+		XCTAssertTrue(try! true.equals(true))
+		XCTAssertTrue(try! false.equals(false))
 	}
 	
 	func testBoolInequality() {
 		
-		XCTAssertFalse(true.isEqualTo(false))
-		XCTAssertFalse(false.isEqualTo(true))
+		XCTAssertFalse(try! true.equals(false))
+		XCTAssertFalse(try! false.equals(true))
 	}
 	
 	func testBoolIntEquality() {
 		
-		XCTAssertTrue(true.asInt!.isEqualTo(1))
-		XCTAssertTrue(false.asInt!.isEqualTo(0))
+		XCTAssertTrue(try! true.asInt().equals(1))
+		XCTAssertTrue(try! false.asInt().equals(0))
 	}
 	
 	func testBoolIntInequality() {
 		
-		XCTAssertFalse(false.asInt!.isEqualTo(1))
-		XCTAssertFalse(true.asInt!.isEqualTo(0))
+		XCTAssertFalse(try! false.asInt().equals(1))
+		XCTAssertFalse(try! true.asInt().equals(0))
 	}
 	
 	func testBoolDoubleEquality() {
 		
-		XCTAssertTrue(true.asDouble!.isEqualTo(1.0))
-		XCTAssertTrue(false.asDouble!.isEqualTo(0.0))
+		XCTAssertTrue(try! true.asDouble().equals(1.0))
+		XCTAssertTrue(try! false.asDouble().equals(0.0))
 	}
 	
 	func testBoolDateEquality() {
 		
-		XCTAssertTrue(true.asDate!.isEqualTo(Date(timeIntervalSince1904: 1.0)))
-		XCTAssertTrue(false.asDate!.isEqualTo(Date(timeIntervalSince1904: 0.0)))
+		XCTAssertTrue(try! true.asDate().equals(Date(timeIntervalSince1904: 1.0)))
+		XCTAssertTrue(try! false.asDate().equals(Date(timeIntervalSince1904: 0.0)))
 	}
 	
 	func testBoolDirectionEquality() {
 		
-		XCTAssertTrue(true.asDirection!.isEqualTo(Direction.up))
-		XCTAssertTrue(false.asDirection!.isEqualTo(Direction.noDirection))
+		let up = try! true.asDirection()
+		XCTAssertTrue(try! up.equals(Direction.up))
+
+		let noDirection = try! false.asDirection()
+		XCTAssertTrue(try! noDirection.equals(Direction.noDirection))
 	}
 	
 	func testBoolStringEquality() {
 		
-		XCTAssertTrue(true.asString!.isEqualTo("true"))
-		XCTAssertTrue(false.asString!.isEqualTo("false"))
+		XCTAssertTrue(try! true.asString().equals("true"))
+		XCTAssertTrue(try! false.asString().equals("false"))
 	}
 	
 	func testBoolListEquality() {
 		
 		let listFalse = List(value: false)
 		let listTrue = List(value: true)
-		XCTAssertTrue(true.asList!.isEqualTo(listTrue))
-		XCTAssertTrue(false.asList!.isEqualTo(listFalse))
+		XCTAssertTrue(try! true.asList().equals(listTrue))
+		XCTAssertTrue(try! false.asList().equals(listFalse))
 	}
 }
 

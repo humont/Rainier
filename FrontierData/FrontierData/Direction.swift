@@ -11,6 +11,7 @@ import Foundation
 public enum Direction: Int {
 	
 	// Stored on disk: don’t change values.
+	// The gap in values (no 7) is from the original source.
 	
 	case noDirection = 0
 	case up = 1

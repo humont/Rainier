@@ -15,4 +15,29 @@ extension Direction: Value {
 			return .direction
 		}
 	}
+	
+	public func asBool() throws -> Bool {
+		
+		return boolAssumingIntValue()
+	}
+	
+	public func asInt() throws -> Int {
+		
+		return rawValue
+	}
+	
+	public func asDouble() throws -> Double {
+		
+		return doubleAssumingIntValue()
+	}
+	
+	public func asDate() throws -> Date {
+		
+		return dateAssumingDoubleValue()
+	}
+	
+	public func asDirection() throws -> Direction {
+		
+		return self
+	}
 }
