@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		844CB7561EB595ED00ED569C /* Tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7551EB595ED00ED569C /* Tables.swift */; };
+		844CB7611EB660E200ED569C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7601EB660E200ED569C /* Config.swift */; };
 		84553AAB1EA9A30E002FC299 /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84553AA11EA9A30E002FC299 /* FrontierData.framework */; };
 		84553AB01EA9A30E002FC299 /* FrontierDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84553AAF1EA9A30E002FC299 /* FrontierDataTests.swift */; };
 		84553AB21EA9A30E002FC299 /* FrontierData.h in Headers */ = {isa = PBXBuildFile; fileRef = 84553AA41EA9A30E002FC299 /* FrontierData.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		844CB7551EB595ED00ED569C /* Tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tables.swift; path = FrontierData/Tables.swift; sourceTree = "<group>"; };
+		844CB7601EB660E200ED569C /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Config.swift; path = FrontierData/Config.swift; sourceTree = "<group>"; };
 		84553AA11EA9A30E002FC299 /* FrontierData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FrontierData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84553AA41EA9A30E002FC299 /* FrontierData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FrontierData.h; path = FrontierData/FrontierData.h; sourceTree = "<group>"; };
 		84553AA51EA9A30E002FC299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = FrontierData/Info.plist; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				84553AA41EA9A30E002FC299 /* FrontierData.h */,
+				844CB7601EB660E200ED569C /* Config.swift */,
 				8481D3561EA9A3BC008DBA8A /* HashTable.swift */,
 				8481D35A1EA9A7CB008DBA8A /* HashNode.swift */,
 				8481D3581EA9A72C008DBA8A /* Address.swift */,
@@ -307,6 +310,7 @@
 				8481D3671EA9B353008DBA8A /* LangError.swift in Sources */,
 				8481D3911EAC19E4008DBA8A /* Record.swift in Sources */,
 				8481D3891EABD539008DBA8A /* ValueList.swift in Sources */,
+				844CB7611EB660E200ED569C /* Config.swift in Sources */,
 				8481D37D1EAB1E83008DBA8A /* ValueDirection.swift in Sources */,
 				8481D36F1EAB047D008DBA8A /* ValueInt.swift in Sources */,
 				8481D3851EABD475008DBA8A /* ValueBinary.swift in Sources */,

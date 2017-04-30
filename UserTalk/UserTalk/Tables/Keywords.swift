@@ -11,23 +11,7 @@ import FrontierData
 
 // OrigFrontier: langtokens.h
 
-let appleeventfunc = 1
-let complexeventfunc = 2
-let findereventfunc = 3
-let tableeventfunc = 4
-let objspecfunc = 5
-let setobjspecfunc = 6
-let packfunc = 7
-let unpackfunc = 8
-let definedfunc = 9
-let typeoffunc = 10
-let sizeoffunc = 11
-let nameoffunc = 12
-let parentoffunc = 13
-let indexoffunc = 14
-let gestaltfunc = 15
-let syscrashfunc = 16
-let myMooffunc = 17
+// system.compiler.language.keywords
 
 // Below must agree with numbers in langparser.y
 

@@ -11,6 +11,8 @@ import FrontierData
 
 // OrigFrontier: langstartup.c
 
+// system.compiler.language.constants
+
 struct Constants {
 
 	static let constantsTable: HashTable = {
