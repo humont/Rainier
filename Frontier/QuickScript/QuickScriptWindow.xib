@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12118"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="QuickScriptWindowController" customModule="Frontier" customModuleProvider="target"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Quick Script" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <scrollView wantsLayer="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soq-KA-vUe">
+                        <rect key="frame" x="0.0" y="32" width="400" height="238"/>
+                        <clipView key="contentView" id="9fz-QR-h4L">
+                            <rect key="frame" x="0.0" y="0.0" width="400" height="238"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="26N-cO-W5e">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="238"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <size key="minSize" width="400" height="238"/>
+                                    <size key="maxSize" width="463" height="10000000"/>
+                                    <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                </textView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="cfe-2o-dQK">
+                            <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="afD-zM-BMk">
+                            <rect key="frame" x="384" y="0.0" width="16" height="238"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SlQ-mE-gr0">
+                        <rect key="frame" x="402" y="222" width="64" height="32"/>
+                        <buttonCell key="cell" type="push" title="Run" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ID9-jy-Gao">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="runScript:" target="-2" id="Zww-lH-C92"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" allowsCharacterPickerTouchBarItem="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmD-XM-DDM">
+                        <rect key="frame" x="18" y="6" width="444" height="17"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="86f-Xi-Lcf">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="EmD-XM-DDM" secondAttribute="bottom" constant="6" id="4ek-XQ-1Ph"/>
+                    <constraint firstItem="Soq-KA-vUe" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" id="56L-Kk-zH1"/>
+                    <constraint firstAttribute="trailing" secondItem="SlQ-mE-gr0" secondAttribute="trailing" constant="20" symbolic="YES" id="7tj-2g-DiE"/>
+                    <constraint firstItem="SlQ-mE-gr0" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="Alj-S6-qKE"/>
+                    <constraint firstItem="EmD-XM-DDM" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" symbolic="YES" id="NwA-wR-XMJ"/>
+                    <constraint firstAttribute="trailing" secondItem="EmD-XM-DDM" secondAttribute="trailing" constant="20" symbolic="YES" id="dHg-it-gAs"/>
+                    <constraint firstItem="Soq-KA-vUe" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="mpW-o7-W7b"/>
+                    <constraint firstItem="SlQ-mE-gr0" firstAttribute="leading" secondItem="Soq-KA-vUe" secondAttribute="trailing" constant="8" symbolic="YES" id="nF6-ML-TTf"/>
+                    <constraint firstAttribute="bottom" secondItem="Soq-KA-vUe" secondAttribute="bottom" constant="32" id="tcs-XM-ykU"/>
+                </constraints>
+            </view>
+            <contentBorderThickness minY="32"/>
+        </window>
+    </objects>
+</document>
