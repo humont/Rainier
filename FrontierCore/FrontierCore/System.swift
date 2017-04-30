@@ -12,17 +12,17 @@ public struct System {
 
 	public static func osVersion() -> OperatingSystemVersion {
 
-		return ProcessInfo.processInfo.operatingSystemVersion()
+		return ProcessInfo.processInfo.operatingSystemVersion
 	}
 
-	public static func osBuildString() -> String {
+	public static func osBuildString() -> String? {
 
 		return runUnixCommand("/usr/bin/sw_vers", ["-buildVersion"])
 	}
 
 	public static func localizedOSName() -> String {
 
-		return ProcessInfo.processInfo.operatingSystemVersionString()
+		return ProcessInfo.processInfo.operatingSystemVersionString
 	}
 
 	public static func runUnixCommand(_ appPath: String, _ parameters: [String]) -> String? {

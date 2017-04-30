@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 // OrigFrontier: langstartup.c
 
@@ -62,6 +63,6 @@ struct Builtins {
 
 	static func lookup(_ identifier: String) -> Int? {
 
-		return keywordTable.lookup(identifier) as? Int
+		return builtinsTable.lookup(identifier) as? Int
 	}
 }

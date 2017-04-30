@@ -8,6 +8,7 @@
 
 import Foundation
 import FrontierData
+import FrontierCore
 
 // system.environment
 // OrigFrontier: langstartup.c
@@ -35,8 +36,12 @@ struct Environment {
 		t.add("osMinorVersion", "\(osVersion.minorVersion)")
 		t.add("osPointVersion", "\(osVersion.patchVersion)")
 
-		let buildString = System.osBuildString()
-		t.add("osBuildNumber", buildString)
+		if let buildString = System.osBuildString() {
+			t.add("osBuildNumber", buildString)
+		}
+		else {
+			t.add("osBuildNumber", "unknown")
+		}
 
 		t.add("osFullNameForDisplay", System.localizedOSName())
 
@@ -47,7 +52,7 @@ struct Environment {
 
 	static func lookup(_ identifier: String) -> Value? {
 
-		return constantsTable.lookup(identifier) as? Value
+		return table.lookup(identifier) as? Value
 	}
 }
 
