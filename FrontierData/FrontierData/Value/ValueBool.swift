@@ -12,7 +12,7 @@ extension Bool: Value {
 	
 	public var valueType: ValueType {
 		get {
-			return .bool
+			return .boolean
 		}
 	}
 	

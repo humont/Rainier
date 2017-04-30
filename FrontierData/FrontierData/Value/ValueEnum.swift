@@ -12,7 +12,7 @@ extension EnumValue: Value {
 	
 	public var valueType: ValueType {
 		get {
-			return .enumType
+			return .enumValue
 		}
 	}
 }

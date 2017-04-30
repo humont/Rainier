@@ -12,7 +12,7 @@ extension OSType: Value {
 	
 	public var valueType: ValueType {
 		get {
-			return .os
+			return .osType
 		}
 	}
 }

@@ -309,10 +309,10 @@ private func compareTwoValues(_ value1: Value, _ value2: Value) throws -> Compar
 	do {
 		switch coercionType {
 			
-		case .none:
+		case .noValue:
 			return .orderedSame
 			
-		case .bool, .char, .int, .direction:
+		case .boolean, .char, .int, .direction:
 			return try compareValues(value1.asInt(), value2.asInt())
 			
 		case .date, .double:

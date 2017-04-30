@@ -12,7 +12,7 @@ extension NSNull: Value {
 	
 	public var valueType: ValueType {
 		get {
-			return .none
+			return .noValue
 		}
 	}
 	

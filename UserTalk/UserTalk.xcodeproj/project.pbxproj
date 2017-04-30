@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844CB7521EB5445700ED569C /* Keywords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7511EB5445700ED569C /* Keywords.swift */; };
+		844CB7541EB54ABC00ED569C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7531EB54ABC00ED569C /* Constants.swift */; };
 		847CDC1B1EB4EF63004E0849 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CDC1A1EB4EF63004E0849 /* Tokenizer.swift */; };
 		849023F11E9EC3C5002D1BA7 /* UserTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849023E71E9EC3C5002D1BA7 /* UserTalk.framework */; };
 		849023F61E9EC3C5002D1BA7 /* UserTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849023F51E9EC3C5002D1BA7 /* UserTalkTests.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		844CB7511EB5445700ED569C /* Keywords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keywords.swift; path = UserTalk/Keywords.swift; sourceTree = "<group>"; };
+		844CB7531EB54ABC00ED569C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = UserTalk/Constants.swift; sourceTree = "<group>"; };
 		847CDC1A1EB4EF63004E0849 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tokenizer.swift; path = UserTalk/Parser/Tokenizer.swift; sourceTree = "<group>"; };
 		849023E71E9EC3C5002D1BA7 /* UserTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		849023EA1E9EC3C5002D1BA7 /* UserTalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserTalk.h; path = UserTalk/UserTalk.h; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				84F908AE1EADAC7C00001B96 /* LangEvaluator.swift */,
 				84F908B41EB1A4BD00001B96 /* CodeTreeNode.swift */,
 				84F908B51EB1A4BD00001B96 /* CodeTreeNodeType.swift */,
+				844CB7511EB5445700ED569C /* Keywords.swift */,
+				844CB7531EB54ABC00ED569C /* Constants.swift */,
 				84F908B01EAEF71500001B96 /* ParamInfo.swift */,
 				847CDC1C1EB4F24C004E0849 /* Parser */,
 				849023EB1E9EC3C5002D1BA7 /* Info.plist */,
@@ -229,6 +235,8 @@
 				84F908B61EB1A4BD00001B96 /* CodeTreeNode.swift in Sources */,
 				847CDC1B1EB4EF63004E0849 /* Tokenizer.swift in Sources */,
 				84F908AF1EADAC7C00001B96 /* LangEvaluator.swift in Sources */,
+				844CB7521EB5445700ED569C /* Keywords.swift in Sources */,
+				844CB7541EB54ABC00ED569C /* Constants.swift in Sources */,
 				84F908B71EB1A4BD00001B96 /* CodeTreeNodeType.swift in Sources */,
 				84F908B11EAEF71500001B96 /* ParamInfo.swift in Sources */,
 			);

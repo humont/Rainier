@@ -28,14 +28,12 @@
 		8481D3811EAB2802008DBA8A /* ValueString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3801EAB2802008DBA8A /* ValueString.swift */; };
 		8481D3831EABD41E008DBA8A /* ValueDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3821EABD41E008DBA8A /* ValueDouble.swift */; };
 		8481D3851EABD475008DBA8A /* ValueBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3841EABD475008DBA8A /* ValueBinary.swift */; };
-		8481D3871EABD4C0008DBA8A /* ValueFileSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3861EABD4C0008DBA8A /* ValueFileSpec.swift */; };
 		8481D3891EABD539008DBA8A /* ValueList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3881EABD539008DBA8A /* ValueList.swift */; };
 		8481D38B1EABD8DD008DBA8A /* ValueRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D38A1EABD8DD008DBA8A /* ValueRecord.swift */; };
 		8481D38D1EABDA37008DBA8A /* ValueNone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D38C1EABDA37008DBA8A /* ValueNone.swift */; };
 		8481D38F1EAC1958008DBA8A /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D38E1EAC1958008DBA8A /* List.swift */; };
 		8481D3911EAC19E4008DBA8A /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3901EAC19E4008DBA8A /* Record.swift */; };
 		8481D3931EAC1A74008DBA8A /* EnumValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3921EAC1A74008DBA8A /* EnumValue.swift */; };
-		8481D3951EAC20E4008DBA8A /* FileSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3941EAC20E4008DBA8A /* FileSpec.swift */; };
 		8481D3971EAC247D008DBA8A /* OSType-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D3961EAC247D008DBA8A /* OSType-Extension.swift */; };
 		8481D39C1EAC4194008DBA8A /* TestEqualityBool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D39B1EAC4194008DBA8A /* TestEqualityBool.swift */; };
 		8481D39E1EAC472A008DBA8A /* TestEqualityInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8481D39D1EAC472A008DBA8A /* TestEqualityInt.swift */; };
@@ -76,14 +74,12 @@
 		8481D3801EAB2802008DBA8A /* ValueString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueString.swift; path = FrontierData/Value/ValueString.swift; sourceTree = "<group>"; };
 		8481D3821EABD41E008DBA8A /* ValueDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueDouble.swift; path = FrontierData/Value/ValueDouble.swift; sourceTree = "<group>"; };
 		8481D3841EABD475008DBA8A /* ValueBinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueBinary.swift; path = FrontierData/Value/ValueBinary.swift; sourceTree = "<group>"; };
-		8481D3861EABD4C0008DBA8A /* ValueFileSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueFileSpec.swift; path = FrontierData/Value/ValueFileSpec.swift; sourceTree = "<group>"; };
 		8481D3881EABD539008DBA8A /* ValueList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueList.swift; path = FrontierData/Value/ValueList.swift; sourceTree = "<group>"; };
 		8481D38A1EABD8DD008DBA8A /* ValueRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueRecord.swift; path = FrontierData/Value/ValueRecord.swift; sourceTree = "<group>"; };
 		8481D38C1EABDA37008DBA8A /* ValueNone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ValueNone.swift; path = FrontierData/Value/ValueNone.swift; sourceTree = "<group>"; };
 		8481D38E1EAC1958008DBA8A /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = List.swift; path = FrontierData/List.swift; sourceTree = "<group>"; };
 		8481D3901EAC19E4008DBA8A /* Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Record.swift; path = FrontierData/Record.swift; sourceTree = "<group>"; };
 		8481D3921EAC1A74008DBA8A /* EnumValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumValue.swift; path = FrontierData/EnumValue.swift; sourceTree = "<group>"; };
-		8481D3941EAC20E4008DBA8A /* FileSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileSpec.swift; path = FrontierData/FileSpec.swift; sourceTree = "<group>"; };
 		8481D3961EAC247D008DBA8A /* OSType-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "OSType-Extension.swift"; path = "FrontierData/OSType-Extension.swift"; sourceTree = "<group>"; };
 		8481D3981EAC326F008DBA8A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = FrontierData/Value/README.md; sourceTree = "<group>"; };
 		8481D39B1EAC4194008DBA8A /* TestEqualityBool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestEqualityBool.swift; sourceTree = "<group>"; };
@@ -119,7 +115,6 @@
 				8481D35E1EA9AF91008DBA8A /* Direction.swift */,
 				8481D38E1EAC1958008DBA8A /* List.swift */,
 				8481D3901EAC19E4008DBA8A /* Record.swift */,
-				8481D3941EAC20E4008DBA8A /* FileSpec.swift */,
 				8481D3921EAC1A74008DBA8A /* EnumValue.swift */,
 				8481D3961EAC247D008DBA8A /* OSType-Extension.swift */,
 				8481D36B1EAB00F9008DBA8A /* Value */,
@@ -168,7 +163,6 @@
 				8481D37E1EAB211A008DBA8A /* ValueAddress.swift */,
 				8481D3801EAB2802008DBA8A /* ValueString.swift */,
 				8481D3841EABD475008DBA8A /* ValueBinary.swift */,
-				8481D3861EABD4C0008DBA8A /* ValueFileSpec.swift */,
 				8481D3881EABD539008DBA8A /* ValueList.swift */,
 				8481D38A1EABD8DD008DBA8A /* ValueRecord.swift */,
 			);
@@ -288,7 +282,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8481D3951EAC20E4008DBA8A /* FileSpec.swift in Sources */,
 				8481D3971EAC247D008DBA8A /* OSType-Extension.swift in Sources */,
 				8481D37B1EAB1CD1008DBA8A /* ValueEnum.swift in Sources */,
 				8481D3591EA9A72C008DBA8A /* Address.swift in Sources */,
@@ -304,7 +297,6 @@
 				8481D35B1EA9A7CB008DBA8A /* HashNode.swift in Sources */,
 				8481D3751EAB0516008DBA8A /* ValueChar.swift in Sources */,
 				8481D38F1EAC1958008DBA8A /* List.swift in Sources */,
-				8481D3871EABD4C0008DBA8A /* ValueFileSpec.swift in Sources */,
 				8481D35F1EA9AF91008DBA8A /* Direction.swift in Sources */,
 				8481D38D1EABDA37008DBA8A /* ValueNone.swift in Sources */,
 				8481D3711EAB048E008DBA8A /* ValueType.swift in Sources */,

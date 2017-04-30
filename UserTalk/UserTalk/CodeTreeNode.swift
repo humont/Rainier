@@ -55,4 +55,25 @@ public class CodeTreeNode {
 		}
 		self.ctParams = ct
 	}
+
+	public convenience init(nodeType: CodeTreeNodeType, value: Value) {
+
+		self.init(nodeType: nodeType, value: value, lineNumber: nil, characterIndex: nil, link: nil, param1: nil, param2: nil, param3: nil, param4: nil)
+	}
+}
+
+
+func valueNode(_ nodeType: CodeTreeNodeType, _ value: Value) -> CodeTreeNode {
+
+	return CodeTreeNode(nodeType: nodeType, value: value)
+}
+
+func newConstNode(_ value: Value) -> CodeTreeNode {
+
+	return valueNode(.const, value)
+}
+
+func newIdentifierNode(_ value: Value) -> CodeTreeNode {
+
+	return valueNode(.identifier, value)
 }

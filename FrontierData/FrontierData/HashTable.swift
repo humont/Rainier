@@ -19,5 +19,15 @@ public final class HashTable {
 	var isLocalTable = false
 	var representedObject: Any?
 	var dateCreated: Date?
+
+	public func add(_ key: String, _ value: Any) {
+
+		dictionary[key] = value
+	}
+
+	public func lookup(_ key: String) -> Any? {
+
+		return dictionary[key]
+	}
 }
 
