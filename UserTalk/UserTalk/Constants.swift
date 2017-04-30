@@ -15,7 +15,7 @@ struct Constants {
 
 	static let constantsTable: HashTable = {
 
-		let t = systemTable(langTable, "constants")
+		let t = HashTable("constants", Tables.languageTable)
 
 		t.add("nil", emptyValue)
 		t.add("infinity", Int.max)
@@ -53,6 +53,8 @@ struct Constants {
 
 		t.add("osMacCocoa", "MacOS 64-bit Cocoa")
 
+		t.isReadOnly = true
+		
 		return t
 	}()
 

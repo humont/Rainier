@@ -100,6 +100,7 @@ class Tokenizer {
 private let singleQuote: Character = "'"
 private let doubleQuote: Character = "\""
 private let openDoubleCurlyQuote: Character = "”"
+private let closeDoubleCurlyQuote: Character = "”"
 private let startComment: Character = "«"
 private let endComment: Character = "»"
 private let forwardSlash: Character = "/"
@@ -145,9 +146,7 @@ private extension Tokenizer {
 
 			if ch == doubleQuote || ch == openDoubleCurlyQuote { // A string constant
 
-				guard let val = try parsePopStringConst() else {
-					return errorToken
-				}
+				let val = try parsePopStringConst()
 				nodeToken = newConstNode(val)
 				return constantToken
 			}
@@ -167,11 +166,11 @@ private extension Tokenizer {
 					return errorToken
 				}
 
-				if let keywordValue = Keywords.shared.lookup(identifier) {
+				if let keywordValue = Keywords.lookup(identifier) {
 					return keywordValue
 				}
 
-				if let constantValue = Constants.shared.lookup(identifier) {
+				if let constantValue = Constants.lookup(identifier) {
 					nodeToken = newConstNode(constantValue)
 					return constantToken
 				}
@@ -272,6 +271,62 @@ private extension Tokenizer {
 		catch { throw error }
 
 		return errorToken
+	}
+
+	func parsePopStringConst() throws -> String {
+
+		/* Pop a string constant off the front of the input stream and return it.
+
+		Throw an error if the string wasn't properly terminated.
+
+		5/6/93: don't allow a string to span input lines
+
+		2.1b2 dmb: handle escape sequences */
+
+		guard let chstart = parsePopChar() else { // Pop off opening doublequote
+			throw LangError(.stringNotTerminated)
+		}
+
+		let lnum = ctScanLines
+		let cnum = ctScanCharacters
+
+		let chstop = (chstart == openDoubleCurlyQuote) ? closeDoubleCurlyQuote : doubleQuote
+
+		var s = ""
+
+		func stringNotTerminatedError() -> LangError {
+			// Make error message point at string start
+			return LangError(.stringNotTerminated, lineNumber: lnum, characterIndex: cnum)
+		}
+
+		while true {
+
+			guard let ch = parsePopChar() else {
+				throw stringNotTerminatedError()
+			}
+
+			if ch == chstop { // properly terminated string
+				return s
+			}
+
+			if ch.isReturnOrLineFeed() { // don't allow string to span lines
+				break
+			}
+
+			if ch == "\\" {
+				if let unescapedCharacter = parsePopEscapeSequence() {
+					s.append(unescapedCharacter)
+				}
+				else {
+					throw stringNotTerminatedError()
+				}
+			}
+			else {
+				s.append(ch)
+			}
+		}
+
+		throw stringNotTerminatedError()
 	}
 
 	func parseStringEmpty() -> Bool {

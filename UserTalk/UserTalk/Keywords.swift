@@ -72,7 +72,7 @@ struct Keywords {
 
 	static let keywordTable: HashTable = {
 
-		let t = systemTable(langTable, "keywords")
+		let t = HashTable("keywords", Tables.languageTable)
 
 		t.add("equals", equalsfunc)
 		t.add("notequals", notequalsfunc)
@@ -105,6 +105,8 @@ struct Keywords {
 		t.add("with", withfunc)
 		t.add("try", tryfunc)
 
+		t.isReadOnly = true
+		
 		return t
 	}()
 

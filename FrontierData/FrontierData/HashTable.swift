@@ -19,10 +19,23 @@ public final class HashTable {
 	var isLocalTable = false
 	var representedObject: Any?
 	var dateCreated: Date?
+	var name: String?
+	public var isReadOnly = false
+
+	public init(_ name: String, _ parentHashTable: HashTable?) {
+
+		self.parentHashTable = parentHashTable
+		self.name = name
+
+		parentHashTable?.add(name, self)
+	}
 
 	public func add(_ key: String, _ value: Any) {
 
-		dictionary[key] = value
+		assert(!isReadOnly, "Can’t add to a read-only table.")
+		if !isReadOnly {
+			dictionary[key] = value
+		}
 	}
 
 	public func lookup(_ key: String) -> Any? {
