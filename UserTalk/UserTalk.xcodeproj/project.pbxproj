@@ -37,6 +37,7 @@
 		844CB7591EB65AC700ED569C /* Keywords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Keywords.swift; path = UserTalk/Tables/Keywords.swift; sourceTree = "<group>"; };
 		844CB75C1EB65AE000ED569C /* Builtins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Builtins.swift; path = UserTalk/Tables/Builtins.swift; sourceTree = "<group>"; };
 		844CB75E1EB65E4800ED569C /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = UserTalk/Tables/Environment.swift; sourceTree = "<group>"; };
+		844CB7771EB68A1200ED569C /* langparser.y */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.yacc; name = langparser.y; path = UserTalk/Parser/langparser.y; sourceTree = "<group>"; };
 		847CDC1A1EB4EF63004E0849 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tokenizer.swift; path = UserTalk/Parser/Tokenizer.swift; sourceTree = "<group>"; };
 		849023E71E9EC3C5002D1BA7 /* UserTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		849023EA1E9EC3C5002D1BA7 /* UserTalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserTalk.h; path = UserTalk/UserTalk.h; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				847CDC1A1EB4EF63004E0849 /* Tokenizer.swift */,
+				844CB7771EB68A1200ED569C /* langparser.y */,
 			);
 			name = Parser;
 			sourceTree = "<group>";
