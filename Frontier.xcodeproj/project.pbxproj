@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		844CB76A1EB66FE200ED569C /* WPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844CB7691EB66FE200ED569C /* WPView.xib */; };
+		844CB76C1EB6714700ED569C /* DBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844CB76B1EB6714700ED569C /* DBView.xib */; };
 		8461885B1E9D707A00A56F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461885A1E9D707A00A56F84 /* AppDelegate.swift */; };
 		8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8461885E1E9D707A00A56F84 /* Assets.xcassets */; };
 		846188621E9D707A00A56F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846188601E9D707A00A56F84 /* Main.storyboard */; };
@@ -175,6 +176,7 @@
 
 /* Begin PBXFileReference section */
 		844CB7691EB66FE200ED569C /* WPView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WPView.xib; path = Frontier/WP/WPView.xib; sourceTree = "<group>"; };
+		844CB76B1EB6714700ED569C /* DBView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DBView.xib; path = Frontier/DB/DBView.xib; sourceTree = "<group>"; };
 		84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierData.xcodeproj; path = FrontierData/FrontierData.xcodeproj; sourceTree = "<group>"; };
 		846188571E9D707A00A56F84 /* Frontier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461885A1E9D707A00A56F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Frontier/AppDelegate.swift; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 		84EEF85E1EA851440061A312 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				844CB76B1EB6714700ED569C /* DBView.xib */,
 				84EEF85C1EA8513E0061A312 /* DBViewController.swift */,
 			);
 			name = DB;
@@ -577,6 +580,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844CB76C1EB6714700ED569C /* DBView.xib in Resources */,
 				84EEF86A1EA94FF70061A312 /* OPView.xib in Resources */,
 				84EEF8591EA850700061A312 /* ShellWindow.xib in Resources */,
 				8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */,
