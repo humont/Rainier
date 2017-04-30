@@ -58,9 +58,9 @@ struct Constants {
 		return t
 	}()
 
-	static func lookup(_ identifier: String) -> Any? {
+	static func lookup(_ identifier: String) -> Value? {
 
-		return constantsTable.lookup(identifier)
+		return constantsTable.lookup(identifier) as? Value
 	}
 }
 

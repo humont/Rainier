@@ -153,19 +153,15 @@ private extension Tokenizer {
 
 			if ch.isDigit() {
 
-				guard let val = try parsePopNumber() else {
-					return errorToken
-				}
+				let val = parsePopNumber()
 				nodeToken = newConstNode(val)
 				return constantToken
 			}
 
 			if ch.isFirstIdentifier() {
 
-				guard let identifier = parsePopIdentifier() else {
-					return errorToken
-				}
-
+				let identifier = parsePopIdentifier()
+				
 				if let keywordValue = Keywords.lookup(identifier) {
 					return keywordValue
 				}
@@ -263,14 +259,97 @@ private extension Tokenizer {
 					return NEToken
 				}
 				return notToken
+
+			default:
+				throw LangError(.illegalToken)
 			}
-			
-			throw LangError(.illegalToken)
-			
 		}
 		catch { throw error }
+	}
 
-		return errorToken
+	func parsePopIdentifier() -> String {
+
+		/* Pull characters off the front of the input stream as long as
+		we're still getting identifier characters. */
+
+		var s = ""
+
+		while true {
+
+			guard let ch = parseFirstChar() else {
+				return s
+			}
+
+			if !ch.isIdentifierChar() {
+				return s
+			}
+
+			if let _ = parsePopChar() {
+				s.append(ch)
+			}
+		}
+
+	}
+
+	func parsePopNumber() -> Value {
+
+		/* Pull characters off the front of the input stream as long as
+		we're still getting digits. When we hit the first non-digit,
+		convert what we got into a long and return it.
+
+		We expect at least one numeric digit to be there, and do not
+		provide for an error return.
+
+		5/29/91 dmb: support hex constants in the form "0xhhhhhhhh" */
+
+		var isHex = false
+		var isFloat = false
+		var numberString = ""
+
+		if parseFirstChar()! == "0" {  // check for hex constant
+
+			let _ = parsePopChar()
+			guard let ch = parseFirstChar() else {
+				return 0 //TODO: error
+			}
+			if ch == "x" {
+				let _ = parsePopChar()
+				isHex = true
+			}
+		}
+
+		while true {
+
+			guard let ch = parseFirstChar() else {
+				return 0
+			}
+
+			if ch == "." && isFloat {
+				isFloat = true
+			}
+			else {
+				if !ch.isDigit() && !(isHex && isxdigit(ch.asInt32()) != 0) {
+
+					if isFloat {
+						return (numberString as NSString).doubleValue
+					}
+					else if isHex {
+						if let n = hexStringToNumber(numberString) {
+							return n
+						}
+						return 0
+					}
+					else {
+						if let n = stringToNumber(numberString) {
+							return n
+						}
+						return 0
+					}
+				}
+			}
+
+			numberString.append(parsePopChar()!)
+		}
 	}
 
 	func parsePopStringConst() throws -> String {
@@ -556,8 +635,14 @@ private extension Character {
 		return self == tab || self == space || isReturnOrLineFeed()
 	}
 	
-	func asInt() -> Int {
+	func asInt32() -> Int32 {
 		
+		let s = String(self)
+		return Int32(s.utf8[s.utf8.startIndex])
+	}
+
+	func asInt() -> Int {
+
 		let s = String(self)
 		return Int(s.utf8[s.utf8.startIndex])
 	}
@@ -576,4 +661,38 @@ private extension Character {
 
 		return isASCIIAlpha() || self == "_"
 	}
+
+	func isIdentifierChar() -> Bool {
+
+		// Could the character be the second through nth character in an identifier?
+
+		if isFirstIdentifier() || isDigit() {
+			return true
+		}
+		if self == "™" { // OrigFrontier: langscan.c:98 (I don’t know why)
+			return true
+		}
+		return false
+	}
 }
+
+private func hexStringToNumber(_ s: String) -> Int? {
+
+	let scanner = Scanner(string: s)
+	var n: UInt64 = 0
+	if scanner.scanHexInt64(&n) {
+		return Int(n)
+	}
+	return nil
+}
+
+private func stringToNumber(_ s: String) -> Int? {
+
+	let scanner = Scanner(string: s)
+	var n = 0
+	if scanner.scanInt(&n) {
+		return n
+	}
+	return nil
+}
+
