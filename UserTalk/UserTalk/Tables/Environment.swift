@@ -18,20 +18,28 @@ struct Environment {
 
 		let t = HashTable("environment", Tables.systemTable)
 
-		// TODO: system version, app version, etc.: see langstartup.c:226
-
 		t.add("isMac", true)
 		t.add("isWindows", false)
 		t.add("isCarbon", false)
 		t.add("isCocoa", true)
 		t.add("is64Bit", true)
 		t.add("isMacOsClassic", false)
-		t.add("maxTcpConnections", Int.max) // TODO
+		t.add("maxTcpConnections", Int.max) // TODO: ?
 		t.add("isPike", false)
 		t.add("isRadio", false)
 		t.add("isOPMLEditor", Config.isOPMLEditor)
 		t.add("isFrontier", Config.isFrontier)
-		
+
+		let osVersion = System.osVersion()
+		t.add("osMajorVersion", "\(osVersion.majorVersion)")
+		t.add("osMinorVersion", "\(osVersion.minorVersion)")
+		t.add("osPointVersion", "\(osVersion.patchVersion)")
+
+		let buildString = System.osBuildString()
+		t.add("osBuildNumber", buildString)
+
+		t.add("osFullNameForDisplay", System.localizedOSName())
+
 		t.isReadOnly = true
 
 		return t
