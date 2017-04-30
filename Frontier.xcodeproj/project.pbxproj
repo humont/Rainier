@@ -11,6 +11,8 @@
 		844CB76C1EB6714700ED569C /* DBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844CB76B1EB6714700ED569C /* DBView.xib */; };
 		844CB76E1EB6726900ED569C /* QuickScriptWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB76D1EB6726900ED569C /* QuickScriptWindowController.swift */; };
 		844CB7711EB6728800ED569C /* QuickScriptWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844CB7701EB6728800ED569C /* QuickScriptWindow.xib */; };
+		844CB7731EB6747D00ED569C /* ErrorWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844CB7721EB6747D00ED569C /* ErrorWindow.xib */; };
+		844CB7761EB674A700ED569C /* ErrorWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7751EB674A700ED569C /* ErrorWindowController.swift */; };
 		8461885B1E9D707A00A56F84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461885A1E9D707A00A56F84 /* AppDelegate.swift */; };
 		8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8461885E1E9D707A00A56F84 /* Assets.xcassets */; };
 		846188621E9D707A00A56F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846188601E9D707A00A56F84 /* Main.storyboard */; };
@@ -181,6 +183,8 @@
 		844CB76B1EB6714700ED569C /* DBView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DBView.xib; path = Frontier/DB/DBView.xib; sourceTree = "<group>"; };
 		844CB76D1EB6726900ED569C /* QuickScriptWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickScriptWindowController.swift; path = Frontier/QuickScript/QuickScriptWindowController.swift; sourceTree = SOURCE_ROOT; };
 		844CB7701EB6728800ED569C /* QuickScriptWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QuickScriptWindow.xib; path = Frontier/QuickScript/QuickScriptWindow.xib; sourceTree = SOURCE_ROOT; };
+		844CB7721EB6747D00ED569C /* ErrorWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ErrorWindow.xib; path = Frontier/ErrorWindow/ErrorWindow.xib; sourceTree = SOURCE_ROOT; };
+		844CB7751EB674A700ED569C /* ErrorWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorWindowController.swift; path = Frontier/ErrorWindow/ErrorWindowController.swift; sourceTree = SOURCE_ROOT; };
 		84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierData.xcodeproj; path = FrontierData/FrontierData.xcodeproj; sourceTree = "<group>"; };
 		846188571E9D707A00A56F84 /* Frontier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frontier.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461885A1E9D707A00A56F84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Frontier/AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +249,16 @@
 			path = Frontier/Preferences;
 			sourceTree = "<group>";
 		};
+		844CB7741EB6748100ED569C /* Error Window */ = {
+			isa = PBXGroup;
+			children = (
+				844CB7721EB6747D00ED569C /* ErrorWindow.xib */,
+				844CB7751EB674A700ED569C /* ErrorWindowController.swift */,
+			);
+			name = "Error Window";
+			path = Frontier/Preferences;
+			sourceTree = "<group>";
+		};
 		84553ABC1EA9A320002FC299 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +283,7 @@
 				84EEF8461EA7FFDE0061A312 /* JumpWindow */,
 				84EEF85F1EA8540A0061A312 /* Preferences */,
 				844CB76F1EB6726C00ED569C /* QuickScript */,
+				844CB7741EB6748100ED569C /* Error Window */,
 				846188631E9D707A00A56F84 /* Info.plist */,
 				8461886B1E9D707A00A56F84 /* FrontierTests */,
 				846188581E9D707A00A56F84 /* Products */,
@@ -598,6 +613,7 @@
 				844CB76C1EB6714700ED569C /* DBView.xib in Resources */,
 				84EEF86A1EA94FF70061A312 /* OPView.xib in Resources */,
 				844CB7711EB6728800ED569C /* QuickScriptWindow.xib in Resources */,
+				844CB7731EB6747D00ED569C /* ErrorWindow.xib in Resources */,
 				84EEF8591EA850700061A312 /* ShellWindow.xib in Resources */,
 				8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */,
 				84EEF85B1EA850830061A312 /* JumpWindow.xib in Resources */,
@@ -622,6 +638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844CB7761EB674A700ED569C /* ErrorWindowController.swift in Sources */,
 				84EEF8551EA8502B0061A312 /* MainWindowViewController.swift in Sources */,
 				84EEF8611EA8540A0061A312 /* PreferencesWindowController.swift in Sources */,
 				84EEF8451EA7FFDA0061A312 /* JumpWindowController.swift in Sources */,
