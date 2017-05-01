@@ -9,6 +9,8 @@
 #ifndef langparser_h
 #define langparser_h
 
+#import <UserTalk/UserTalk-Swift.h>
+
 // OrigFrontier: langparser.h
 
 #define YYSTYPE CodeTreeNode /*data type of yacc stack*/
@@ -21,15 +23,15 @@ extern CodeTreeNode *yyval;
 
 /*prototypes*/
 
-int yyparse (void); // langparser.c
+NSInteger yyparse(void); // langparser.c
 
-void parsesetscanstring (Handle, boolean); // langscan.c
+//void parsesetscanstring(Handle, boolean); // langscan.c
 
-unsigned long parsegetscanoffset (unsigned long, unsigned short);
+unsigned long parsegetscanoffset(unsigned long, unsigned short);
 
-void parsesetscanoffset (unsigned long);
+void parsesetscanoffset(unsigned long);
 
-tokentype parsegettoken (CodeTreeNode *);
+tokentype parsegettoken(CodeTreeNode *);
 
 
 #endif /* langparser_h */

@@ -13,15 +13,15 @@
 		844CB75F1EB65E4800ED569C /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB75E1EB65E4800ED569C /* Environment.swift */; };
 		844CB77F1EB6ACA200ED569C /* LangEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB77E1EB6ACA200ED569C /* LangEvaluator.swift */; };
 		844CB7821EB6ACDC00ED569C /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7811EB6ACDC00ED569C /* Tokenizer.swift */; };
-		844CB7841EB6ACE600ED569C /* ParserBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7831EB6ACE600ED569C /* ParserBridge.m */; };
-		844CB7861EB6ACEB00ED569C /* ParserBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 844CB7851EB6ACEB00ED569C /* ParserBridge.h */; };
 		844CB7881EB6ACF300ED569C /* langparser.ym in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7871EB6ACF300ED569C /* langparser.ym */; };
 		844CB78A1EB6AD2400ED569C /* langparser.h in Headers */ = {isa = PBXBuildFile; fileRef = 844CB7891EB6AD2400ED569C /* langparser.h */; };
 		844CB78C1EB6AD3C00ED569C /* ParamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB78B1EB6AD3C00ED569C /* ParamInfo.swift */; };
-		844CB78E1EB6ADE800ED569C /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB78D1EB6ADE800ED569C /* Compiler.swift */; };
+		844CB7981EB6C01A00ED569C /* UserTalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 849023EA1E9EC3C5002D1BA7 /* UserTalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		844CB79B1EB6C0E400ED569C /* Compiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 844CB7991EB6C0E400ED569C /* Compiler.h */; };
+		844CB79C1EB6C0E400ED569C /* Compiler.m in Sources */ = {isa = PBXBuildFile; fileRef = 844CB79A1EB6C0E400ED569C /* Compiler.m */; };
+		844CB79E1EB6C33600ED569C /* FrontierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844CB79D1EB6C33600ED569C /* FrontierCore.framework */; };
 		849023F11E9EC3C5002D1BA7 /* UserTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849023E71E9EC3C5002D1BA7 /* UserTalk.framework */; };
 		849023F61E9EC3C5002D1BA7 /* UserTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849023F51E9EC3C5002D1BA7 /* UserTalkTests.swift */; };
-		849023F81E9EC3C5002D1BA7 /* UserTalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 849023EA1E9EC3C5002D1BA7 /* UserTalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84F908AD1EADAC4400001B96 /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F908AC1EADAC4400001B96 /* FrontierData.framework */; };
 		84F908B61EB1A4BD00001B96 /* CodeTreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F908B41EB1A4BD00001B96 /* CodeTreeNode.swift */; };
 		84F908B71EB1A4BD00001B96 /* CodeTreeNodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F908B51EB1A4BD00001B96 /* CodeTreeNodeType.swift */; };
@@ -44,12 +44,12 @@
 		844CB75E1EB65E4800ED569C /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Environment.swift; path = UserTalk/Tables/Environment.swift; sourceTree = "<group>"; };
 		844CB77E1EB6ACA200ED569C /* LangEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LangEvaluator.swift; path = UserTalk/Runtime/LangEvaluator.swift; sourceTree = "<group>"; };
 		844CB7811EB6ACDC00ED569C /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tokenizer.swift; path = UserTalk/Compiler/Tokenizer.swift; sourceTree = "<group>"; };
-		844CB7831EB6ACE600ED569C /* ParserBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ParserBridge.m; path = UserTalk/Compiler/ParserBridge.m; sourceTree = "<group>"; };
-		844CB7851EB6ACEB00ED569C /* ParserBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ParserBridge.h; path = UserTalk/Compiler/ParserBridge.h; sourceTree = "<group>"; };
 		844CB7871EB6ACF300ED569C /* langparser.ym */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = langparser.ym; path = UserTalk/Compiler/langparser.ym; sourceTree = "<group>"; };
 		844CB7891EB6AD2400ED569C /* langparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = langparser.h; path = UserTalk/Compiler/langparser.h; sourceTree = "<group>"; };
 		844CB78B1EB6AD3C00ED569C /* ParamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParamInfo.swift; path = UserTalk/Runtime/ParamInfo.swift; sourceTree = "<group>"; };
-		844CB78D1EB6ADE800ED569C /* Compiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compiler.swift; path = UserTalk/Compiler/Compiler.swift; sourceTree = "<group>"; };
+		844CB7991EB6C0E400ED569C /* Compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Compiler.h; path = UserTalk/Compiler/Compiler.h; sourceTree = "<group>"; };
+		844CB79A1EB6C0E400ED569C /* Compiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Compiler.m; path = UserTalk/Compiler/Compiler.m; sourceTree = "<group>"; };
+		844CB79D1EB6C33600ED569C /* FrontierCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FrontierCore.framework; path = ../FrontierCore/build/Debug/FrontierCore.framework; sourceTree = "<group>"; };
 		849023E71E9EC3C5002D1BA7 /* UserTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		849023EA1E9EC3C5002D1BA7 /* UserTalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserTalk.h; path = UserTalk/UserTalk.h; sourceTree = "<group>"; };
 		849023EB1E9EC3C5002D1BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = UserTalk/Info.plist; sourceTree = "<group>"; };
@@ -66,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844CB79E1EB6C33600ED569C /* FrontierCore.framework in Frameworks */,
 				84F908AD1EADAC4400001B96 /* FrontierData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,10 +105,9 @@
 		847CDC1C1EB4F24C004E0849 /* Compiler */ = {
 			isa = PBXGroup;
 			children = (
-				844CB78D1EB6ADE800ED569C /* Compiler.swift */,
+				844CB7991EB6C0E400ED569C /* Compiler.h */,
+				844CB79A1EB6C0E400ED569C /* Compiler.m */,
 				844CB7811EB6ACDC00ED569C /* Tokenizer.swift */,
-				844CB7851EB6ACEB00ED569C /* ParserBridge.h */,
-				844CB7831EB6ACE600ED569C /* ParserBridge.m */,
 				844CB7871EB6ACF300ED569C /* langparser.ym */,
 				844CB7891EB6AD2400ED569C /* langparser.h */,
 			);
@@ -151,6 +151,7 @@
 		84F908AB1EADAC4400001B96 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				844CB79D1EB6C33600ED569C /* FrontierCore.framework */,
 				84F908AC1EADAC4400001B96 /* FrontierData.framework */,
 			);
 			name = Frameworks;
@@ -164,8 +165,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				844CB78A1EB6AD2400ED569C /* langparser.h in Headers */,
-				844CB7861EB6ACEB00ED569C /* ParserBridge.h in Headers */,
-				849023F81E9EC3C5002D1BA7 /* UserTalk.h in Headers */,
+				844CB7981EB6C01A00ED569C /* UserTalk.h in Headers */,
+				844CB79B1EB6C0E400ED569C /* Compiler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,10 +274,9 @@
 			files = (
 				84F908B61EB1A4BD00001B96 /* CodeTreeNode.swift in Sources */,
 				844CB77F1EB6ACA200ED569C /* LangEvaluator.swift in Sources */,
-				844CB7841EB6ACE600ED569C /* ParserBridge.m in Sources */,
 				844CB78C1EB6AD3C00ED569C /* ParamInfo.swift in Sources */,
-				844CB78E1EB6ADE800ED569C /* Compiler.swift in Sources */,
 				844CB75D1EB65AE000ED569C /* Builtins.swift in Sources */,
+				844CB79C1EB6C0E400ED569C /* Compiler.m in Sources */,
 				844CB7881EB6ACF300ED569C /* langparser.ym in Sources */,
 				844CB75F1EB65E4800ED569C /* Environment.swift in Sources */,
 				84F908B71EB1A4BD00001B96 /* CodeTreeNodeType.swift in Sources */,

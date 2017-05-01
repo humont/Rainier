@@ -220,7 +220,7 @@ module:
 			return (1);
 			}
 		
-		pushbinaryoperation(moduleop, $1, nil, &$$);
+		$$ = pushbinaryoperation(moduleop, $1, nil);
 		return 0;
 	
 		}
@@ -246,7 +246,7 @@ bracketedidentifier:
 		
 		yytrace ("bracketedidentifier | '[' expr ']'");
 		
-		pushunaryoperation(bracketop, $2, &$$);
+		$$ = pushunaryoperation(bracketop, $2);
 		}
 	;
 
@@ -256,14 +256,14 @@ handlerheader:
 		
 		yytrace ("handlerheader | ontoken bracketedidentifier '(' namelist ')'");
 		
-		pushbinaryoperation(procop, $2, $4, &$$);
+		$$ = pushbinaryoperation(procop, $2, $4);
 		}
 	
 	| ontoken bracketedidentifier '(' ')' {
 		
 		yytrace ("handlerheader | ontoken bracketedidentifier '(' ')'");
 		
-		pushbinaryoperation(procop, $2, nil, &$$);
+		$$ = pushbinaryoperation(procop, $2, nil);
 		}
 	
 	/*
@@ -308,7 +308,7 @@ namelistid:
 			$$ = $1; /*just return the id*/
 			
 		else {
-			pushbinaryoperation(assignlocalop, $1, $2, &$$);
+			$$ = pushbinaryoperation(assignlocalop, $1, $2);
 			}
 		}
 	
@@ -386,21 +386,21 @@ derefid:
 		
 		yytrace ("derefid : term '^'");
 		
-		pushunaryoperation(dereferenceop, $1, &$$);
+		$$ = pushunaryoperation(dereferenceop, $1);
 		}
 	
 	| functionref '^' {
 		
 		yytrace ("derefid | functionref '^'");
 		
-		pushunaryoperation(dereferenceop, $1, &$$);
+		$$ = pushunaryoperation(dereferenceop, $1);
 		}
 	
 	| '(' expr ')'  '^' {
 		
 		yytrace ("derefid | '(' expr ')' '^'");
 		
-		pushunaryoperation (dereferenceop, $2, &$$);
+		$$ = pushunaryoperation (dereferenceop, $2);
 		}
 	;
 
@@ -410,7 +410,7 @@ dottedid:
 		
 		yytrace ("dottedid : term '.' bracketedidentifier");
 		
-		pushbinaryoperation(dotop, $1, $3, &$$);
+		$$ = pushbinaryoperation(dotop, $1, $3);
 		}
 	
 	| term '.' error {
@@ -427,7 +427,7 @@ rangeref:
 		
 		yytrace ("rangeref: expr totoken expr");
 		
-		pushbinaryoperation(rangeop, $1, $3, &$$);
+		$$ = pushbinaryoperation(rangeop, $1, $3);
 		}
 	;
 
@@ -437,21 +437,21 @@ arrayref:
 		
 		yytrace ("arrayref: term '[' expr ']'");
 		
-		pushbinaryoperation(arrayop, $1, $3, &$$);
+		$$ = pushbinaryoperation(arrayop, $1, $3);
 		}
 	
 	| term '[' rangeref ']' {
 		
 		yytrace ("arrayref | term '[' rangeref ']'");
 		
-		pushbinaryoperation(arrayop, $1, $3, &$$);
+		$$ = pushbinaryoperation(arrayop, $1, $3);
 		}
 	
 	| term '[' fieldspec ']' {
 		
 		yytrace ("arrayref | term '[' fieldspec ']'");
 		
-		pushbinaryoperation(arrayop, $1, $3, &$$);
+		$$ = pushbinaryoperation(arrayop, $1, $3);
 		}
 	;
 
@@ -506,49 +506,49 @@ statement:
 		
 		yytrace ("statement | term assigntoken expr");
 		
-		pushbinaryoperation(assignop, $1, $3, &$$);
+		$$ = pushbinaryoperation(assignop, $1, $3);
 		}
 	
 	| handlerheader bracketedstatementlist {
 		
 		yytrace ("statement : handlerheader bracketedstatementlist");
 		
-		pushbinaryoperation(moduleop, $2, $1, &$$);
+		$$ = pushbinaryoperation(moduleop, $2, $1);
 		}
 	
 	| handlerheader '{' kernelcall '}' {
 		
 		yytrace ("statement : handlerheader '{' kernelcall '}'");
 		
-		pushbinaryoperation(moduleop, $3, $1, &$$);
+		$$ = pushbinaryoperation(moduleop, $3, $1);
 		}
 	
 	| localtoken '(' namelist ')' {
 		
 		yytrace ("statement | localtoken '(' namelist ')'");
 		
-		pushunaryoperation(localop, $3, &$$);
+		$$ = pushunaryoperation(localop, $3);
 		}
 	
 	| localtoken '{' namelist '}' {
 		
 		yytrace ("statement | localtoken '{' namelist '}'");
 		
-		pushunaryoperation(localop, $3, &$$);
+		$$ = pushunaryoperation(localop, $3);
 		}
 	
 	| globaltoken '(' namelist ')' {
 		
 		yytrace ("statement | globaltoken '(' namelist ')'");
 		
-		pushunaryoperation (globalop, $3, &$$);
+		$$ = pushunaryoperation (globalop, $3);
 		}
 	
 	| globaltoken '{' namelist '}' {
 		
 		yytrace ("statement | globaltoken '{' namelist '}'");
 		
-		pushunaryoperation(globalop, $3, &$$);
+		$$ = pushunaryoperation(globalop, $3);
 		}
 	
 	| fileloopheader bracketedstatementlist {
@@ -639,7 +639,7 @@ statement:
 		
 		yytrace ("statement | returntoken");
 		
-		pushunaryoperation(returnop, $2, &$$);
+		$$ = pushunaryoperation(returnop, $2);
 		}
 	
 	| caseheader '{' casebody '}' {
@@ -753,7 +753,7 @@ fileloopheader:
 		
 		yytrace ("fileloopheader | filelooptoken '(' bracketedidentifier error");
 		
-		pushquadruplet(fileloopop, $3, nil, nil, nil, &$$)'
+		pushquadruplet(fileloopop, $3, nil, nil, nil, &$$);
 		}
 	;
 
@@ -802,7 +802,7 @@ forloopheader:
 		
 		yytrace ("forloopheader: fortoken term assigntoken expr totoken expr");
 		
-		pushquadruplet (forloopop, $4, $6, $2, nil, &$$);
+		pushquadruplet(forloopop, $4, $6, $2, nil, &$$);
 		}
 	
 	| fortoken '(' term assigntoken expr totoken expr ')' {
@@ -865,6 +865,7 @@ ifheader:
 		yytrace ("ifheader: iftoken expr");
 		
 		pushtriplet(ifop, $2, nil, nil, &$$);
+		}
 	;
 
 tryheader:
@@ -883,7 +884,7 @@ bundleheader:
 		
 		yytrace ("bundleheader: bundletoken");
 		
-		pushunaryoperation(bundleop, nil, &$$);
+		$$ = pushunaryoperation(bundleop, nil);
 		}
 	;
 
@@ -920,14 +921,14 @@ casebody:
 		
 		yytrace ("casebody: expr optionalstatementlist");
 		
-		pushbinaryoperation(casebodyop, $1, $2, &$$);
+		$$ = pushbinaryoperation(casebodyop, $1, $2);
 		}
 	
 	| casebody ';' expr optionalstatementlist {
 		
 		yytrace ("casebody | casebody ';' expr optionalstatementlist");
 		
-		pushbinaryoperation(casebodyop, $3, $4, &$$);
+		$$ = pushbinaryoperation(casebodyop, $3, $4);
 		pushlastlink($$, $1);
 
 		$$ = $1;
@@ -940,7 +941,7 @@ withheader:
 		
 		yytrace ("withheader: withtoken termlist");
 		
-		pushbinaryoperation(withop, $2, nil, &$$);
+		$$ = pushbinaryoperation(withop, $2, nil);
 		}
 	;
 
@@ -1046,7 +1047,7 @@ fieldspec:
 		
 		yytrace ("fieldspec: expr : expr ");
 		
-		pushbinaryoperation(fieldop, $1, $3, &$$);
+		$$ = pushbinaryoperation(fieldop, $1, $3);
 		}
 	;
 
@@ -1075,7 +1076,7 @@ namedvalue:
 		
 		yytrace ("namedvalue: bracketedidentifier : expr ");
 		
-		pushbinaryoperation(fieldop, $1, $3, &$$);
+		$$ = pushbinaryoperation(fieldop, $1, $3);
 		}
 	;
 
@@ -1154,7 +1155,7 @@ expr:
 		
 		yytrace ("expr | '@' term");
 		
-		pushunaryoperation(addressofop, $2, &$$);
+		$$ = pushunaryoperation(addressofop, $2);
 		}
 	
 	| functionref {
@@ -1168,28 +1169,28 @@ expr:
 		
 		yytrace ("expr | plusplustoken term"); 
 		
-		pushunaryoperation(incrpreop, $2, &$$);
+		$$ = pushunaryoperation(incrpreop, $2);
 		}
 	
 	| term plusplustoken {
 		
 		yytrace ("expr | term plusplustoken");
 		
-		pushunaryoperation(incrpostop, $1, &$$);
+		$$ = pushunaryoperation(incrpostop, $1);
 		}
 	
 	| minusminustoken term {
 		
 		yytrace ("expr | minusminustoken term");
 		
-		pushunaryoperation(decrpreop, $2, &$$);
+		$$ = pushunaryoperation(decrpreop, $2);
 		}
 	
 	| term minusminustoken {
 		
 		yytrace ("expr | term minusminustoken");
 		
-		pushunaryoperation(decrpostop, $1, &$$);
+		$$ = pushunaryoperation(decrpostop, $1);
 		}
 	
 	| '(' expr ')' {
@@ -1203,141 +1204,140 @@ expr:
 		
 		yytrace ("expr | expr addtoken expr");
 		
-		pushbinaryoperation(addop, $1, $3, &$$);
+		$$ = pushbinaryoperation(addop, $1, $3);
 		}
 	
 	| expr subtracttoken expr {
 		
 		yytrace ("expr | expr subtracttoken expr");
 		
-		pushbinaryoperation(subtractop, $1, $3, &$$);
+		$$ = pushbinaryoperation(subtractop, $1, $3);
 		}
 	
 	| expr multiplytoken expr {
 		
 		yytrace ("expr | expr multiplytoken expr");
 		
-		pushbinaryoperation(multiplyop, $1, $3, &$$);
+		$$ = pushbinaryoperation(multiplyop, $1, $3);
 		}
 	
 	| expr dividetoken expr {
 		
 		yytrace ("expr | expr dividetoken expr");
 		
-		pushbinaryoperation(divideop, $1, $3, &$$);
+		$$ = pushbinaryoperation(divideop, $1, $3);
 		}
 	
 	| expr modtoken expr {
 		
 		yytrace ("expr | expr modtoken expr");
 		
-		pushbinaryoperation(modop, $1, $3, &$$);
+		$$ = pushbinaryoperation(modop, $1, $3);
 		}
 	
 	| expr EQtoken expr {
 		
 		yytrace ("expr | expr EQtoken expr");
 		
-		pushbinaryoperation(EQop, $1, $3, &$$);
+		$$ = pushbinaryoperation(EQop, $1, $3);
 		}
 	
 	| expr NEtoken expr {
 		
 		yytrace ("expr | expr NEtoken expr");
 		
-		pushbinaryoperation(NEop, $1, $3, &$$);
+		$$ = pushbinaryoperation(NEop, $1, $3);
 		}
 	
 	| expr LTtoken expr {
 		
 		yytrace ("expr | expr LTtoken expr");
 		
-		pushbinaryoperation(LTop, $1, $3, &$$);
-			goto cleanexit;
+		$$ = pushbinaryoperation(LTop, $1, $3);
 		}
 	
 	| expr LEtoken expr {
 		
 		yytrace ("expr | expr LEtoken expr");
 		
-		pushbinaryoperation(LEop, $1, $3, &$$);
+		$$ = pushbinaryoperation(LEop, $1, $3);
 		}
 	
 	| expr GTtoken expr {
 		
 		yytrace ("expr | expr GTtoken expr");
 		
-		pushbinaryoperation(GTop, $1, $3, &$$);
+		$$ = pushbinaryoperation(GTop, $1, $3);
 		}
 	
 	| expr GEtoken expr {
 		
 		yytrace ("expr | expr GEtoken expr");
 		
-		pushbinaryoperation(GEop, $1, $3, &$$);
+		$$ = pushbinaryoperation(GEop, $1, $3);
 		}
 	
 	| expr beginswithtoken expr {
 		
 		yytrace ("expr | expr beginswithtoken expr");
 		
-		pushbinaryoperation(beginswithop, $1, $3, &$$);
+		$$ = pushbinaryoperation(beginswithop, $1, $3);
 		}
 	
 	| expr endswithtoken expr {
 		
 		yytrace ("expr | expr endswithtoken expr");
 		
-		pushbinaryoperation(endswithop, $1, $3, &$$);
+		$$ = pushbinaryoperation(endswithop, $1, $3);
 		}
 	
 	| expr containstoken expr {
 		
 		yytrace ("expr | expr containstoken expr");
 		
-		pushbinaryoperation(containsop, $1, $3, &$$);
+		$$ = pushbinaryoperation(containsop, $1, $3);
 		}
 	
 	| expr orortoken expr {
 		
 		yytrace ("expr | expr orortoken expr");
 		
-		pushbinaryoperation(ororop, $1, $3, &$$);
+		$$ = pushbinaryoperation(ororop, $1, $3);
 		}
 	
 	| expr andandtoken expr {
 		
 		yytrace ("expr | expr andandtoken expr");
 		
-		pushbinaryoperation(andandop, $1, $3, &$$);
+		$$ = pushbinaryoperation(andandop, $1, $3);
 		}
 	
 	| subtracttoken expr %prec unaryminus {
 		
 		yytrace ("expr | subtracttoken expr %prec unaryminus");
 		
-		pushunaryoperation(unaryop, $2, &$$);
+		$$ = pushunaryoperation(unaryop, $2);
 		}
 	
 	| nottoken expr {
 		
 		yytrace ("expr | nottoken expr");
 		
-		pushunaryoperation(notop, $2, &$$);
+		$$ = pushunaryoperation(notop, $2);
 		}
 	
 	| '{' optionalexprlist '}' {
 		
 		yytrace ("expr | '{' exprlist '}'");
 		
-		pushunaryoperation(listop, $2, &$$);
+		$$ = pushunaryoperation(listop, $2);
 		}
 	
 	| '{' fieldlist '}' {
 		
 		yytrace ("expr | '{' fieldlist '}'");
 		
-		pushunaryoperation(recordop, $2, &$$);
+		$$ = pushunaryoperation(recordop, $2);
 		}
 	
 	/*
@@ -1354,14 +1354,15 @@ expr:
 
 #ifdef fldebug
 
-	static void yytrace (char * s) {
-		
-		bigstring bs;
-		
-		copyctopstring (s, bs);
-		
-		langtrace (bs);
-		} /*yytrace*/
+#define yytrace(s)
+//	static void yytrace (char * s) { //TODO
+//		
+//		bigstring bs;
+//		
+//		copyctopstring (s, bs);
+//		
+//		langtrace (bs);
+//		} /*yytrace*/
 
 #else
 
@@ -1393,7 +1394,7 @@ static void yyerror (char *s) {
 	clearbytes (&parseresult, (long) sizeof (parseresult));
 	*/
 	
-	parseerror ((ptrstring) s); 
+	parseerror ((ptrstring) s); //TODO
 	} /*yyerror*/
 
 

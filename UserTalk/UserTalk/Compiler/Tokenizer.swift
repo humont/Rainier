@@ -65,7 +65,7 @@ let unaryminusToken = 305
 
 // OrigFrontier: langscan.c
 
-class Tokenizer {
+public final class Tokenizer: NSObject {
 
 	var sentEOL = false
 	var ixParseString: String.Index
@@ -75,12 +75,15 @@ class Tokenizer {
 	var ctScanLines = 0
 	var ctScanCharacters = 0
 
-	init(_ parseString: String, lineBasedScan: Bool) {
+	public init(withText parseString: String, lineBasedScan: Bool) {
 
 		self.parseString = parseString
 		self.lineBasedScan = lineBasedScan
 		self.ixParseString = parseString.startIndex
 		self.ixEndString = parseString.endIndex
+
+		super.init()
+
 	}
 
 	func parseGetToken(_ nodeToken: inout CodeTreeNode) -> Int {
