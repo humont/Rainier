@@ -52,28 +52,31 @@ public final class CodeTreeNode: NSObject {
 		self.param2 = param2
 		self.param3 = param3
 		self.param4 = param4
+		
 		super.init()
 	}
 
-	public convenience init(nodeType: Int, value: Value) {
+	public convenience init(nodeType: CodeTreeNodeType) {
+		
+		self.init(nodeType: nodeType, value: nil, lineNumber: nil, characterIndex: nil, link: nil, param1: nil, param2: nil, param3: nil, param4: nil)
+	}
+
+	public convenience init(nodeType: CodeTreeNodeType, value: Value) {
 
 		self.init(nodeType: nodeType, value: value, lineNumber: nil, characterIndex: nil, link: nil, param1: nil, param2: nil, param3: nil, param4: nil)
 	}
 
-	public convenience init(nodeType: Int, param1: CodeTreeNode) {
-
-		self.init(nodeType: nodeType, value: nil, lineNumber: nil, characterIndex: nil, link: nil, param1: param1, param2: nil, param3: nil, param4: nil)
-	}
-
-	public convenience init(nodeType: CodeTreeNodeType, param1: CodeTreeNode, param2: CodeTreeNode) {
-
-		self.init(nodeType: nodeType, value: nil, lineNumber: nil, characterIndex: nil, link: nil, param1: param1, param2: param2, param3: nil, param4: nil)
-	}
-
-	public convenience init(nodeType: CodeTreeNodeType, takingValueFromNode: otherNode) {
-
+	public convenience init(nodeType: CodeTreeNodeType, takingValueFromNode otherNode: CodeTreeNode) {
+		
 		// node.value is inaccessible from Objective-C, hence this trick.
+		self.init(nodeType: nodeType, value: otherNode.value, lineNumber: nil, characterIndex: nil, link: nil, param1: nil, param2: nil, param3: nil, param4: nil)
 	}
+
+	public convenience init(nodeType: CodeTreeNodeType, param1: CodeTreeNode?, param2: CodeTreeNode?, param3: CodeTreeNode?, param4: CodeTreeNode?) {
+		
+		self.init(nodeType: nodeType, value: nil, lineNumber: nil, characterIndex: nil, link: nil, param1: param1, param2: param2, param3: param3, param4: param4)
+	}
+
 }
 
 

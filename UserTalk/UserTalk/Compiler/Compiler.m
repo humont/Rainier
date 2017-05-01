@@ -72,14 +72,19 @@ CodeTreeNode *compile(NSString *text, BOOL lineBased) {
 // PBS 30 April 2017: This provides a bridge between the generated-by-bison parser,
 // which is C code, and CodeTreeNode, which is Swift.
 
+CodeTreeNode *pushoperation(NSInteger type) {
+	
+	return pushquadruplet(type, nil, nil, nil, nil);
+}
+
 CodeTreeNode *pushunaryoperation(NSInteger type, CodeTreeNode *param1) {
 
-	return [[CodeTreeNode alloc] initWithNodeType:type param1:param1];
+	return pushquadruplet(type, param1, nil, nil, nil);
 }
 
 CodeTreeNode *pushbinaryoperation(NSInteger type, CodeTreeNode *param1, CodeTreeNode *param2) {
 
-	return [[CodeTreeNode alloc] initWithNodeType:type param1:param1 param2:param2];
+	return pushquadruplet(type, param1, param2, nil, nil);
 }
 
 void pushlastlink(CodeTreeNode *newLast, CodeTreeNode *list) {
@@ -107,7 +112,7 @@ void pushlastlink(CodeTreeNode *newLast, CodeTreeNode *list) {
 
 		if (!nomad.link) {
 			nomad.link = newLast;
-			return
+			return;
 		}
 		nomad = nomad.link;
 	}
@@ -147,7 +152,7 @@ void pushloopbody(CodeTreeNode *p4, CodeTreeNode *list) {
 
 CodeTreeNode *pushkernelcall(CodeTreeNode *node) {
 
-	return [[CodeTreeNode alloc] initWithNodeType:kernelOp value:node.value];
+	return [[CodeTreeNode alloc] initWithNodeType:kernelOptionsErr takingValueFromNode:node];
 }
 
 void pushtriplet(CodeTreeNodeType nodeType, CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3, CodeTreeNode **newNode) {
@@ -155,12 +160,17 @@ void pushtriplet(CodeTreeNodeType nodeType, CodeTreeNode *p1, CodeTreeNode *p2, 
 	*newNode = [CodeTreeNode nodeWithType:nodeType param1:p1 param2:p2 param3:p3];
 }
 
-void pushquadruplet (CodeTreeNodeType nodeType, CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3, CodeTreeNode *p4, CodeTreeNode **newNode) {
-
-	*newNode = [CodeTreeNode nodeWithType:nodeType param1:p1 param2:p2 param3:p3 param4:p4];
+CodeTreeNode *pushtriplet(NSInteger nodeType, CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3) {
+	
+	return pushquadruplet(nodeType, p1, p2, p3, nil);
 }
 
-void pushloop(CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3, CodeTreeNode **newNode) {
+CodeTreeNode *pushquadruplet (CodeTreeNodeType nodeType, CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3, CodeTreeNode *p4) {
+	
+	return [[CodeTreeNode alloc] initWithNodeType:nodeType param1:param2 param2:param2 param3:param3 param4:param4];
+}
 
-	pushquadruplet(loopop, p1, p2, p3, nil, newNode);
+CodeTreeNode *pushloop(CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3) {
+
+	return pushquadruplet(loopOp, p1, p2, p3, nil)
 }

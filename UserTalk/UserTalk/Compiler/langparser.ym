@@ -492,7 +492,7 @@ statement:
 		
 		yytrace ("statement: <empty statement>");
 		
-		pushoperation(noop, &$$); /*a place for the debugger to stop*/
+		$$ = pushoperation(noop); /*a place for the debugger to stop*/
 		}
 	
 	| expr {
@@ -618,21 +618,21 @@ statement:
 		
 		yytrace ("statement | breaktoken '(' ')'");
 		
-		pushoperation(breakop, &$$);
+		$$ = pushoperation(breakop);
 		}
 	
 	| breaktoken {
 		
 		yytrace ("statement | breaktoken");
 		
-		pushoperation(breakop, &$$);
+		$$ = pushoperation(breakop);
 		}
 	
 	| continuetoken {
 		
 		yytrace ("statement | continuetoken");
 		
-		pushoperation(continueop, &$$);
+		$$ = pushoperation(continueop);
 		}
 	
 	| returntoken optionalexpr {
@@ -709,7 +709,7 @@ kernelcall:
 		
 		yytrace ("kernelcall: kerneltoken '(' dottedid ')'");
 		
-		pushkernelcall($3, &$$);
+		$$ = pushkernelcall($3);
 		}
 	;
 
@@ -739,21 +739,21 @@ fileloopheader:
 		
 		yytrace ("fileloopheader: filelooptoken '(' bracketedidentifier intoken expr ')'");
 		
-		pushquadruplet(fileloopop, $3, $5, nil, nil, &$$);
+		$$ = pushquadruplet(fileloopop, $3, $5, nil, nil);
 		}
 	
 	| filelooptoken '(' bracketedidentifier intoken expr ',' expr ')' {
 		
 		yytrace ("fileloopheader | filelooptoken '(' bracketedidentifier intoken expr ',' expr ')'");
 		
-		pushquadruplet(fileloopop, $3, $5, nil, $7, &$$);
+		$$ = pushquadruplet(fileloopop, $3, $5, nil, $7);
 		}
 	
 	| filelooptoken '(' bracketedidentifier error {
 		
 		yytrace ("fileloopheader | filelooptoken '(' bracketedidentifier error");
 		
-		pushquadruplet(fileloopop, $3, nil, nil, nil, &$$);
+		$$ = pushquadruplet(fileloopop, $3, nil, nil, nil);
 		}
 	;
 
@@ -763,7 +763,7 @@ loopheader:
 		
 		yytrace ("loopheader: looptoken '(' statement ';' expr ';' statement ')'");
 		
-		pushloop($3, $5, $7, &$$);
+		$$ = pushloop($3, $5, $7);
 			goto cleanexit;
 		}
 	
@@ -771,28 +771,28 @@ loopheader:
 		
 		yytrace ("loopheader | looptoken");
 		
-		pushloop(nil, nil, nil, &$$);
+		$$ = pushloop(nil, nil, nil);
 		}
 	
 	| looptoken '(' expr ')' {
 		
 		yytrace ("loopheader | looptoken '(' expr ')'");
 		
-		pushloop($3, nil, nil, &$$);
+		$$ = pushloop($3, nil, nil);
 		}
 	
 	| whiletoken expr {
 		
 		yytrace ("loopheader | whiletoken expr");
 		
-		pushloop(nil, $2, nil, &$$);
+		$$ = pushloop(nil, $2, nil);
 		}
 	
 	| looptoken '(' statement ';' expr ')' {
 		
 		yytrace ("loopheader | looptoken '(' statement ';' expr ')'");
 		
-		pushloop($3, $5, nil, &$$);
+		$$ = pushloop($3, $5, nil);
 		}
 	;
 
@@ -802,42 +802,42 @@ forloopheader:
 		
 		yytrace ("forloopheader: fortoken term assigntoken expr totoken expr");
 		
-		pushquadruplet(forloopop, $4, $6, $2, nil, &$$);
+		$$ = pushquadruplet(forloopop, $4, $6, $2, nil);
 		}
 	
 	| fortoken '(' term assigntoken expr totoken expr ')' {
 		
 		yytrace ("forloopheader | fortoken '(' term assigntoken expr totoken expr ')' ");
 		
-		pushquadruplet(forloopop, $5, $7, $3, nil, &$$);
+		$$ = pushquadruplet(forloopop, $5, $7, $3, nil);
 		}
 	
 	| fortoken term assigntoken expr downtotoken expr {
 		
 		yytrace ("forloopheader | fortoken term assigntoken expr downtotoken expr");
 		
-		pushquadruplet(fordownloopop, $4, $6, $2, nil, &$$);
+		$$ = pushquadruplet(fordownloopop, $4, $6, $2, nil);
 		}
 	
 	| fortoken '(' term assigntoken expr downtotoken expr ')' {
 		
 		yytrace ("forloopheader | fortoken '(' term assigntoken expr downtotoken expr ')' ");
 		
-		pushquadruplet(fordownloopop, $5, $7, $3, nil, &$$);
+		$$ = pushquadruplet(fordownloopop, $5, $7, $3, nil);
 		}
 	
 	| fortoken term assigntoken expr error {
 		
 		yytrace ("forloopheader: fortoken term assigntoken expr error");
 		
-		pushquadruplet(noop, $2, $4, nil, nil, &$$);
+		$$ = pushquadruplet(noop, $2, $4, nil, nil);
 		}
 	
 	| fortoken term error {
 		
 		yytrace ("forloopheader: fortoken term error");
 		
-		pushquadruplet(noop, $2, nil, nil, nil, &$$);
+		$$ = pushquadruplet(noop, $2, nil, nil, nil);
 		}
 	;
 
@@ -847,14 +847,14 @@ forinloopheader:
 		
 		yytrace ("forinloopheader: fortoken term intoken expr");
 		
-		pushquadruplet(forinloopop, $4, $2, nil, nil, &$$);
+		$$ = pushquadruplet(forinloopop, $4, $2, nil, nil);
 		}
 	
 	| fortoken '(' term intoken expr ')' {
 		
 		yytrace ("forinloopheader | fortoken '(' term intoken expr ')' ");
 		
-		pushquadruplet(forinloopop, $5, $3, nil, nil, &$$);
+		$$ = pushquadruplet(forinloopop, $5, $3, nil, nil);
 		}
 	;
 
@@ -864,7 +864,7 @@ ifheader:
 		
 		yytrace ("ifheader: iftoken expr");
 		
-		pushtriplet(ifop, $2, nil, nil, &$$);
+		$$ = pushtriplet(ifop, $2, nil, nil);
 		}
 	;
 
@@ -874,7 +874,7 @@ tryheader:
 		
 		yytrace ("tryheader | trytoken");
 		
-		pushtriplet (tryop, nil, nil, nil, &$$); /*it's really just a binary*/
+		$$ = pushtriplet (tryop, nil, nil, nil); /*it's really just a binary*/
 		}
 	;
 
@@ -894,7 +894,7 @@ caseheader:
 		
 		yytrace ("caseheader | casetoken expr");
 		
-		pushtriplet(caseop, $2, nil, nil, &$$);
+		$$ = pushtriplet(caseop, $2, nil, nil);
 		}
 	;
 
