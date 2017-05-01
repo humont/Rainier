@@ -14,7 +14,6 @@
 		844CB77F1EB6ACA200ED569C /* LangEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB77E1EB6ACA200ED569C /* LangEvaluator.swift */; };
 		844CB7821EB6ACDC00ED569C /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7811EB6ACDC00ED569C /* Tokenizer.swift */; };
 		844CB7881EB6ACF300ED569C /* langparser.ym in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7871EB6ACF300ED569C /* langparser.ym */; };
-		844CB78A1EB6AD2400ED569C /* langparser.h in Headers */ = {isa = PBXBuildFile; fileRef = 844CB7891EB6AD2400ED569C /* langparser.h */; };
 		844CB78C1EB6AD3C00ED569C /* ParamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB78B1EB6AD3C00ED569C /* ParamInfo.swift */; };
 		844CB7981EB6C01A00ED569C /* UserTalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 849023EA1E9EC3C5002D1BA7 /* UserTalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		844CB79B1EB6C0E400ED569C /* Compiler.h in Headers */ = {isa = PBXBuildFile; fileRef = 844CB7991EB6C0E400ED569C /* Compiler.h */; };
@@ -45,7 +44,6 @@
 		844CB77E1EB6ACA200ED569C /* LangEvaluator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LangEvaluator.swift; path = UserTalk/Runtime/LangEvaluator.swift; sourceTree = "<group>"; };
 		844CB7811EB6ACDC00ED569C /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tokenizer.swift; path = UserTalk/Compiler/Tokenizer.swift; sourceTree = "<group>"; };
 		844CB7871EB6ACF300ED569C /* langparser.ym */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = langparser.ym; path = UserTalk/Compiler/langparser.ym; sourceTree = "<group>"; };
-		844CB7891EB6AD2400ED569C /* langparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = langparser.h; path = UserTalk/Compiler/langparser.h; sourceTree = "<group>"; };
 		844CB78B1EB6AD3C00ED569C /* ParamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParamInfo.swift; path = UserTalk/Runtime/ParamInfo.swift; sourceTree = "<group>"; };
 		844CB7991EB6C0E400ED569C /* Compiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Compiler.h; path = UserTalk/Compiler/Compiler.h; sourceTree = "<group>"; };
 		844CB79A1EB6C0E400ED569C /* Compiler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Compiler.m; path = UserTalk/Compiler/Compiler.m; sourceTree = "<group>"; };
@@ -109,7 +107,6 @@
 				844CB79A1EB6C0E400ED569C /* Compiler.m */,
 				844CB7811EB6ACDC00ED569C /* Tokenizer.swift */,
 				844CB7871EB6ACF300ED569C /* langparser.ym */,
-				844CB7891EB6AD2400ED569C /* langparser.h */,
 			);
 			name = Compiler;
 			sourceTree = "<group>";
@@ -164,7 +161,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				844CB78A1EB6AD2400ED569C /* langparser.h in Headers */,
 				844CB7981EB6C01A00ED569C /* UserTalk.h in Headers */,
 				844CB79B1EB6C0E400ED569C /* Compiler.h in Headers */,
 			);

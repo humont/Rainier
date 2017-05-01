@@ -8,11 +8,10 @@
 
 #import "Compiler.h"
 #import <UserTalk/UserTalk-Swift.h>
-#import "langparser.h"
 
 @class CodeTreeNode;
 
-@interface Compiler ()
+@interface Compiler : NSObject
 
 @property (nonatomic) NSString *text;
 @property (nonatomic) BOOL lineBased;
@@ -69,8 +68,13 @@ CodeTreeNode *compile(NSString *text, BOOL lineBased) {
 }
 
 
-// PBS 30 April 2017: This provides a bridge between the generated-by-bison parser,
-// which is C code, and CodeTreeNode, which is Swift.
+// PBS 30 April 2017: The Bison-generated parser calls these as it parses.
+// These C functions bridge the parser, which is C code, and CodeTreeNode, which is Swift.
+
+CodeTreeNode *pushquadruplet (NSInteger nodeType, CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3, CodeTreeNode *p4) {
+
+	return [[CodeTreeNode alloc] initWithNodeType:nodeType param1:p1 param2:p2 param3:p3 param4:p4];
+}
 
 CodeTreeNode *pushoperation(NSInteger type) {
 	
@@ -155,22 +159,14 @@ CodeTreeNode *pushkernelcall(CodeTreeNode *node) {
 	return [[CodeTreeNode alloc] initWithNodeType:kernelOptionsErr takingValueFromNode:node];
 }
 
-void pushtriplet(CodeTreeNodeType nodeType, CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3, CodeTreeNode **newNode) {
-
-	*newNode = [CodeTreeNode nodeWithType:nodeType param1:p1 param2:p2 param3:p3];
-}
-
 CodeTreeNode *pushtriplet(NSInteger nodeType, CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3) {
 	
 	return pushquadruplet(nodeType, p1, p2, p3, nil);
 }
 
-CodeTreeNode *pushquadruplet (CodeTreeNodeType nodeType, CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3, CodeTreeNode *p4) {
-	
-	return [[CodeTreeNode alloc] initWithNodeType:nodeType param1:param2 param2:param2 param3:param3 param4:param4];
-}
-
 CodeTreeNode *pushloop(CodeTreeNode *p1, CodeTreeNode *p2, CodeTreeNode *p3) {
 
-	return pushquadruplet(loopOp, p1, p2, p3, nil)
+	// Objective-C can’t see Ints from CodeTreeNodeType.
+	return pushquadruplet(24 /*loopOp*/, p1, p2, p3, nil);
 }
+
