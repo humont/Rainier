@@ -9,9 +9,7 @@
 import Foundation
 import FrontierData
 
-// TODO: move this and CodeTreeType into UserTalk.framework, since that’s the only place they're used
-
-public class CodeTreeNode {
+public final class CodeTreeNode: NSObject {
 	
 	public let nodeType: CodeTreeNodeType
 	public let value: Value?

@@ -18,6 +18,7 @@
 		844CB7881EB6ACF300ED569C /* langparser.ym in Sources */ = {isa = PBXBuildFile; fileRef = 844CB7871EB6ACF300ED569C /* langparser.ym */; };
 		844CB78A1EB6AD2400ED569C /* langparser.h in Headers */ = {isa = PBXBuildFile; fileRef = 844CB7891EB6AD2400ED569C /* langparser.h */; };
 		844CB78C1EB6AD3C00ED569C /* ParamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB78B1EB6AD3C00ED569C /* ParamInfo.swift */; };
+		844CB78E1EB6ADE800ED569C /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB78D1EB6ADE800ED569C /* Compiler.swift */; };
 		849023F11E9EC3C5002D1BA7 /* UserTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849023E71E9EC3C5002D1BA7 /* UserTalk.framework */; };
 		849023F61E9EC3C5002D1BA7 /* UserTalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849023F51E9EC3C5002D1BA7 /* UserTalkTests.swift */; };
 		849023F81E9EC3C5002D1BA7 /* UserTalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 849023EA1E9EC3C5002D1BA7 /* UserTalk.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +49,7 @@
 		844CB7871EB6ACF300ED569C /* langparser.ym */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; name = langparser.ym; path = UserTalk/Compiler/langparser.ym; sourceTree = "<group>"; };
 		844CB7891EB6AD2400ED569C /* langparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = langparser.h; path = UserTalk/Compiler/langparser.h; sourceTree = "<group>"; };
 		844CB78B1EB6AD3C00ED569C /* ParamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParamInfo.swift; path = UserTalk/Runtime/ParamInfo.swift; sourceTree = "<group>"; };
+		844CB78D1EB6ADE800ED569C /* Compiler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Compiler.swift; path = UserTalk/Compiler/Compiler.swift; sourceTree = "<group>"; };
 		849023E71E9EC3C5002D1BA7 /* UserTalk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserTalk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		849023EA1E9EC3C5002D1BA7 /* UserTalk.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UserTalk.h; path = UserTalk/UserTalk.h; sourceTree = "<group>"; };
 		849023EB1E9EC3C5002D1BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = UserTalk/Info.plist; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		847CDC1C1EB4F24C004E0849 /* Compiler */ = {
 			isa = PBXGroup;
 			children = (
+				844CB78D1EB6ADE800ED569C /* Compiler.swift */,
 				844CB7811EB6ACDC00ED569C /* Tokenizer.swift */,
 				844CB7851EB6ACEB00ED569C /* ParserBridge.h */,
 				844CB7831EB6ACE600ED569C /* ParserBridge.m */,
@@ -272,6 +275,7 @@
 				844CB77F1EB6ACA200ED569C /* LangEvaluator.swift in Sources */,
 				844CB7841EB6ACE600ED569C /* ParserBridge.m in Sources */,
 				844CB78C1EB6AD3C00ED569C /* ParamInfo.swift in Sources */,
+				844CB78E1EB6ADE800ED569C /* Compiler.swift in Sources */,
 				844CB75D1EB65AE000ED569C /* Builtins.swift in Sources */,
 				844CB7881EB6ACF300ED569C /* langparser.ym in Sources */,
 				844CB75F1EB65E4800ED569C /* Environment.swift in Sources */,
