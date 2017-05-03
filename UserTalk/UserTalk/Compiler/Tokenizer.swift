@@ -114,6 +114,19 @@ func tokensFor(_ s: String, lineBasedScan: Bool) throws -> [TokenWithPosition] {
 
 // OrigFrontier: langscan.c
 
+private let singleQuote: Character = "'"
+private let doubleQuote: Character = "\""
+private let openDoubleCurlyQuote: Character = "“"
+private let closeDoubleCurlyQuote: Character = "”"
+private let startComment: Character = "«"
+private let endComment: Character = "»"
+private let forwardSlash: Character = "/"
+private let space: Character = " "
+private let tab: Character = "\t"
+private let lineFeed: Character = "\n"
+private let carriageReturn: Character = "\r"
+private let backslash: Character = "\\"
+
 private struct Tokenizer {
 
 	var ixParseString: String.Index
@@ -128,9 +141,6 @@ private struct Tokenizer {
 		self.lineBasedScan = lineBasedScan
 		self.ixParseString = parseString.startIndex
 		self.ixEndString = parseString.endIndex
-
-		super.init()
-
 	}
 
 	func parseGetToken() throws -> TokenWithPosition? {
@@ -146,22 +156,6 @@ private struct Tokenizer {
 		}
 		catch { throw error }
 	}
-}
-
-private let singleQuote: Character = "'"
-private let doubleQuote: Character = "\""
-private let openDoubleCurlyQuote: Character = "“"
-private let closeDoubleCurlyQuote: Character = "”"
-private let startComment: Character = "«"
-private let endComment: Character = "»"
-private let forwardSlash: Character = "/"
-private let space: Character = " "
-private let tab: Character = "\t"
-private let lineFeed: Character = "\n"
-private let carriageReturn: Character = "\r"
-private let backslash: Character = "\\"
-
-private extension Tokenizer {
 
 	func tokenWithPosition(_ token: Token) -> TokenWithPosition {
 
@@ -354,8 +348,10 @@ private extension Tokenizer {
 
 	func parsePopIdentifier() -> String {
 
-		/* Pull characters off the front of the input stream as long as
-		we're still getting identifier characters. */
+		/*
+		Pull characters off the front of the input stream as long as
+		we're still getting identifier characters.
+		*/
 
 		var s = ""
 
@@ -377,14 +373,16 @@ private extension Tokenizer {
 
 	func parsePopNumber() -> Value {
 
-		/* Pull characters off the front of the input stream as long as
+		/*
+		Pull characters off the front of the input stream as long as
 		we're still getting digits. When we hit the first non-digit,
 		convert what we got into a long and return it.
 
 		We expect at least one numeric digit to be there, and do not
 		provide for an error return.
 
-		5/29/91 dmb: support hex constants in the form "0xhhhhhhhh" */
+		5/29/91 dmb: support hex constants in the form "0xhhhhhhhh"
+		*/
 
 		var isHex = false
 		var isFloat = false
