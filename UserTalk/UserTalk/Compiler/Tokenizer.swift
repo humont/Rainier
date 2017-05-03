@@ -78,33 +78,6 @@ enum Token: Integer {
 	case caretToken = 911
 }
 
-struct TextPosition {
-
-	let lineNumber: Integer
-	let characterIndex: Integer
-
-	init(_ lineNumber: Integer, _ characterIndex: Integer) {
-
-		self.lineNumber = lineNumber
-		self.characterIndex = characterIndex
-	}
-
-	static func start() -> TextPosition {
-
-		return TextPosition(0, 0)
-	}
-
-	func nextLine() -> TextPosition {
-
-		return TextPosition(lineNumber + 1, 0)
-	}
-
-	func nextCharacter() -> TextPosition {
-
-		return TextPosition(lineNumber, characterIndex + 1)
-	}
-}
-
 struct TokenWithPosition {
 
 	let token: Token
