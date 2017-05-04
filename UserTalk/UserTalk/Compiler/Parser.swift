@@ -7,12 +7,12 @@
 //
 
 import Foundation
-
+import FrontierData
 
 struct Parser {
 
 	var currentNode = CodeTreeNode(nodeType: moduleOp)
-	let tokens: [Integer]
+	let tokens: [TokenWithPosition]
 	var currentTokenIndex = 0
 	var ctLoops = 0
 
@@ -22,24 +22,34 @@ struct Parser {
 		}
 	}
 
-	var currentToken: Integer {
+	var currentToken: TokenWithPosition {
 		get {
 			return tokens[currentTokenIndex]
 		}
 	}
 
-	init(_ tokens: [Integer]) {
+	init(_ tokens: [TokenWithPosition]) {
 
 		assert(!tokens.isEmpty)
 		self.tokens = tokens
 	}
 
-	func currentToken() -> Integer {
+	func errorWithToken(_ token: TokenWithPosition, _ error: LangErrorType) -> LangError {
+		
+		return LangError(error, textPosition: token.position)
+	}
+	
+	func illegalTokenError(_ token: TokenWithPosition) -> LangError {
+	
+		return errorWithToken(token, .illegalToken)
+	}
+	
+	func currentToken() -> TokenWithPosition {
 
 		return tokens[currentTokenIndex]
 	}
 
-	func popToken() -> Integer? {
+	func popToken() -> TokenWithPosition? {
 
 		if currentTokenIndex + 1 >= tokens.count {
 			return nil
@@ -48,7 +58,7 @@ struct Parser {
 		return currentToken()
 	}
 
-	func peekNextToken() -> Integer? {
+	func peekNextToken() -> TokenWithPosition? {
 		
 		if currentTokenIndex + 1 >= tokens.count {
 			return nil
@@ -56,6 +66,14 @@ struct Parser {
 		return tokens[currentTokenIndex + 1]
 	}
 
+	func peekNextTokenIs(_ token: TokenWithPosition) -> Bool {
+		
+		guard let nextToken = peekNextToken() else {
+			return false
+		}
+		return nextToken == token
+	}
+	
 	func parseToken(token: ParseToken) throws {
 		
 		switch(token.type) {
@@ -73,10 +91,24 @@ struct Parser {
 	
 	func parseBreak() throws {
 		
-		if !insideLoop {
-			throw LangError(.illegalToken)
-		}
 		pushOperation(breakOp)
+		do {
+			try skipEmptyParensIfNeeded()
+		}
+		catch { throw error }
+	}
+	
+	func skipEmptyParensIfNeeded() throws {
+		
+		if !peekNextTokenIs(.leftParenToken) {
+			return
+		}
+		popToken()
+		if !peekNextTokenIs(.rightParenToken) {
+			throw illegalTokenError(currentToken)
+		}
+		
+		popToken()
 	}
 	
 	func pushOperation(_ operation: CodeTreeNodeType) {
