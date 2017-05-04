@@ -15,6 +15,7 @@ public final class CodeTreeNode: NSObject {
 	public var value: Value?
 	public var lineNumber: Int?
 	public var characterIndex: Int?
+	public var prevLink: CodeTreeNode?
 	public var link: CodeTreeNode?
 	public var param1: CodeTreeNode?
 	public var param2: CodeTreeNode?

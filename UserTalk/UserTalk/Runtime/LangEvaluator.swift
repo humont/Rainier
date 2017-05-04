@@ -171,36 +171,36 @@ public class LangEvaluator {
 			case notOp:
 				return try val1.not()
 				
-			case equalsOp:
-				return try val1.equals(val2)
-				
-			case notEqualsOp:
-				return try !(val1.equals(val2))
-				
-			case greaterThanOp:
-				return try val1.greaterThan(val2)
-				
-			case lessThanOp:
-				return try val1.lessThan(val2)
-				
-			case greaterThanEqualsOp:
-				return try val1.greaterThanEqual(val2)
-				
-			case lessThanEqualsOp:
-				return try val1.lessThanEqual(val2)
-				
-			case beginsWithOp:
-				return try val1.beginsWith(val2)
-				
-			case containsOp:
-				return try val1.contains(val2)
-				
-			case orOrOp:
-				return orOrValue(val1, node.param2!)
-				
-			case andAndOp:
-				return andAndValue(val1, node.param2!)
-				
+//			case equalsOp:
+//				return try val1.equals(val2)
+//				
+//			case notEqualsOp:
+//				return try !(val1.equals(val2))
+//				
+//			case greaterThanOp:
+//				return try val1.greaterThan(val2)
+//				
+//			case lessThanOp:
+//				return try val1.lessThan(val2)
+//				
+//			case greaterThanEqualsOp:
+//				return try val1.greaterThanEqual(val2)
+//				
+//			case lessThanEqualsOp:
+//				return try val1.lessThanEqual(val2)
+//				
+//			case beginsWithOp:
+//				return try val1.beginsWith(val2)
+//				
+//			case containsOp:
+//				return try val1.contains(val2)
+
+//			case orOrOp:
+//				return orOrValue(val1, node.param2!)
+//				
+//			case andAndOp:
+//				return andAndValue(val1, node.param2!)
+
 			case breakOp:
 				flbreak = true
 				return true

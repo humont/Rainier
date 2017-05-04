@@ -12,7 +12,7 @@ import FrontierData
 struct Parser {
 
 	var currentNode = CodeTreeNode(nodeType: moduleOp)
-	let tokens: [TokenWithPosition]
+	let tokensWithPosition: [TokenWithPosition]
 	var currentTokenIndex = 0
 	var ctLoops = 0
 
@@ -22,66 +22,112 @@ struct Parser {
 		}
 	}
 
-	var currentToken: TokenWithPosition {
+	var currentTokenWithPosition: TokenWithPosition {
 		get {
-			return tokens[currentTokenIndex]
+			return tokensWithPosition[currentTokenIndex]
 		}
 	}
 
-	init(_ tokens: [TokenWithPosition]) {
-
-		assert(!tokens.isEmpty)
-		self.tokens = tokens
+	var currentToken: Token {
+		get {
+			return tokenAtIndex(currentTokenIndex)
+		}
 	}
 
-	func errorWithToken(_ token: TokenWithPosition, _ error: LangErrorType) -> LangError {
+	var currentTextPosition: TextPosition {
+		get {
+			return currentTokenWithPosition.position
+		}
+	}
+
+	init(_ tokensWithPosition: [TokenWithPosition]) {
+
+		assert(!tokensWithPosition.isEmpty)
+		self.tokensWithPosition = tokensWithPosition
+	}
+
+	static func errorWithToken(_ token: TokenWithPosition, _ error: LangErrorType) -> LangError {
 		
 		return LangError(error, textPosition: token.position)
 	}
 	
-	func illegalTokenError(_ token: TokenWithPosition) -> LangError {
+	static func illegalTokenError(_ token: TokenWithPosition) -> LangError {
 	
 		return errorWithToken(token, .illegalToken)
 	}
-	
-	func currentToken() -> TokenWithPosition {
 
-		return tokens[currentTokenIndex]
+	func illegalTokenError() -> LangError {
+
+		return Parser.illegalTokenError(currentTokenWithPosition)
 	}
 
-	func popToken() -> TokenWithPosition? {
+	func tokenAtIndex(_ ix: Int) -> Token? {
+
+		if ix >= tokensWithPosition.count {
+			return nil
+		}
+		return tokensWithPosition[ix].token
+	}
+
+	func popToken() -> Token? {
 
 		if currentTokenIndex + 1 >= tokens.count {
 			return nil
 		}
 		currentTokenIndex = currentTokenIndex + 1
-		return currentToken()
+		return currentToken
 	}
 
-	func peekNextToken() -> TokenWithPosition? {
+	func peekNextToken() -> Token? {
 		
-		if currentTokenIndex + 1 >= tokens.count {
-			return nil
-		}
-		return tokens[currentTokenIndex + 1]
+		return tokenAtIndex(currentTokenIndex + 1)
 	}
 
-	func peekNextTokenIs(_ token: TokenWithPosition) -> Bool {
+	func peekNextTokenIs(_ token: Token) -> Bool {
 		
 		guard let nextToken = peekNextToken() else {
 			return false
 		}
 		return nextToken == token
 	}
-	
-	func parseToken(token: ParseToken) throws {
-		
-		switch(token.type) {
-			
-		case breakOp:
-			parseBreak()
+
+	func peekPreviousToken() -> Token? {
+
+		if currentTokenIndex < 1 {
+			return nil
 		}
-		
+		return tokenAtIndex(currentTokenIndex - 1)
+	}
+
+	func peekPreviousTokenIs(_ token: Token) -> Bool {
+
+		guard let previousToken = peekPreviousToken() else {
+			return false
+		}
+		return previousToken == token
+	}
+
+	func parseNextToken() throws -> Bool {
+
+		// Returns false when finished.
+
+		guard let token = popToken() else {
+			return false
+		}
+
+		do {
+			if currentTokenIsAtBeginningOfStatement() {
+
+				switch(token.type) {
+
+				case breakOp:
+					try parseBreak()
+				}
+			}
+		}
+		catch { throw error }
+
+		return true
 	}
 
 	func parseConstant() {
@@ -90,14 +136,24 @@ struct Parser {
 	}
 	
 	func parseBreak() throws {
-		
-		pushOperation(breakOp)
+
+		pushOperation(.breakOp)
 		do {
 			try skipEmptyParensIfNeeded()
+			try advanceToBeginningOfNextStatement()
 		}
 		catch { throw error }
 	}
-	
+
+	func currentTokenIsAtBeginningOfStatement() {
+
+		if currentTokenIndex < 1 {
+			return true
+		}
+		let previousToken = peekPreviousToken()!
+		return previousToken.isEndOfStatement()
+	}
+
 	func skipEmptyParensIfNeeded() throws {
 		
 		if !peekNextTokenIs(.leftParenToken) {
@@ -105,22 +161,48 @@ struct Parser {
 		}
 		popToken()
 		if !peekNextTokenIs(.rightParenToken) {
-			throw illegalTokenError(currentToken)
+			throw illegalTokenError()
 		}
 		
 		popToken()
 	}
-	
-	func pushOperation(_ operation: CodeTreeNodeType) {
-		
+
+	func advanceToEndOfStatement() throws {
+
+		guard let token = popToken() else {
+			return
+		}
+		if token != .semicolonToken {
+			throw illegalTokenError()
+		}
+	}
+
+	func pushUnaryOperation(_ operation: CodeTreeNodeType) {
+
 		let operationNode = CodeTreeNode(nodeType: operation)
-		currentNode.link = operationNode
+		operationNode.param1 = currentNode
 		currentNode = operationNode
 	}
 
-	func pushNode(_ node: CodeTreeNodeType) {
+	func pushOperation(_ operation: CodeTreeNodeType) {
+
+		let operationNode = SimpleOperationNode(operation, currentTextPosition)
+		pushNode(operationNode)
+	}
+
+	func pushNode(_ node: CodeTreeNode) {
 
 		currentNode.link = node
+		node.prevLink = currentNode
 		currentNode = node
 	}
 }
+
+private extension Token {
+
+	func isEndOfStatement() -> Bool {
+
+		return self == .semicolonToken
+	}
+}
+

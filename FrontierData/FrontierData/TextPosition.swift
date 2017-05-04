@@ -8,7 +8,8 @@
 
 import Foundation
 
-public struct TextPosition {
+public struct TextPosition: Equatable {
+
 
 	public let lineNumber: Int
 	public let characterIndex: Int
@@ -33,4 +34,10 @@ public struct TextPosition {
 
 		return TextPosition(lineNumber, characterIndex + 1)
 	}
+
+	publicstatic func ==(lhs: TextPosition, rhs: TextPosition) -> Bool {
+
+		return lhs.lineNumber == rhs.lineNumber && lhs.characterIndex == rhs.characterIndex
+	}
+
 }
