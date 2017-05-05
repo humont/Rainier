@@ -13,10 +13,9 @@ protocol CodeTreeNode: class {
 	
 	var operation: CodeTreeOperation { get }
 	var textPosition: TextPosition { get }
-	var link: CodeTreeNode?
-	var prevlink: CodeTreeNode?
-	
-	func evaluate(_ breakOperation: inout CodeTreeOperation) throws -> EvaluateResult
+
+	// breakOperation must be one of .breakOp, .returnOp, .continueOp, or .noOp
+	func evaluate(_ breakOperation: inout CodeTreeOperation) throws -> Value
 }
 
 //public final class CodeTreeNode: NSObject {

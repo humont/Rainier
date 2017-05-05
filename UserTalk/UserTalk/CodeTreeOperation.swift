@@ -72,5 +72,6 @@ public enum CodeTreeOperation: Int {
 	case subtractValueOp = 59
 	case multiplyValueOp = 60
 	case divideValueOp = 61
+	case blockOp = 128
 }
 

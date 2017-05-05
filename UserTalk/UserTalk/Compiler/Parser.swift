@@ -9,6 +9,7 @@
 import Foundation
 import FrontierData
 
+
 struct Parser {
 
 	var currentNode = CodeTreeNode(nodeType: moduleOp)
@@ -134,15 +135,36 @@ struct Parser {
 
 		
 	}
+
+	func parseBlock() throws -> CodeTreeNode {
+
+		
+
+	}
 	
 	func parseBreak() throws {
 
-		pushOperation(.breakOp)
+		pushSimpleOperation(.breakOp)
 		do {
-			try skipEmptyParensIfNeeded()
+			try skipEmptyParensIfNeeded() // break() is allowed in OrigFrontier
 			try advanceToBeginningOfNextStatement()
 		}
 		catch { throw error }
+	}
+
+	func parseReturn() throws {
+
+		let returnTextPosition = textPosition
+		let expressionNode = try parseExpressionUntilEndOfStatement()
+		pushUnaryOperation(.returnOp, returnTextPosition, expressionNode)
+	}
+
+	func parseExpressionUntilEndOfStatement() throws -> CodeTreeNode {
+
+		guard let token = popToken() else {
+			return 
+		}
+
 	}
 
 	func currentTokenIsAtBeginningOfStatement() {
@@ -177,20 +199,19 @@ struct Parser {
 		}
 	}
 
-	func pushUnaryOperation(_ operation: CodeTreeNodeType) {
+	func pushUnaryOperation(_ operation: CodeTreeNodeType, _ textPosition: TextPosition, _ expressionNode: CodeTreeNode) {
 
-		let operationNode = CodeTreeNode(nodeType: operation)
-		operationNode.param1 = currentNode
-		currentNode = operationNode
+		let node = UnaryOperationNode(.returnOp, textPosition, expressionNode)
+		push(node)
 	}
 
-	func pushOperation(_ operation: CodeTreeNodeType) {
+	func pushSimpleOperation(_ operation: CodeTreeNodeType) {
 
 		let operationNode = SimpleOperationNode(operation, currentTextPosition)
 		pushNode(operationNode)
 	}
 
-	func pushNode(_ node: CodeTreeNode) {
+	func push(_ node: CodeTreeNode) {
 
 		currentNode.link = node
 		node.prevLink = currentNode
