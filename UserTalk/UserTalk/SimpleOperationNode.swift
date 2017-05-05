@@ -8,16 +8,21 @@
 
 import Foundation
 
-struct SimpleOperationNode {
+final class SimpleOperationNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation
 	let textPosition: TextPosition
-	var prevLink: CodeTreeNode?
+	var prevlink: CodeTreeNode?
 	var link: CodeTreeNode?
 
 	init(_ operation: CodeTreeOperation, _ textPosition: TextPosition) {
 
 		assert(operation == .breakOp || operation == .continueOp || operation == .noOp)
 		self.operation = operation
+	}
+	
+	func evaluate() throws -> Value {
+		
+		return false //TODO
 	}
 }

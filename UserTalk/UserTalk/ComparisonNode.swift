@@ -8,30 +8,30 @@
 
 import Foundation
 
-struct ComparisonNode {
+final class ComparisonNode: CodeTreeNode {
 
 	// Both sides always evaluated.
 
 	let operation: CodeTreeOperation
-	let lhs: CodeTreeNode
-	let rhs: CodeTreeNode
 	let textPosition: TextPosition
+	let node1: CodeTreeNode
+	let node2: CodeTreeNode
 	var link: CodeTreeNode?
 	var prevlink: CodeTreeNode?
 
-	init(_ operation: CodeTreeOperation, _ lhs: CodeTreeNode, _ rhs: CodeTreeNode, _ textPosition: TextPosition) {
+	init(_ operation: CodeTreeOperation, _ textPosition: TextPosition, _ node1: CodeTreeNode, _ node2: CodeTreeNode) {
 
 		self.operation = operation
-		self.lhs = lhs
-		self.rhs = rhs
+		self.node1 = node1
+		self.node2 = node2
 		self.textPosition = textPosition
 	}
 
 	func evaluate() throws -> Value {
 
 		do {
-			let val1 = evaluate(lhs)
-			let val2 = evaluate(rhs)
+			let val1 = evaluate(node1)
+			let val2 = evaluate(node2)
 
 			switch operation {
 

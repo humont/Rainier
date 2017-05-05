@@ -8,16 +8,22 @@
 
 import Foundation
 
-struct UnaryOperationNode {
+final class UnaryOperationNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation
+	let textPosition: TextPosition
 	let expressionNode: CodeTreeNode
 	var link: CodeTreeNode?
 	var prevlink = CodeTreeNode?
 
-	init(_ operation: CodeTreeOperation, _ expressionNode: CodeTreeNode) {
+	init(_ operation: CodeTreeOperation, _ textPosition: TextPosition, _ expressionNode: CodeTreeNode) {
 
 		self.operation = operation
 		self.expressionNode = expressionNode
+	}
+	
+	func evaluate() throws -> Value {
+		
+		return false // TODO
 	}
 }

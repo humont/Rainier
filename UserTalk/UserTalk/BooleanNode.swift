@@ -8,18 +8,18 @@
 
 import Foundation
 
-struct BooleanNode {
+final class BooleanNode: CodeTreeNode {
 
-	// rhs evaluated only when needed. Short-circuited.
+	// Short-circuited. rhs evaluated only when needed.
 
 	let operation: CodeTreeOperation
+	let textPosition: TextPosition
 	let lhs: CodeTreeNode
 	let rhs: CodeTreeNode
-	let textPosition: TextPosition
 	var link: CodeTreeNode?
 	var prevlink: CodeTreeNode?
 
-	init(_ operation: CodeTreeOperation, _ lhs: CodeTreeNode, _ rhs: CodeTreeNode, _ textPosition: TextPosition) {
+	init(_ operation: CodeTreeOperation, _ textPosition: TextPosition, _ lhs: CodeTreeNode, _ rhs: CodeTreeNode) {
 
 		self.operation = operation
 		self.lhs = lhs
@@ -27,31 +27,30 @@ struct BooleanNode {
 		self.textPosition = textPosition
 	}
 
-	private func rhsIsTrue() throws -> Bool {
-
-		return try rhs.evaluate().asBool()
-	}
-
 	func evaluate() throws -> Value {
 
 		do {
-			let val1 = evaluate(lhs).asBool()
+			let leftValue = evaluate(lhs).asBool()
 
+			func rightValueIsTrue() throws -> Bool {
+				return try rhs.evaluate().asBool()
+			}
+			
 			switch operation {
 
 			case .orOrOp:
 
-				if val1 {
+				if leftValue {
 					return true
 				}
-				return rhsIsTrue()
+				return rightValueIsTrue()
 
 			case .andAndOp:
 
-				if !val1 {
+				if !leftValue {
 					return false
 				}
-				return rhsIsTrue()
+				return rightValueIsTrue()
 
 			default:
 				throw LangError(.illegalTokenError, textPosition: textPosition)
