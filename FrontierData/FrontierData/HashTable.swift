@@ -38,6 +38,13 @@ public final class HashTable {
 		}
 	}
 
+	public func addTable(_ table: HashTable) {
+
+		table.dictionary.forEach { (oneKey, oneValue) in
+			add(oneKey, oneValue)
+		}
+	}
+
 	public func lookup(_ key: String) -> Any? {
 
 		return dictionary[key]

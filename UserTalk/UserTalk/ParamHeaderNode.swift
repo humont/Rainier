@@ -1,5 +1,5 @@
 //
-//  ParamNode.swift
+//  ParamHeaderNode.swift
 //  UserTalk
 //
 //  Created by Brent Simmons on 5/5/17.
@@ -9,7 +9,7 @@
 import Foundation
 import FrontierData
 
-final class FunctionHeaderParamNode: CodeTreeNode {
+final class ParamHeaderNode: CodeTreeNode {
 	
 	// on (foo, bar, baz=3*9, nerf="well", dill=pick.le())
 	
@@ -18,7 +18,10 @@ final class FunctionHeaderParamNode: CodeTreeNode {
 	let name: String?
 	let defaultValueExpression: CodeTreeNode?
 	
-	init(_ textPosition: TextPosition, name: String, params: [Params], blockNode: BlockNode) {
-		
+	init(_ textPosition: TextPosition, name: String, defaultValueExpression: CodeTreeNode?) {
+
+		self.textPosition = textPosition
+		self.name = name
+		self.defaultValueExpression = defaultValueExpression
 	}
 }
