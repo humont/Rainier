@@ -14,7 +14,12 @@ final class ScriptNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation = .moduleOp
 	let textPosition = TextPosition.start() // By definition
-	var blockNode: BlockNode
+	let blockNode: BlockNode
+	
+	init(_ blockNode: BlockNode) {
+		
+		self.blockNode = blockNode
+	}
 
 	func evaluate(_ breakOperation: inout CodeTreeOperation) throws -> Value {
 

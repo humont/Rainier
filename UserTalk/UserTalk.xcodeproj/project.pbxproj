@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840FF73F1EBD61AF0061927D /* FunctionHeaderParamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF73E1EBD61AF0061927D /* FunctionHeaderParamNode.swift */; };
+		840FF7411EBD62B90061927D /* ParamNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840FF7401EBD62B90061927D /* ParamNode.swift */; };
 		8412CA241EBAE41E009FC0F1 /* SimpleOperationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412CA231EBAE41E009FC0F1 /* SimpleOperationNode.swift */; };
 		8412CA261EBAE682009FC0F1 /* UnaryOperationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412CA251EBAE682009FC0F1 /* UnaryOperationNode.swift */; };
 		8412CA281EBAE83E009FC0F1 /* ComparisonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8412CA271EBAE83E009FC0F1 /* ComparisonNode.swift */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		840FF73E1EBD61AF0061927D /* FunctionHeaderParamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FunctionHeaderParamNode.swift; path = UserTalk/FunctionHeaderParamNode.swift; sourceTree = "<group>"; };
+		840FF7401EBD62B90061927D /* ParamNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParamNode.swift; path = UserTalk/ParamNode.swift; sourceTree = "<group>"; };
 		8412CA231EBAE41E009FC0F1 /* SimpleOperationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleOperationNode.swift; path = UserTalk/SimpleOperationNode.swift; sourceTree = "<group>"; };
 		8412CA251EBAE682009FC0F1 /* UnaryOperationNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UnaryOperationNode.swift; path = UserTalk/Compiler/UnaryOperationNode.swift; sourceTree = "<group>"; };
 		8412CA271EBAE83E009FC0F1 /* ComparisonNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComparisonNode.swift; path = UserTalk/ComparisonNode.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 				842BC7D51EBC2F4300C7838E /* ScriptNode.swift */,
 				842BC7D31EBC271B00C7838E /* BlockNode.swift */,
 				842BC7D71EBC335F00C7838E /* FunctionNode.swift */,
+				840FF73E1EBD61AF0061927D /* FunctionHeaderParamNode.swift */,
+				840FF7401EBD62B90061927D /* ParamNode.swift */,
 				8412CA231EBAE41E009FC0F1 /* SimpleOperationNode.swift */,
 				8412CA251EBAE682009FC0F1 /* UnaryOperationNode.swift */,
 				8412CA271EBAE83E009FC0F1 /* ComparisonNode.swift */,
@@ -300,6 +306,8 @@
 				84B168CE1EB9816D00E5A4F8 /* Parser.swift in Sources */,
 				844CB7821EB6ACDC00ED569C /* Tokenizer.swift in Sources */,
 				842BC7D41EBC271B00C7838E /* BlockNode.swift in Sources */,
+				840FF7411EBD62B90061927D /* ParamNode.swift in Sources */,
+				840FF73F1EBD61AF0061927D /* FunctionHeaderParamNode.swift in Sources */,
 				84A2D8C71EBBC01C00A73248 /* ValueNode.swift in Sources */,
 				844CB75B1EB65AC700ED569C /* Keywords.swift in Sources */,
 				8412CA241EBAE41E009FC0F1 /* SimpleOperationNode.swift in Sources */,
