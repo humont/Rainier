@@ -21,11 +21,13 @@ final class ScriptNode: CodeTreeNode {
 		self.blockNode = blockNode
 	}
 
-	func evaluate(_ breakOperation: inout CodeTreeOperation) throws -> Value {
+	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
+
+		stack.push(self)
+		var breakOperation = .noOp
 
 		do {
-			var breakOperation = .noOp
-			return try blockNode.evaluate(&breakOperation)
+			return try blockNode.evaluate(stack, &breakOperation)
 		}
 		catch { throw error }
 	}

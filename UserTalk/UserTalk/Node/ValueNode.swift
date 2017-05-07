@@ -14,9 +14,7 @@ final class ValueNode: CodeTreeNode {
 	let operation: CodeTreeOperation
 	let textPosition: TextPosition
 	let value: Value
-	var link: CodeTreeNode?
-	var prevlink: CodeTreeNode?
-	
+
 	init(_ operation: CodeTreeOperation, _ textPosition: textPosition, _ value: Value) {
 	
 		assert(operation == .constOp || operation == .identifierOp)
@@ -26,8 +24,8 @@ final class ValueNode: CodeTreeNode {
 		self.value = value
 	}
 	
-	func evaluate() throws -> EvaluateResult {
-		
-		return valueResult(value) // TODO
+	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
+
+		return value
 	}
 }

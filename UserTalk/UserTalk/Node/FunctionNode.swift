@@ -25,18 +25,17 @@ final class FunctionNode: CodeTreeNode {
 		self.blockNode = blockNode
 	}
 
-	func evaluate(_ breakOperation: inout CodeTreeOperation) throws -> Value {
+	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
 
 		preconditionFailure("evaluate() should not be called on a Function Node.")
 	}
 
-	func call(_ params: [ParamNode]) throw -> Value {
+	func call(_ stack: Stack, _ params: [ParamNode]) throw -> Value {
 
 		if params.count > paramHeader.count {
 			throw LangError(.tooManyParameters, textPosition: params[0].textPosition)
 		}
 
-		
+		stack.push(self)
 	}
-
 }

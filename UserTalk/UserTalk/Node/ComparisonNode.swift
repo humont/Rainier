@@ -16,15 +16,13 @@ final class ComparisonNode: CodeTreeNode {
 	let textPosition: TextPosition
 	let node1: CodeTreeNode
 	let node2: CodeTreeNode
-	var link: CodeTreeNode?
-	var prevlink: CodeTreeNode?
 
 	init(_ operation: CodeTreeOperation, _ textPosition: TextPosition, _ node1: CodeTreeNode, _ node2: CodeTreeNode) {
 
 		self.operation = operation
+		self.textPosition = textPosition
 		self.node1 = node1
 		self.node2 = node2
-		self.textPosition = textPosition
 	}
 
 	func evaluate() throws -> Value {

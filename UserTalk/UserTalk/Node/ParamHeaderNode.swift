@@ -24,4 +24,8 @@ final class ParamHeaderNode: CodeTreeNode {
 		self.name = name
 		self.defaultValueExpression = defaultValueExpression
 	}
+
+	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
+
+	}
 }

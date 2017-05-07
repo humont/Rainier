@@ -25,7 +25,7 @@ final class ParamNode: CodeTreeNode {
 		self.expression = expression
 	}
 
-	func evaluate(_ breakOperation: inout CodeTreeOperation) throws -> Value {
+	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
 
 		do {
 			return try expression.evaluate(breakOperation)

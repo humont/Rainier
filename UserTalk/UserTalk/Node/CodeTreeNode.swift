@@ -9,11 +9,14 @@
 import Foundation
 import FrontierData
 
+// CodeTreeNodes are immutable, so that a tree, once built, can be evaluated many times.
+// They’re also thread-safe — the same tree could be evaluated on multiple threads at once.
+
 protocol CodeTreeNode: class {
 	
 	var operation: CodeTreeOperation { get }
 	var textPosition: TextPosition { get }
 
 	// breakOperation must be one of .breakOp, .returnOp, .continueOp, or .noOp
-	func evaluate(_ breakOperation: inout CodeTreeOperation) throws -> Value
+	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value
 }

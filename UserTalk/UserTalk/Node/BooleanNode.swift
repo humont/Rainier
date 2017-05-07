@@ -10,47 +10,47 @@ import Foundation
 
 final class BooleanNode: CodeTreeNode {
 
-	// Short-circuited. rhs evaluated only when needed.
+	// Short-circuited. node2 evaluated only when needed.
 
 	let operation: CodeTreeOperation
 	let textPosition: TextPosition
-	let lhs: CodeTreeNode
-	let rhs: CodeTreeNode
-	var link: CodeTreeNode?
-	var prevlink: CodeTreeNode?
+	let node1: CodeTreeNode
+	let node2: CodeTreeNode
 
-	init(_ operation: CodeTreeOperation, _ textPosition: TextPosition, _ lhs: CodeTreeNode, _ rhs: CodeTreeNode) {
+	init(_ operation: CodeTreeOperation, _ textPosition: TextPosition, _ node1: CodeTreeNode, _ node2: CodeTreeNode) {
 
+		precondition(operation == .orOrOp || operation == .andAndOp)
+		
 		self.operation = operation
-		self.lhs = lhs
-		self.rhs = rhs
 		self.textPosition = textPosition
+		self.node1 = node1
+		self.node2 = node2
 	}
 
 	func evaluate() throws -> Value {
 
 		do {
-			let leftValue = evaluate(lhs).asBool()
+			let val1 = evaluate(node1).asBool()
 
-			func rightValueIsTrue() throws -> Bool {
-				return try rhs.evaluate().asBool()
+			func val2IsTrue() throws -> Bool {
+				return try node2.evaluate().asBool()
 			}
 			
 			switch operation {
 
 			case .orOrOp:
 
-				if leftValue {
+				if val1 {
 					return true
 				}
-				return rightValueIsTrue()
+				return val2IsTrue()
 
 			case .andAndOp:
 
-				if !leftValue {
+				if !val1 {
 					return false
 				}
-				return rightValueIsTrue()
+				return val2IsTrue()
 
 			default:
 				throw LangError(.illegalTokenError, textPosition: textPosition)

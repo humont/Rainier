@@ -15,11 +15,11 @@ final class BlockNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation = .blockOp
 	let textPosition = TextPosition.start() // TextPosition of first statement in block is relevant
-	var statements = [CodeTreeNode]()
+	let statements: [CodeTreeNode]
 
-	func push(_ node: CodeTreeNode) {
+	init(_ statements: [CodeTreeNode]) {
 
-		statements += [node]
+		self.statements = statements
 	}
 
 	func evaluate(_ breakOperation: inout CodeTreeOperation) throws -> Value
