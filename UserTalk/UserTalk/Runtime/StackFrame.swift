@@ -14,12 +14,14 @@ final class StackFrame {
 	var locals: HashTable
 	let node: CodeTreeNode
 	let parent: StackFrame?
+	var withAddress: Address?
 
 	init(_ node: CodeTreeNode, _ parent: StackFrame?) {
 
 		self.locals = HashTable(name, parent.locals)
 		self.name = name
 		self.parent = parent
+		self.withAddress = nil
 	}
 
 	func addLocals(_ localsToAdd: Hashtable) {
@@ -34,15 +36,17 @@ final class StackFrame {
 
 	func lookup(_ key: String) -> Value? {
 
+		// TODO: Handle withAddress when looking up a symbol.
+
 		if let value = locals.lookup(key) as Value {
 			return value
 		}
-		if node.operation == .moduleOp {
-			return nil // Don't search backwards past a script
+		if node.operation != .moduleOp { // Don't search backwards past a script
+			if let value = parent?.lookup(key) {
+				return value
+			}
 		}
-		if let parent = parent {
-			return parent.lookup(key)
-		}
-		return nil
+
+		return Evaluator.lookupGlobalValue(key, withAddress)
 	}
 }

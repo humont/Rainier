@@ -23,4 +23,11 @@ public class Evaluator {
 		var breakOperation = .noOp
 		return scriptNode.evaluate(stack, &breakOperation)
 	}
+
+	static func lookupGlobalValue(_ key: String, _ withAddress: Address?) -> Value {
+
+		// TODO: find in database. withAddress provides a starting place.
+		
+		return nil
+	}
 }

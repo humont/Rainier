@@ -22,8 +22,10 @@ final class BlockNode: CodeTreeNode {
 		self.statements = statements
 	}
 
-	func evaluate(_ breakOperation: inout CodeTreeOperation) throws -> Value
+	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
 
+		// Caller should have pushed a stack frame if needed.
+		
 		do {
 			for oneNode in statements {
 

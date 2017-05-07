@@ -1,5 +1,5 @@
 //
-//  IFElseNode.swift
+//  IfElseNode.swift
 //  UserTalk
 //
 //  Created by Brent Simmons on 5/6/17.
@@ -9,7 +9,7 @@
 import Foundation
 import FrontierData
 
-func class IFElseNode: CodeTreeNode {
+func class IfElseNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation
 	let textPosition: TextPosition
@@ -33,10 +33,14 @@ func class IFElseNode: CodeTreeNode {
 
 	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
 
-		do {
-			stack.push(self)
-			let value = try blockNode.evaluate(stack, breakOperation)
+		stack.push(self)
+		defer {
 			stack.pop()
+		}
+
+		do {
+
+			let value = try blockNode.evaluate(stack, breakOperation)
 		}
 		catch { throw error }
 	}

@@ -99,9 +99,9 @@ public class LangEvaluator {
 			
 			switch op {
 				
-			case noOp:
-				return true
-				
+//			case noOp:
+//				return true
+
 			case localOp:
 				return addLocals(node)
 				
@@ -201,40 +201,40 @@ public class LangEvaluator {
 //			case andAndOp:
 //				return andAndValue(val1, node.param2!)
 
-			case breakOp:
-				flbreak = true
-				return true
-				
-			case continueOp:
-				flcontinue = true
-				return true
-				
-			case withOp:
-				return evaluateWith(node)
-				
-			case returnOp:
-				flreturn = true
-				if val1.valueType == .none {
-					return true
-				}
-				return val1
-				
-			case bundleOp:
-				return try evaluateList(node.param1!)
-				
-			case ifOp: //{
-				let fl = try val1.asBool()
-				if let ifNode = fl ? node.param2 : node.param3 {
-					return try evaluateList(ifNode)
-				}
-				else {
-					return true
-				}
-				//}
-				
-			case caseOp:
-				return evaluateCase(node)
-				
+//			case breakOp:
+//				flbreak = true
+//				return true
+
+//			case continueOp:
+//				flcontinue = true
+//				return true
+//				
+//			case withOp:
+//				return evaluateWith(node)
+
+//			case returnOp:
+//				flreturn = true
+//				if val1.valueType == .none {
+//					return true
+//				}
+//				return val1
+
+//			case bundleOp:
+//				return try evaluateList(node.param1!)
+
+//			case ifOp: //{
+//				let fl = try val1.asBool()
+//				if let ifNode = fl ? node.param2 : node.param3 {
+//					return try evaluateList(ifNode)
+//				}
+//				else {
+//					return true
+//				}
+//				//}
+
+//			case caseOp:
+//				return evaluateCase(node)
+
 			case loopOp:
 				return evaluateLoop(node)
 				

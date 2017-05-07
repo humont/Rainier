@@ -17,9 +17,9 @@ func class IfListNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation = .ifListOp
 	let textPosition: TextPosition
-	let nodes: [IFElseNode]
+	let nodes: [IfElseNode]
 
-	init(_ textPosition: TextPosition, _ nodes: [IFElseNode]) {
+	init(_ textPosition: TextPosition, _ nodes: [IfElseNode]) {
 
 		self.textPosition = textPosition
 		self.nodes = nodes

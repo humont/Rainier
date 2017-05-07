@@ -21,7 +21,8 @@ final class SimpleOperationNode: CodeTreeNode {
 
 	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
 
-		preconditionFailure("A SimpleOperationNode must not be evaluated, as its return value must be ignored.")
+		breakOperation = operation
+		return true
 	}
 }
 

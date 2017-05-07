@@ -37,9 +37,10 @@ final class FunctionNode: CodeTreeNode {
 		}
 
 		stack.push(self)
+		defer {
+			stack.pop()
+		}
 
 		// TODO
-
-		stack.pop()
 	}
 }

@@ -24,13 +24,15 @@ final class ScriptNode: CodeTreeNode {
 	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
 
 		stack.push(self)
+		defer {
+			stack.pop()
+		}
+
 		var breakOperation = .noOp
 
 		do {
 			return try blockNode.evaluate(stack, &breakOperation)
 		}
 		catch { throw error }
-
-		stack.pop()
 	}
 }
