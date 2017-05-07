@@ -19,7 +19,7 @@ func class IfListNode: CodeTreeNode {
 	let textPosition: TextPosition
 	let nodes: [IFElseNode]
 
-	init(_ textPosition: TextPosition, _ nodes: [CodeTreeNode]) {
+	init(_ textPosition: TextPosition, _ nodes: [IFElseNode]) {
 
 		self.textPosition = textPosition
 		self.nodes = nodes
@@ -29,11 +29,24 @@ func class IfListNode: CodeTreeNode {
 
 		do {
 			var isFirst = true
+			var isLast = false
+			var ix = 0
 
 			for oneNode in nodes {
 
+				isLast = (ix == nodes.count - 1)
+
 				if isFirst {
-					precondition(oneNode.operation == .ifOp);
+					precondition(oneNode.operation == .ifOp)
+				}
+				else {
+					precondition(oneNode.operation == .elseIfOp || oneNode.operation == .elseOp)
+				}
+
+				if isLast {
+					if oneNode.operation == .elseOp {
+						return try oneNode.evaluate(stack, breakOperation)
+					}
 				}
 
 				if try oneNode.evaluateCondition(stack) {
@@ -41,6 +54,7 @@ func class IfListNode: CodeTreeNode {
 				}
 
 				isFirst = false
+				ix = ix + 1
 			}
 		}
 		catch { throw error }

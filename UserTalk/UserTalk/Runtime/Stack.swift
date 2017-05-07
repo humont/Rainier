@@ -30,4 +30,9 @@ final class Stack {
 		let frame = StackFrame(node, currentFrame)
 		frames += [frame]
 	}
+
+	func pop() {
+
+		frames.pop()
+	}
 }

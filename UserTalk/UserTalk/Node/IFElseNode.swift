@@ -22,23 +22,21 @@ func class IFElseNode: CodeTreeNode {
 		self.nodes = nodes
 	}
 
+	func evaluateCondition(_ stack: Stack) throws -> Bool {
+
+		do {
+			var breakOperation: CodeTreeOperation = .noOp // break, return, continue should not be in conditions, so this can be ignored.
+			return try conditionNode.evaluate(stack, &breakOperation).asBool()
+		}
+		catch { throw error }
+	}
+
 	func evaluate(_ stack: Stack, _ breakOperation: inout CodeTreeOperation) throws -> Value {
 
 		do {
-			var isFirst = true
-
-			for oneNode in nodes {
-
-				if isFirst {
-					precondition(oneNode.operation == .ifOp);
-				}
-
-				if try oneNode.evaluateCondition(stack) {
-					return try oneNode.evaluate(stack, breakOperation)
-				}
-
-				isFirst = false
-			}
+			stack.push(self)
+			let value = try blockNode.evaluate(stack, breakOperation)
+			stack.pop()
 		}
 		catch { throw error }
 	}

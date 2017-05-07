@@ -37,5 +37,9 @@ final class FunctionNode: CodeTreeNode {
 		}
 
 		stack.push(self)
+
+		// TODO
+
+		stack.pop()
 	}
 }

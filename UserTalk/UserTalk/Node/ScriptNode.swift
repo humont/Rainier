@@ -30,5 +30,7 @@ final class ScriptNode: CodeTreeNode {
 			return try blockNode.evaluate(stack, &breakOperation)
 		}
 		catch { throw error }
+
+		stack.pop()
 	}
 }
