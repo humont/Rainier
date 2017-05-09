@@ -1,5 +1,5 @@
 //
-//  PascalLoopNode.swift
+//  ForLoopNode.swift
 //  UserTalk
 //
 //  Created by Brent Simmons on 5/7/17.
@@ -9,10 +9,10 @@
 import Foundation
 import FrontierData
 
-// for counter = n1 to n2 // PascalLoopNode (with RangeNode)
+// for counter = n1 to n2 // ForLoopNode (with RangeNode)
 //   script() //BlockNode
 
-final class PascalLoopNode: CodeTreeNode {
+final class ForLoopNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation = .forLoopOp
 	let textPosition: textPosition

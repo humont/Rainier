@@ -19,7 +19,7 @@ public final class HashTable {
 	var isLocalTable = false
 	var representedObject: Any?
 	var dateCreated: Date?
-	var name: String?
+	var name: String? //Maybe this is owned by parent instead?
 	public var isReadOnly = false
 
 	public init(_ name: String, _ parentHashTable: HashTable?) {
@@ -33,8 +33,15 @@ public final class HashTable {
 	public func add(_ key: String, _ value: Any) {
 
 		assert(!isReadOnly, "Can’t add to a read-only table.")
-		if !isReadOnly {
-			dictionary[key] = value
+		guard !isReadonly else {
+			return
+		}
+		
+		if let keyToUse = canonicalKeyForKey(key) {
+			dictionary[keyToUse] = value // existing object
+		}
+		else {
+			dictionary[key] = value // new object
 		}
 	}
 
@@ -47,7 +54,37 @@ public final class HashTable {
 
 	public func lookup(_ key: String) -> Any? {
 
-		return dictionary[key]
+		if let keyToUse = canonicalKeyForKey(key) {
+			return dictionary[key]
+		}
+		return nil
+	}
+	
+	public func addressOf(_ key: String) -> Address? {
+		
+		if let canonicalKey = canonicalKeyForKey(key) {
+			return Address(hashTable: self, name: key)
+		}
+		return nil
+	}
+}
+
+private extension HashTable {
+	
+	func canonicalKeyForKey(_ key: String) -> String? {
+		
+		// Getting and setting is case insensitive, but the original case is saved: that’s the canonical key.
+		
+		if let _ = dictionary[key] {
+			return key
+		}
+		let lowerKey = key.lowercased()
+		for oneKey in dictionary.keys {
+			if lowerKey == oneKey.lowercased() {
+				return oneKey
+			}
+		}
+		return nil
 	}
 }
 

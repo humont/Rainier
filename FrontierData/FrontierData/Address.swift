@@ -19,6 +19,13 @@ public struct Address: Equatable {
 		self.name = name
 	}
 	
+	func value() -> Value? {
+		
+		// Returns nil if this address no longer points to a real thing.
+		
+		return hashTable.lookup(name)
+	}
+	
 	// MARK: Equatable
 	
 	public static func ==(lhs: Address, rhs: Address) -> Bool {
