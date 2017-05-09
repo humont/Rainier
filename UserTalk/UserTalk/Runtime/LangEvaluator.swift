@@ -259,8 +259,8 @@ public class LangEvaluator {
 			case decrementPostOp:
 				return try incrementValue(node.param1!, increment: false, pre: false)
 				
-			case tryOp:
-				return evaluateTry(node)
+//			case tryOp:
+//				return evaluateTry(node)
 				
 			case rangeOp:
 				throw langError(.badRangeOperation)

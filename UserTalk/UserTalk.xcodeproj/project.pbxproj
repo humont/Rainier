@@ -40,6 +40,10 @@
 		84AA26161EBF95F6003A28CF /* CaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA26151EBF95F6003A28CF /* CaseNode.swift */; };
 		84AA26181EBF9915003A28CF /* CaseConditionNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA26171EBF9915003A28CF /* CaseConditionNode.swift */; };
 		84AA261A1EBF9E10003A28CF /* ReturnNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA26191EBF9E10003A28CF /* ReturnNode.swift */; };
+		84AA261C1EBFA099003A28CF /* TryNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA261B1EBFA099003A28CF /* TryNode.swift */; };
+		84AA261E1EBFB175003A28CF /* PascalLoopNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA261D1EBFB174003A28CF /* PascalLoopNode.swift */; };
+		84AA26201EBFC5BA003A28CF /* RangeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA261F1EBFC5BA003A28CF /* RangeNode.swift */; };
+		84AA26221EC0184E003A28CF /* CLoopNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AA26211EC0184E003A28CF /* CLoopNode.swift */; };
 		84B168CE1EB9816D00E5A4F8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B168CD1EB9816D00E5A4F8 /* Parser.swift */; };
 		84F908AD1EADAC4400001B96 /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F908AC1EADAC4400001B96 /* FrontierData.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +96,10 @@
 		84AA26151EBF95F6003A28CF /* CaseNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaseNode.swift; path = UserTalk/Node/CaseNode.swift; sourceTree = "<group>"; };
 		84AA26171EBF9915003A28CF /* CaseConditionNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaseConditionNode.swift; path = UserTalk/Node/CaseConditionNode.swift; sourceTree = "<group>"; };
 		84AA26191EBF9E10003A28CF /* ReturnNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReturnNode.swift; path = UserTalk/Node/ReturnNode.swift; sourceTree = "<group>"; };
+		84AA261B1EBFA099003A28CF /* TryNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TryNode.swift; path = UserTalk/Node/TryNode.swift; sourceTree = "<group>"; };
+		84AA261D1EBFB174003A28CF /* PascalLoopNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PascalLoopNode.swift; path = UserTalk/Node/PascalLoopNode.swift; sourceTree = "<group>"; };
+		84AA261F1EBFC5BA003A28CF /* RangeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RangeNode.swift; path = UserTalk/Node/RangeNode.swift; sourceTree = "<group>"; };
+		84AA26211EC0184E003A28CF /* CLoopNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CLoopNode.swift; path = UserTalk/Node/CLoopNode.swift; sourceTree = "<group>"; };
 		84B168CD1EB9816D00E5A4F8 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parser.swift; path = UserTalk/Compiler/Parser.swift; sourceTree = "<group>"; };
 		84F908AC1EADAC4400001B96 /* FrontierData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FrontierData.framework; path = "../../../Library/Developer/Xcode/DerivedData/Frontier-fcajnrwwhuhnzbdirndityaaqnhy/Build/Products/Debug/FrontierData.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,9 +207,13 @@
 				84AA25F71EBE945A003A28CF /* ParamNode.swift */,
 				84AA25F51EBE945A003A28CF /* FunctionNode.swift */,
 				84AA25F61EBE945A003A28CF /* ParamHeaderNode.swift */,
+				84AA261D1EBFB174003A28CF /* PascalLoopNode.swift */,
+				84AA26211EC0184E003A28CF /* CLoopNode.swift */,
+				84AA261F1EBFC5BA003A28CF /* RangeNode.swift */,
 				84AA26191EBF9E10003A28CF /* ReturnNode.swift */,
 				84AA25F81EBE945A003A28CF /* ScriptNode.swift */,
 				84AA25F91EBE945A003A28CF /* SimpleOperationNode.swift */,
+				84AA261B1EBFA099003A28CF /* TryNode.swift */,
 				84AA26051EBE946E003A28CF /* UnaryOperationNode.swift */,
 				84AA26071EBE947C003A28CF /* ValueNode.swift */,
 				84AA26131EBF9267003A28CF /* WithNode.swift */,
@@ -332,8 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84AA25FE1EBE945A003A28CF /* ComparisonNode.swift in Sources */,
+				84AA26201EBFC5BA003A28CF /* RangeNode.swift in Sources */,
 				84AA26021EBE945A003A28CF /* ParamNode.swift in Sources */,
 				844CB77F1EB6ACA200ED569C /* LangEvaluator.swift in Sources */,
+				84AA261E1EBFB175003A28CF /* PascalLoopNode.swift in Sources */,
 				84AA25FA1EBE945A003A28CF /* BlockNode.swift in Sources */,
 				84AA260B1EBE94A0003A28CF /* Stack.swift in Sources */,
 				84AA26001EBE945A003A28CF /* FunctionNode.swift in Sources */,
@@ -342,11 +356,13 @@
 				84AA26141EBF9267003A28CF /* WithNode.swift in Sources */,
 				84AA25EB1EBE8E86003A28CF /* Evaluator.swift in Sources */,
 				84B168CE1EB9816D00E5A4F8 /* Parser.swift in Sources */,
+				84AA261C1EBFA099003A28CF /* TryNode.swift in Sources */,
 				844CB7821EB6ACDC00ED569C /* Tokenizer.swift in Sources */,
 				84AA26031EBE945A003A28CF /* ScriptNode.swift in Sources */,
 				84AA25FB1EBE945A003A28CF /* BooleanNode.swift in Sources */,
 				84AA25FD1EBE945A003A28CF /* CodeTreeOperation.swift in Sources */,
 				84AA26061EBE946E003A28CF /* UnaryOperationNode.swift in Sources */,
+				84AA26221EC0184E003A28CF /* CLoopNode.swift in Sources */,
 				844CB75B1EB65AC700ED569C /* Keywords.swift in Sources */,
 				84AA26081EBE947C003A28CF /* ValueNode.swift in Sources */,
 				84AA260C1EBE94A0003A28CF /* StackFrame.swift in Sources */,
