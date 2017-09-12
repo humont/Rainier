@@ -1,19 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <opml version="2.0">
-  <head><!-- <editor>
+  <head><!-- <editor scale-mac="1.25">
       <sidebar width="203"/>
-      <column name="text" width="661"/>
+      <column name="text" width="656"/>
     </editor> -->
     <title>ToDo</title>
     <dateCreated>Tue, 12 Sep 2017 20:21:05 GMT</dateCreated>
-    <expansionState></expansionState>
+    <expansionState>0,17,19,26,37,44,47</expansionState>
     <vertScrollState>0</vertScrollState>
-    <windowTop>208</windowTop>
-    <windowLeft>105</windowLeft>
-    <windowRight>787</windowRight>
-    <windowBottom>892</windowBottom>
+    <windowTop>257</windowTop>
+    <windowLeft>59</windowLeft>
+    <windowRight>741</windowRight>
+    <windowBottom>941</windowBottom>
   </head>
   <body>
-    <outline text=""/>
+    <outline text="App">
+      <outline text="Use new build system"/>
+      <outline text="Use Xcode 9"/>
+      <outline text="Make app a VerbDelegate"/>
+      <outline text="MainWindow">
+        <outline text="Wire up message"/>
+        <outline text="Wire up popup menu"/>
+      </outline>
+      <outline text="ScriptView"/>
+      <outline text="OPView"/>
+      <outline text="WPView"/>
+      <outline text="DBView"/>
+      <outline text="Preferences window"/>
+      <outline text="Jump window"/>
+      <outline text="Icons"/>
+      <outline text="Sparkle"/>
+      <outline text="Appcast"/>
+      <outline text="Codesign"/>
+    </outline>
+    <outline text="Frameworks">
+      <outline text="Move into Frameworks folder"/>
+      <outline text="FrontierVerbs">
+        <outline text="Finish stubs"/>
+        <outline text="Unit tests"/>
+      </outline>
+      <outline text="FrontierDB"/>
+      <outline text="FrontierData"/>
+      <outline text="FrontierCore"/>
+      <outline text="UserTalk"/>
+    </outline>
+    <outline text="Wish list">
+      <outline text="Call JS (Node package code, for instance) and get back results"/>
+      <outline text="JS plus ODB"/>
+      <outline text="In scripts, automatically indent/outdent as needed"/>
+      <outline text="Script syntax coloring"/>
+      <outline text="Script autocompletion"/>
+      <outline text="UTF8 strings"/>
+      <outline text="Console"/>
+      <outline text="Jump auto-complete options — like open quickly in Xcode"/>
+      <outline text="https server"/>
+      <outline text="Project view — see nodeEditor"/>
+      <outline text="Verbs">
+        <outline text="HTML parser using libxml2 SAX"/>
+        <outline text="Markdown"/>
+        <outline text="Keychain"/>
+        <outline text="Defaults"/>
+        <outline text="++ and —"/>
+        <outline text="https client"/>
+      </outline>
+      <outline text="Language">
+        <outline text="on _ (params) syntax"/>
+        <outline text="Remove need for parentheses for local"/>
+        <outline text="Literal table syntax: if not defined (adrdata^) {adrdata^ = {xxx: 1, yyy: 0, zzz: &quot;hi mom!&quot;)};">
+          <outline text="Keys are expressions or not? Dave is thinking."/>
+        </outline>
+      </outline>
+    </outline>
   </body>
 </opml>
