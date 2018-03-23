@@ -27,6 +27,14 @@
 		849023D41E9EC258002D1BA7 /* FrontierVerbs.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7E61E9EC20A00CB76EC /* FrontierVerbs.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8490240A1E9EC422002D1BA7 /* UserTalk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849024071E9EC3D9002D1BA7 /* UserTalk.framework */; };
 		8490240B1E9EC422002D1BA7 /* UserTalk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 849024071E9EC3D9002D1BA7 /* UserTalk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84E726592064C4DD001DAA09 /* RSDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E7263F2064C4A1001DAA09 /* RSDatabase.framework */; };
+		84E7265A2064C4DD001DAA09 /* RSDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84E7263F2064C4A1001DAA09 /* RSDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84E7265D2064C4E7001DAA09 /* RSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E726322064C495001DAA09 /* RSCore.framework */; };
+		84E7265E2064C4E7001DAA09 /* RSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84E726322064C495001DAA09 /* RSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84E726612064C4F3001DAA09 /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E7264A2064C4B6001DAA09 /* RSParser.framework */; };
+		84E726622064C4F3001DAA09 /* RSParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84E7264A2064C4B6001DAA09 /* RSParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84E726652064C500001DAA09 /* RSWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E726542064C4BE001DAA09 /* RSWeb.framework */; };
+		84E726662064C500001DAA09 /* RSWeb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84E726542064C4BE001DAA09 /* RSWeb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84EEF8451EA7FFDA0061A312 /* JumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8441EA7FFDA0061A312 /* JumpWindowController.swift */; };
 		84EEF8481EA84F8F0061A312 /* ScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8471EA84F8F0061A312 /* ScriptViewController.swift */; };
 		84EEF84B1EA84FB70061A312 /* OPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF84A1EA84FB70061A312 /* OPViewController.swift */; };
@@ -130,6 +138,111 @@
 			remoteGlobalIDString = 849024211E9EC446002D1BA7;
 			remoteInfo = FrontierDBTests;
 		};
+		84E726312064C495001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726272064C495001DAA09 /* RSCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84CFF4F41AC3C69700CEA6C8;
+			remoteInfo = RSCore;
+		};
+		84E726332064C495001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726272064C495001DAA09 /* RSCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84CFF4FF1AC3C69700CEA6C8;
+			remoteInfo = RSCoreTests;
+		};
+		84E726352064C495001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726272064C495001DAA09 /* RSCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 842DD7BC1E14993900E061EB;
+			remoteInfo = RSCoreiOS;
+		};
+		84E7263E2064C4A1001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84F22C551B52E0D9000060CE;
+			remoteInfo = RSDatabase;
+		};
+		84E726402064C4A1001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84F22C5F1B52E0D9000060CE;
+			remoteInfo = RSDatabaseTests;
+		};
+		84E726422064C4A1001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8400ABF71E0CFBD800AA7C57;
+			remoteInfo = RSDatabaseiOS;
+		};
+		84E726492064C4B6001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726442064C4B6001DAA09 /* RSParser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84FF5F841EFA285800C15A01;
+			remoteInfo = RSParser;
+		};
+		84E7264B2064C4B6001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726442064C4B6001DAA09 /* RSParser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84FF5F8D1EFA285800C15A01;
+			remoteInfo = RSParserTests;
+		};
+		84E726532064C4BE001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E7264D2064C4BE001DAA09 /* RSWeb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 849C08B61E0CAC85006B03FA;
+			remoteInfo = RSWeb;
+		};
+		84E726552064C4BE001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E7264D2064C4BE001DAA09 /* RSWeb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 849C08BF1E0CAC86006B03FA;
+			remoteInfo = RSWebTests;
+		};
+		84E726572064C4BE001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E7264D2064C4BE001DAA09 /* RSWeb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 849C08D51E0CACA3006B03FA;
+			remoteInfo = RSWebiOS;
+		};
+		84E7265B2064C4DD001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F22C541B52E0D9000060CE;
+			remoteInfo = RSDatabase;
+		};
+		84E7265F2064C4E7001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726272064C495001DAA09 /* RSCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84CFF4F31AC3C69700CEA6C8;
+			remoteInfo = RSCore;
+		};
+		84E726632064C4F3001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E726442064C4B6001DAA09 /* RSParser.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84FF5F831EFA285800C15A01;
+			remoteInfo = RSParser;
+		};
+		84E726672064C500001DAA09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E7264D2064C4BE001DAA09 /* RSWeb.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 849C08B51E0CAC85006B03FA;
+			remoteInfo = RSWeb;
+		};
 		84ECA7AF1E9DC21000CB76EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */;
@@ -167,6 +280,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				84E726662064C500001DAA09 /* RSWeb.framework in Embed Frameworks */,
+				84E726622064C4F3001DAA09 /* RSParser.framework in Embed Frameworks */,
+				84E7265A2064C4DD001DAA09 /* RSDatabase.framework in Embed Frameworks */,
+				84E7265E2064C4E7001DAA09 /* RSCore.framework in Embed Frameworks */,
 				849023D41E9EC258002D1BA7 /* FrontierVerbs.framework in Embed Frameworks */,
 				8481D34A1EA9A343008DBA8A /* FrontierData.framework in Embed Frameworks */,
 				849023CF1E9EC24C002D1BA7 /* FrontierCore.framework in Embed Frameworks */,
@@ -196,6 +313,10 @@
 		8461886E1E9D707A00A56F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849024011E9EC3D9002D1BA7 /* UserTalk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserTalk.xcodeproj; path = UserTalk/UserTalk.xcodeproj; sourceTree = "<group>"; };
 		849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierDB.xcodeproj; path = FrontierDB/FrontierDB.xcodeproj; sourceTree = "<group>"; };
+		84E726272064C495001DAA09 /* RSCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSCore.xcodeproj; path = submodules/RSCore/RSCore.xcodeproj; sourceTree = "<group>"; };
+		84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSDatabase.xcodeproj; path = submodules/RSDatabase/RSDatabase.xcodeproj; sourceTree = "<group>"; };
+		84E726442064C4B6001DAA09 /* RSParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSParser.xcodeproj; path = submodules/RSParser/RSParser.xcodeproj; sourceTree = "<group>"; };
+		84E7264D2064C4BE001DAA09 /* RSWeb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSWeb.xcodeproj; path = submodules/RSWeb/RSWeb.xcodeproj; sourceTree = "<group>"; };
 		84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierCore.xcodeproj; path = FrontierCore/FrontierCore.xcodeproj; sourceTree = "<group>"; };
 		84ECA7E01E9EC20A00CB76EC /* FrontierVerbs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierVerbs.xcodeproj; path = FrontierVerbs/FrontierVerbs.xcodeproj; sourceTree = "<group>"; };
 		84EEF8441EA7FFDA0061A312 /* JumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JumpWindowController.swift; path = Frontier/JumpWindow/JumpWindowController.swift; sourceTree = "<group>"; };
@@ -221,6 +342,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E726652064C500001DAA09 /* RSWeb.framework in Frameworks */,
+				84E726612064C4F3001DAA09 /* RSParser.framework in Frameworks */,
+				84E726592064C4DD001DAA09 /* RSDatabase.framework in Frameworks */,
+				84E7265D2064C4E7001DAA09 /* RSCore.framework in Frameworks */,
 				849023D31E9EC258002D1BA7 /* FrontierVerbs.framework in Frameworks */,
 				8481D3491EA9A343008DBA8A /* FrontierData.framework in Frameworks */,
 				849023CE1E9EC24C002D1BA7 /* FrontierCore.framework in Frameworks */,
@@ -292,6 +417,10 @@
 				849024011E9EC3D9002D1BA7 /* UserTalk.xcodeproj */,
 				849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */,
 				84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */,
+				84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */,
+				84E726272064C495001DAA09 /* RSCore.xcodeproj */,
+				84E726442064C4B6001DAA09 /* RSParser.xcodeproj */,
+				84E7264D2064C4BE001DAA09 /* RSWeb.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -339,6 +468,45 @@
 				84EEF8521EA8502B0061A312 /* MainWindowViewController.swift */,
 			);
 			name = MainWindow;
+			sourceTree = "<group>";
+		};
+		84E726282064C495001DAA09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E726322064C495001DAA09 /* RSCore.framework */,
+				84E726342064C495001DAA09 /* RSCoreTests.xctest */,
+				84E726362064C495001DAA09 /* RSCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E726392064C4A1001DAA09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E7263F2064C4A1001DAA09 /* RSDatabase.framework */,
+				84E726412064C4A1001DAA09 /* RSDatabaseTests.xctest */,
+				84E726432064C4A1001DAA09 /* RSDatabase.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E726452064C4B6001DAA09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E7264A2064C4B6001DAA09 /* RSParser.framework */,
+				84E7264C2064C4B6001DAA09 /* RSParserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E7264E2064C4BE001DAA09 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E726542064C4BE001DAA09 /* RSWeb.framework */,
+				84E726562064C4BE001DAA09 /* RSWebTests.xctest */,
+				84E726582064C4BE001DAA09 /* RSWeb.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		84ECA7AB1E9DC21000CB76EC /* Products */ = {
@@ -444,6 +612,10 @@
 				8490240D1E9EC422002D1BA7 /* PBXTargetDependency */,
 				8481D34C1EA9A343008DBA8A /* PBXTargetDependency */,
 				8481D3551EA9A34E008DBA8A /* PBXTargetDependency */,
+				84E7265C2064C4DD001DAA09 /* PBXTargetDependency */,
+				84E726602064C4E7001DAA09 /* PBXTargetDependency */,
+				84E726642064C4F3001DAA09 /* PBXTargetDependency */,
+				84E726682064C500001DAA09 /* PBXTargetDependency */,
 			);
 			name = Frontier;
 			productName = Frontier;
@@ -520,6 +692,22 @@
 					ProjectRef = 84ECA7E01E9EC20A00CB76EC /* FrontierVerbs.xcodeproj */;
 				},
 				{
+					ProductGroup = 84E726282064C495001DAA09 /* Products */;
+					ProjectRef = 84E726272064C495001DAA09 /* RSCore.xcodeproj */;
+				},
+				{
+					ProductGroup = 84E726392064C4A1001DAA09 /* Products */;
+					ProjectRef = 84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */;
+				},
+				{
+					ProductGroup = 84E726452064C4B6001DAA09 /* Products */;
+					ProjectRef = 84E726442064C4B6001DAA09 /* RSParser.xcodeproj */;
+				},
+				{
+					ProductGroup = 84E7264E2064C4BE001DAA09 /* Products */;
+					ProjectRef = 84E7264D2064C4BE001DAA09 /* RSWeb.xcodeproj */;
+				},
+				{
 					ProductGroup = 849024021E9EC3D9002D1BA7 /* Products */;
 					ProjectRef = 849024011E9EC3D9002D1BA7 /* UserTalk.xcodeproj */;
 				},
@@ -573,6 +761,83 @@
 			fileType = wrapper.cfbundle;
 			path = FrontierDBTests.xctest;
 			remoteRef = 849024391E9EC44F002D1BA7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E726322064C495001DAA09 /* RSCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSCore.framework;
+			remoteRef = 84E726312064C495001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E726342064C495001DAA09 /* RSCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSCoreTests.xctest;
+			remoteRef = 84E726332064C495001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E726362064C495001DAA09 /* RSCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSCore.framework;
+			remoteRef = 84E726352064C495001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E7263F2064C4A1001DAA09 /* RSDatabase.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSDatabase.framework;
+			remoteRef = 84E7263E2064C4A1001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E726412064C4A1001DAA09 /* RSDatabaseTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSDatabaseTests.xctest;
+			remoteRef = 84E726402064C4A1001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E726432064C4A1001DAA09 /* RSDatabase.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSDatabase.framework;
+			remoteRef = 84E726422064C4A1001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E7264A2064C4B6001DAA09 /* RSParser.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSParser.framework;
+			remoteRef = 84E726492064C4B6001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E7264C2064C4B6001DAA09 /* RSParserTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSParserTests.xctest;
+			remoteRef = 84E7264B2064C4B6001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E726542064C4BE001DAA09 /* RSWeb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSWeb.framework;
+			remoteRef = 84E726532064C4BE001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E726562064C4BE001DAA09 /* RSWebTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSWebTests.xctest;
+			remoteRef = 84E726552064C4BE001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E726582064C4BE001DAA09 /* RSWeb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSWeb.framework;
+			remoteRef = 84E726572064C4BE001DAA09 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		84ECA7B01E9DC21000CB76EC /* FrontierCore.framework */ = {
@@ -696,6 +961,26 @@
 			name = UserTalk;
 			targetProxy = 8490240C1E9EC422002D1BA7 /* PBXContainerItemProxy */;
 		};
+		84E7265C2064C4DD001DAA09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSDatabase;
+			targetProxy = 84E7265B2064C4DD001DAA09 /* PBXContainerItemProxy */;
+		};
+		84E726602064C4E7001DAA09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSCore;
+			targetProxy = 84E7265F2064C4E7001DAA09 /* PBXContainerItemProxy */;
+		};
+		84E726642064C4F3001DAA09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSParser;
+			targetProxy = 84E726632064C4F3001DAA09 /* PBXContainerItemProxy */;
+		};
+		84E726682064C500001DAA09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSWeb;
+			targetProxy = 84E726672064C500001DAA09 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -814,6 +1099,7 @@
 		846188721E9D707A00A56F84 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9C84TZ7Q6Z;
@@ -828,6 +1114,7 @@
 		846188731E9D707A00A56F84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 9C84TZ7Q6Z;

@@ -1,0 +1,18 @@
+[submodule "submodules/RSCore"]
+	path = submodules/RSCore
+	url = https://brentsimmons@github.com/brentsimmons/RSCore.git
+[submodule "submodules/RSTree"]
+	path = submodules/RSTree
+	url = https://brentsimmons@github.com/brentsimmons/RSTree.git
+[submodule "submodules/RSParser"]
+	path = submodules/RSParser
+	url = https://brentsimmons@github.com/brentsimmons/RSParser.git
+[submodule "submodules/RSWeb"]
+	path = submodules/RSWeb
+	url = https://brentsimmons@github.com/brentsimmons/RSWeb.git
+[submodule "submodules/DB5"]
+	path = submodules/DB5
+	url = https://brentsimmons@github.com/brentsimmons/DB5.git
+[submodule "submodules/RSDatabase"]
+	path = submodules/RSDatabase
+	url = https://brentsimmons@github.com/brentsimmons/RSDatabase.git

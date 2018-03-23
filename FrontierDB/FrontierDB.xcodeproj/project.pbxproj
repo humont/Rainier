@@ -10,6 +10,7 @@
 		849024221E9EC446002D1BA7 /* FrontierDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849024181E9EC446002D1BA7 /* FrontierDB.framework */; };
 		849024271E9EC446002D1BA7 /* FrontierDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849024261E9EC446002D1BA7 /* FrontierDBTests.swift */; };
 		849024291E9EC446002D1BA7 /* FrontierDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 8490241B1E9EC446002D1BA7 /* FrontierDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84DAD8751F3F85350065F17D /* CreateStatements.sql in Resources */ = {isa = PBXBuildFile; fileRef = 84DAD8741F3F85350065F17D /* CreateStatements.sql */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		849024211E9EC446002D1BA7 /* FrontierDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrontierDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		849024261E9EC446002D1BA7 /* FrontierDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontierDBTests.swift; sourceTree = "<group>"; };
 		849024281E9EC446002D1BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84DAD8741F3F85350065F17D /* CreateStatements.sql */ = {isa = PBXFileReference; lastKnownFileType = text; path = CreateStatements.sql; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,9 @@
 		8490240E1E9EC446002D1BA7 = {
 			isa = PBXGroup;
 			children = (
-				8490241A1E9EC446002D1BA7 /* FrontierDB */,
+				8490241B1E9EC446002D1BA7 /* FrontierDB.h */,
+				84DAD8741F3F85350065F17D /* CreateStatements.sql */,
+				8490241C1E9EC446002D1BA7 /* Info.plist */,
 				849024251E9EC446002D1BA7 /* FrontierDBTests */,
 				849024191E9EC446002D1BA7 /* Products */,
 			);
@@ -66,15 +70,6 @@
 				849024211E9EC446002D1BA7 /* FrontierDBTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		8490241A1E9EC446002D1BA7 /* FrontierDB */ = {
-			isa = PBXGroup;
-			children = (
-				8490241B1E9EC446002D1BA7 /* FrontierDB.h */,
-				8490241C1E9EC446002D1BA7 /* Info.plist */,
-			);
-			path = FrontierDB;
 			sourceTree = "<group>";
 		};
 		849024251E9EC446002D1BA7 /* FrontierDBTests */ = {
@@ -181,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84DAD8751F3F85350065F17D /* CreateStatements.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +399,7 @@
 				8490242E1E9EC446002D1BA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8490242F1E9EC446002D1BA7 /* Build configuration list for PBXNativeTarget "FrontierDBTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +408,7 @@
 				849024311E9EC446002D1BA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -67,6 +67,12 @@ public final class HashTable {
 		}
 		return nil
 	}
+
+	public subscript (_ key: String) -> Any {
+		get {
+			return lookup(key)
+		}
+	}
 }
 
 private extension HashTable {
