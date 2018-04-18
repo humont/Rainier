@@ -19,8 +19,6 @@
 		8461886D1E9D707A00A56F84 /* FrontierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461886C1E9D707A00A56F84 /* FrontierTests.swift */; };
 		8481D3491EA9A343008DBA8A /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84553AC21EA9A320002FC299 /* FrontierData.framework */; };
 		8481D34A1EA9A343008DBA8A /* FrontierData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84553AC21EA9A320002FC299 /* FrontierData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8481D3521EA9A34E008DBA8A /* FrontierDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849024381E9EC44F002D1BA7 /* FrontierDB.framework */; };
-		8481D3531EA9A34E008DBA8A /* FrontierDB.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 849024381E9EC44F002D1BA7 /* FrontierDB.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849023CE1E9EC24C002D1BA7 /* FrontierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7B01E9DC21000CB76EC /* FrontierCore.framework */; };
 		849023CF1E9EC24C002D1BA7 /* FrontierCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7B01E9DC21000CB76EC /* FrontierCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849023D31E9EC258002D1BA7 /* FrontierVerbs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7E61E9EC20A00CB76EC /* FrontierVerbs.framework */; };
@@ -35,6 +33,8 @@
 		84E726622064C4F3001DAA09 /* RSParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84E7264A2064C4B6001DAA09 /* RSParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84E726652064C500001DAA09 /* RSWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E726542064C4BE001DAA09 /* RSWeb.framework */; };
 		84E726662064C500001DAA09 /* RSWeb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84E726542064C4BE001DAA09 /* RSWeb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84E9B7B52086FC8700B3FA4D /* DB5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E9B7A72086FC7000B3FA4D /* DB5.framework */; };
+		84E9B7B62086FC8700B3FA4D /* DB5.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84E9B7A72086FC7000B3FA4D /* DB5.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84EEF8451EA7FFDA0061A312 /* JumpWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8441EA7FFDA0061A312 /* JumpWindowController.swift */; };
 		84EEF8481EA84F8F0061A312 /* ScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8471EA84F8F0061A312 /* ScriptViewController.swift */; };
 		84EEF84B1EA84FB70061A312 /* OPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF84A1EA84FB70061A312 /* OPViewController.swift */; };
@@ -82,13 +82,6 @@
 			remoteGlobalIDString = 84553AA01EA9A30E002FC299;
 			remoteInfo = FrontierData;
 		};
-		8481D3541EA9A34E008DBA8A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 849024171E9EC446002D1BA7;
-			remoteInfo = FrontierDB;
-		};
 		849023D01E9EC24C002D1BA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */;
@@ -123,20 +116,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 849023E61E9EC3C5002D1BA7;
 			remoteInfo = UserTalk;
-		};
-		849024371E9EC44F002D1BA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 849024181E9EC446002D1BA7;
-			remoteInfo = FrontierDB;
-		};
-		849024391E9EC44F002D1BA7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 849024211E9EC446002D1BA7;
-			remoteInfo = FrontierDBTests;
 		};
 		84E726312064C495001DAA09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -243,6 +222,27 @@
 			remoteGlobalIDString = 849C08B51E0CAC85006B03FA;
 			remoteInfo = RSWeb;
 		};
+		84E9B7A62086FC7000B3FA4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E9B7A12086FC7000B3FA4D /* DB5.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84F22BD11B52DC2E000060CE;
+			remoteInfo = DB5;
+		};
+		84E9B7A82086FC7000B3FA4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E9B7A12086FC7000B3FA4D /* DB5.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84F22BDB1B52DC2E000060CE;
+			remoteInfo = DB5Tests;
+		};
+		84E9B7B72086FC8700B3FA4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84E9B7A12086FC7000B3FA4D /* DB5.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F22BD01B52DC2E000060CE;
+			remoteInfo = DB5;
+		};
 		84ECA7AF1E9DC21000CB76EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */;
@@ -280,6 +280,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				84E9B7B62086FC8700B3FA4D /* DB5.framework in Embed Frameworks */,
 				84E726662064C500001DAA09 /* RSWeb.framework in Embed Frameworks */,
 				84E726622064C4F3001DAA09 /* RSParser.framework in Embed Frameworks */,
 				84E7265A2064C4DD001DAA09 /* RSDatabase.framework in Embed Frameworks */,
@@ -288,7 +289,6 @@
 				8481D34A1EA9A343008DBA8A /* FrontierData.framework in Embed Frameworks */,
 				849023CF1E9EC24C002D1BA7 /* FrontierCore.framework in Embed Frameworks */,
 				8490240B1E9EC422002D1BA7 /* UserTalk.framework in Embed Frameworks */,
-				8481D3531EA9A34E008DBA8A /* FrontierDB.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,11 +312,11 @@
 		8461886C1E9D707A00A56F84 /* FrontierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontierTests.swift; sourceTree = "<group>"; };
 		8461886E1E9D707A00A56F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		849024011E9EC3D9002D1BA7 /* UserTalk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserTalk.xcodeproj; path = UserTalk/UserTalk.xcodeproj; sourceTree = "<group>"; };
-		849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierDB.xcodeproj; path = FrontierDB/FrontierDB.xcodeproj; sourceTree = "<group>"; };
 		84E726272064C495001DAA09 /* RSCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSCore.xcodeproj; path = submodules/RSCore/RSCore.xcodeproj; sourceTree = "<group>"; };
 		84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSDatabase.xcodeproj; path = submodules/RSDatabase/RSDatabase.xcodeproj; sourceTree = "<group>"; };
 		84E726442064C4B6001DAA09 /* RSParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSParser.xcodeproj; path = submodules/RSParser/RSParser.xcodeproj; sourceTree = "<group>"; };
 		84E7264D2064C4BE001DAA09 /* RSWeb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSWeb.xcodeproj; path = submodules/RSWeb/RSWeb.xcodeproj; sourceTree = "<group>"; };
+		84E9B7A12086FC7000B3FA4D /* DB5.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DB5.xcodeproj; path = submodules/DB5/DB5.xcodeproj; sourceTree = "<group>"; };
 		84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierCore.xcodeproj; path = FrontierCore/FrontierCore.xcodeproj; sourceTree = "<group>"; };
 		84ECA7E01E9EC20A00CB76EC /* FrontierVerbs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FrontierVerbs.xcodeproj; path = FrontierVerbs/FrontierVerbs.xcodeproj; sourceTree = "<group>"; };
 		84EEF8441EA7FFDA0061A312 /* JumpWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JumpWindowController.swift; path = Frontier/JumpWindow/JumpWindowController.swift; sourceTree = "<group>"; };
@@ -342,6 +342,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84E9B7B52086FC8700B3FA4D /* DB5.framework in Frameworks */,
 				84E726652064C500001DAA09 /* RSWeb.framework in Frameworks */,
 				84E726612064C4F3001DAA09 /* RSParser.framework in Frameworks */,
 				84E726592064C4DD001DAA09 /* RSDatabase.framework in Frameworks */,
@@ -350,7 +351,6 @@
 				8481D3491EA9A343008DBA8A /* FrontierData.framework in Frameworks */,
 				849023CE1E9EC24C002D1BA7 /* FrontierCore.framework in Frameworks */,
 				8490240A1E9EC422002D1BA7 /* UserTalk.framework in Frameworks */,
-				8481D3521EA9A34E008DBA8A /* FrontierDB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,11 +415,11 @@
 				84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */,
 				84ECA7E01E9EC20A00CB76EC /* FrontierVerbs.xcodeproj */,
 				849024011E9EC3D9002D1BA7 /* UserTalk.xcodeproj */,
-				849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */,
 				84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */,
 				84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */,
 				84E726272064C495001DAA09 /* RSCore.xcodeproj */,
 				84E726442064C4B6001DAA09 /* RSParser.xcodeproj */,
+				84E9B7A12086FC7000B3FA4D /* DB5.xcodeproj */,
 				84E7264D2064C4BE001DAA09 /* RSWeb.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -447,15 +447,6 @@
 			children = (
 				849024071E9EC3D9002D1BA7 /* UserTalk.framework */,
 				849024091E9EC3D9002D1BA7 /* UserTalkTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		849024331E9EC44F002D1BA7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				849024381E9EC44F002D1BA7 /* FrontierDB.framework */,
-				8490243A1E9EC44F002D1BA7 /* FrontierDBTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -505,6 +496,15 @@
 				84E726542064C4BE001DAA09 /* RSWeb.framework */,
 				84E726562064C4BE001DAA09 /* RSWebTests.xctest */,
 				84E726582064C4BE001DAA09 /* RSWeb.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84E9B7A22086FC7000B3FA4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84E9B7A72086FC7000B3FA4D /* DB5.framework */,
+				84E9B7A92086FC7000B3FA4D /* DB5Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -611,11 +611,11 @@
 				849023D61E9EC258002D1BA7 /* PBXTargetDependency */,
 				8490240D1E9EC422002D1BA7 /* PBXTargetDependency */,
 				8481D34C1EA9A343008DBA8A /* PBXTargetDependency */,
-				8481D3551EA9A34E008DBA8A /* PBXTargetDependency */,
 				84E7265C2064C4DD001DAA09 /* PBXTargetDependency */,
 				84E726602064C4E7001DAA09 /* PBXTargetDependency */,
 				84E726642064C4F3001DAA09 /* PBXTargetDependency */,
 				84E726682064C500001DAA09 /* PBXTargetDependency */,
+				84E9B7B82086FC8700B3FA4D /* PBXTargetDependency */,
 			);
 			name = Frontier;
 			productName = Frontier;
@@ -676,16 +676,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 84E9B7A22086FC7000B3FA4D /* Products */;
+					ProjectRef = 84E9B7A12086FC7000B3FA4D /* DB5.xcodeproj */;
+				},
+				{
 					ProductGroup = 84ECA7AB1E9DC21000CB76EC /* Products */;
 					ProjectRef = 84ECA7AA1E9DC21000CB76EC /* FrontierCore.xcodeproj */;
 				},
 				{
 					ProductGroup = 84553ABC1EA9A320002FC299 /* Products */;
 					ProjectRef = 84553ABB1EA9A320002FC299 /* FrontierData.xcodeproj */;
-				},
-				{
-					ProductGroup = 849024331E9EC44F002D1BA7 /* Products */;
-					ProjectRef = 849024321E9EC44F002D1BA7 /* FrontierDB.xcodeproj */;
 				},
 				{
 					ProductGroup = 84ECA7E11E9EC20A00CB76EC /* Products */;
@@ -747,20 +747,6 @@
 			fileType = wrapper.cfbundle;
 			path = UserTalkTests.xctest;
 			remoteRef = 849024081E9EC3D9002D1BA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		849024381E9EC44F002D1BA7 /* FrontierDB.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = FrontierDB.framework;
-			remoteRef = 849024371E9EC44F002D1BA7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		8490243A1E9EC44F002D1BA7 /* FrontierDBTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = FrontierDBTests.xctest;
-			remoteRef = 849024391E9EC44F002D1BA7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		84E726322064C495001DAA09 /* RSCore.framework */ = {
@@ -838,6 +824,20 @@
 			fileType = wrapper.framework;
 			path = RSWeb.framework;
 			remoteRef = 84E726572064C4BE001DAA09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E9B7A72086FC7000B3FA4D /* DB5.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DB5.framework;
+			remoteRef = 84E9B7A62086FC7000B3FA4D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84E9B7A92086FC7000B3FA4D /* DB5Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DB5Tests.xctest;
+			remoteRef = 84E9B7A82086FC7000B3FA4D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		84ECA7B01E9DC21000CB76EC /* FrontierCore.framework */ = {
@@ -941,11 +941,6 @@
 			name = FrontierData;
 			targetProxy = 8481D34B1EA9A343008DBA8A /* PBXContainerItemProxy */;
 		};
-		8481D3551EA9A34E008DBA8A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FrontierDB;
-			targetProxy = 8481D3541EA9A34E008DBA8A /* PBXContainerItemProxy */;
-		};
 		849023D11E9EC24C002D1BA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FrontierCore;
@@ -980,6 +975,11 @@
 			isa = PBXTargetDependency;
 			name = RSWeb;
 			targetProxy = 84E726672064C500001DAA09 /* PBXContainerItemProxy */;
+		};
+		84E9B7B82086FC8700B3FA4D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DB5;
+			targetProxy = 84E9B7B72086FC8700B3FA4D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1051,6 +1051,8 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -1093,6 +1095,8 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1107,7 +1111,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.Frontier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1122,7 +1125,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.Frontier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -1137,7 +1139,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.FrontierTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Frontier.app/Contents/MacOS/Frontier";
 			};
 			name = Debug;
@@ -1153,7 +1154,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.FrontierTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Frontier.app/Contents/MacOS/Frontier";
 			};
 			name = Release;
