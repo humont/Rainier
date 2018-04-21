@@ -33,7 +33,7 @@ public final class HashTable {
 	public func add(_ key: String, _ value: Any) {
 
 		assert(!isReadOnly, "Can’t add to a read-only table.")
-		guard !isReadonly else {
+		guard !isReadOnly else {
 			return
 		}
 		
@@ -55,20 +55,20 @@ public final class HashTable {
 	public func lookup(_ key: String) -> Any? {
 
 		if let keyToUse = canonicalKeyForKey(key) {
-			return dictionary[key]
+			return dictionary[keyToUse]
 		}
 		return nil
 	}
 	
 	public func addressOf(_ key: String) -> Address? {
 		
-		if let canonicalKey = canonicalKeyForKey(key) {
+		if let _ = canonicalKeyForKey(key) {
 			return Address(hashTable: self, name: key)
 		}
 		return nil
 	}
 
-	public subscript (_ key: String) -> Any {
+	public subscript (_ key: String) -> Any? {
 		get {
 			return lookup(key)
 		}

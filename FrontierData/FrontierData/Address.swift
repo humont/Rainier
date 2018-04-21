@@ -23,7 +23,7 @@ public struct Address: Equatable {
 		
 		// Returns nil if this address no longer points to a real thing.
 		
-		return hashTable.lookup(name)
+		return hashTable.lookup(name) as? Value
 	}
 	
 	// MARK: Equatable

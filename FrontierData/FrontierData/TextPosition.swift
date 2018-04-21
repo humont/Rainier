@@ -35,7 +35,7 @@ public struct TextPosition: Equatable {
 		return TextPosition(lineNumber, characterIndex + 1)
 	}
 
-	publicstatic func ==(lhs: TextPosition, rhs: TextPosition) -> Bool {
+	public static func ==(lhs: TextPosition, rhs: TextPosition) -> Bool {
 
 		return lhs.lineNumber == rhs.lineNumber && lhs.characterIndex == rhs.characterIndex
 	}
