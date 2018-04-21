@@ -188,7 +188,7 @@ private extension VerbRunner {
 	
 	func verbNamePieces(_ verbName: String) -> (String, String) {
 		
-		if verbName.contains(".") {
+		if let _ = verbName.range(of: ".") {
 			let components = verbName.components(separatedBy: ".")
 			return (components[0].lowercased(), components[1].lowercased())
 		}

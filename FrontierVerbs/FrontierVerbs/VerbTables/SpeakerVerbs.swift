@@ -42,7 +42,7 @@ private extension SpeakerVerbs {
 	
 	static func beep(_ params: VerbParams) throws -> Value {
 		
-		NSBeep()
+		NSSound.beep()
 		return true
 	}
 	
