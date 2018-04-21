@@ -13,7 +13,7 @@ import Foundation
 // else if another thing
 // else
 
-func class IfListNode: CodeTreeNode {
+final class IfListNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation = .ifListOp
 	let textPosition: TextPosition

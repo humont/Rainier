@@ -9,7 +9,7 @@
 import Foundation
 import FrontierData
 
-func class IfElseNode: CodeTreeNode {
+final class IfElseNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation
 	let textPosition: TextPosition

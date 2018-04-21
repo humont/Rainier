@@ -102,31 +102,31 @@ public class LangEvaluator {
 //			case noOp:
 //				return true
 
-			case localOp:
+			case .localOp:
 				return addLocals(node)
 				
-			case moduleOp:
+			case .moduleOp:
 				return addHandler(node)
 				
-			case identifierOp, bracketOp:
+			case .identifierOp, .bracketOp:
 				return idvalue(node)
 				
-			case dotOp:
+			case .dotOp:
 				return dotValue(node)
 				
-			case addressOfOp:
+			case .addressOfOp:
 				return addressOfValue(node.param1!)
 				
-			case dereferenceOp:
+			case .dereferenceOp:
 				return dereferenceValue(node.param1!)
 				
-			case arrayOp:
+			case .arrayOp:
 				return arrayValue(node)
 				
-			case constOp:
+			case .constOp:
 				return copyValue(node.value!)
 				
-			case assignOp:
+			case .assignOp:
 				if !assignValue(node.param1!, val2) {
 					return false
 				}
@@ -135,40 +135,40 @@ public class LangEvaluator {
 				}
 				return copyValue(val2)
 				
-			case functionOp:
+			case .functionOp:
 				return functionValue(node.param1!, node.param2!)
 				
-			case addOp:
+			case .addOp:
 				return try val1.add(val2)
 				
-			case subtractOp:
+			case .subtractOp:
 				return try val1.subtract(val2)
 				
-			case unaryOp:
+			case .unaryOp:
 				return try val1.unaryMinusValue()
 				
-			case multiplyOp:
+			case .multiplyOp:
 				return try val1.multiply(val2)
 				
-			case divideOp:
+			case .divideOp:
 				return try val1.divide(val2)
 				
-			case addValueOp:
-				return modifyAssignValue(node.param1!, val2, addOp, needAssignmentResult(node))
+			case .addValueOp:
+				return modifyAssignValue(node.param1!, val2, .addOp, needAssignmentResult(node))
 				
-			case subtractValueOp:
-				return modifyAssignValue(node.param1!, val2, subtractOp, needAssignmentResult(node))
+			case .subtractValueOp:
+				return modifyAssignValue(node.param1!, val2, .subtractOp, needAssignmentResult(node))
 				
-			case multiplyValueOp:
-				return modifyAssignValue(node.param1!, val2, multiplyOp, needAssignmentResult(node))
+			case .multiplyValueOp:
+				return modifyAssignValue(node.param1!, val2, .multiplyOp, needAssignmentResult(node))
 				
-			case divideValueOp:
-				return modifyAssignValue(node.param1!, val2, divideOp, needAssignmentResult(node))
+			case .divideValueOp:
+				return modifyAssignValue(node.param1!, val2, .divideOp, needAssignmentResult(node))
 				
-			case modOp:
+			case .modOp:
 				return try val1.mod(val2)
 				
-			case notOp:
+			case .notOp:
 				return try val1.not()
 				
 //			case equalsOp:
@@ -235,46 +235,46 @@ public class LangEvaluator {
 //			case caseOp:
 //				return evaluateCase(node)
 
-			case loopOp:
+			case .loopOp:
 				return evaluateLoop(node)
 				
-			case fileLoopOp:
+			case .fileLoopOp:
 				return evaluateFileLoop(node)
 				
-			case forLoopOp:
+			case .forLoopOp:
 				return evaluateForLoop(node, val1, val2, 1)
 				
-			case forDownLoopOp:
+			case .forDownLoopOp:
 				return evaluateForLoop(node, val1, val2, -1)
 				
-			case incrementPreOp:
+			case .incrementPreOp:
 				return try incrementValue(node.param1!, increment: true, pre: true)
 				
-			case incrementPostOp:
+			case .incrementPostOp:
 				return try incrementValue(node.param1!, increment: true, pre: false)
 				
-			case decrementPreOp:
+			case .decrementPreOp:
 				return try incrementValue(node.param1!, increment: false, pre: true)
 				
-			case decrementPostOp:
+			case .decrementPostOp:
 				return try incrementValue(node.param1!, increment: false, pre: false)
 				
 //			case tryOp:
 //				return evaluateTry(node)
 				
-			case rangeOp:
+			case .rangeOp:
 				throw langError(.badRangeOperation)
 				
-			case fieldOp:
+			case .fieldOp:
 				throw langError(.badFieldOperation)
 				
-			case listOp:
+			case .listOp:
 				return makeList(node.param1!)
 				
-			case recordOp:
+			case .recordOp:
 				return makeRecord(node.param1!)
 				
-			case forInLoopOp:
+			case .forInLoopOp:
 				return evaluateForInLoop(node, val1)
 				
 			default:

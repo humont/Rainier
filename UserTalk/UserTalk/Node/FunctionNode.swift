@@ -30,7 +30,7 @@ final class FunctionNode: CodeTreeNode {
 		preconditionFailure("evaluate() should not be called on a Function Node.")
 	}
 
-	func call(_ stack: Stack, _ params: [ParamNode]) throw -> Value {
+	func call(_ stack: Stack, _ params: [ParamNode]) throws -> Value {
 
 		if params.count > paramHeader.count {
 			throw LangError(.tooManyParameters, textPosition: params[0].textPosition)

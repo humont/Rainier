@@ -13,7 +13,7 @@ import FrontierData
 // Leaving “Token” as part of these names
 // because some of them conflict with Swift keywords.
 
-enum Token: Integer {
+enum Token: Int {
 
 	case emptyToken = 0
 	case EQToken = 400

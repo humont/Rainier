@@ -25,6 +25,7 @@ final class Stack {
 		}
 	}
 
+	@discardableResult
 	func push(_ node: CodeTreeNode) -> StackFrame {
 
 		let frame = StackFrame(node, currentFrame)

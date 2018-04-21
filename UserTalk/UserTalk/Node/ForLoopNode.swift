@@ -15,7 +15,7 @@ import FrontierData
 final class ForLoopNode: CodeTreeNode {
 
 	let operation: CodeTreeOperation = .forLoopOp
-	let textPosition: textPosition
+	let textPosition: TextPosition
 	let counterNode: CodeTreeNode
 	let rangeNode: RangeNode
 	let blockNode: BlockNode
@@ -32,7 +32,7 @@ final class ForLoopNode: CodeTreeNode {
 		let ascending = rangeNode.ascending
 
 		do {
-			try let (startIndex, endIndex) = rangeNode.startAndEndIndex()
+			let (startIndex, endIndex) = try rangeNode.startAndEndIndex()
 		}
 		catch { throw error }
 

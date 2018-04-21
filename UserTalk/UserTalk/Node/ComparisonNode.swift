@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FrontierData
 
 final class ComparisonNode: CodeTreeNode {
 
@@ -39,22 +40,22 @@ final class ComparisonNode: CodeTreeNode {
 			case .notEqualsOp:
 				return try !(val1.equals(val2))
 
-			case greaterThanOp:
+			case .greaterThanOp:
 				return try val1.greaterThan(val2)
 
-			case lessThanOp:
+			case .lessThanOp:
 				return try val1.lessThan(val2)
 
-			case greaterThanEqualsOp:
+			case .greaterThanEqualsOp:
 				return try val1.greaterThanEqual(val2)
 
-			case lessThanEqualsOp:
+			case .lessThanEqualsOp:
 				return try val1.lessThanEqual(val2)
 
-			case beginsWithOp:
+			case .beginsWithOp:
 				return try val1.beginsWith(val2)
 
-			case containsOp:
+			case .containsOp:
 				return try val1.contains(val2)
 
 			default:

@@ -12,7 +12,7 @@ import FrontierData
 // CodeTreeNodes are immutable, so that a tree, once built, can be evaluated many times.
 // They’re also thread-safe — the same tree could be evaluated on multiple threads at once.
 
-protocol CodeTreeNode: class {
+public protocol CodeTreeNode: class {
 	
 	var operation: CodeTreeOperation { get }
 	var textPosition: TextPosition { get }
