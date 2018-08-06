@@ -1,14 +1,14 @@
 //
-//  MainWindowController.swift
+//  ShellWindowController.swift
 //  Frontier
 //
-//  Created by Brent Simmons on 4/18/17.
+//  Created by Brent Simmons on 4/19/17.
 //  Copyright © 2017 Ranchero Software. All rights reserved.
 //
 
 import Cocoa
 
-class MainWindowController: NSWindowController {
+class ShellWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()

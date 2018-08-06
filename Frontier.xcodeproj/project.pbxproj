@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84443E622118E64E0060889E /* MainWindow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84443E532118E64E0060889E /* MainWindow.storyboard */; };
+		84443E632118E64E0060889E /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84443E542118E64E0060889E /* MainWindowController.swift */; };
 		844CB76A1EB66FE200ED569C /* WPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844CB7691EB66FE200ED569C /* WPView.xib */; };
 		844CB76C1EB6714700ED569C /* DBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844CB76B1EB6714700ED569C /* DBView.xib */; };
 		844CB76E1EB6726900ED569C /* QuickScriptWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844CB76D1EB6726900ED569C /* QuickScriptWindowController.swift */; };
@@ -17,6 +19,9 @@
 		8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8461885E1E9D707A00A56F84 /* Assets.xcassets */; };
 		846188621E9D707A00A56F84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846188601E9D707A00A56F84 /* Main.storyboard */; };
 		8461886D1E9D707A00A56F84 /* FrontierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8461886C1E9D707A00A56F84 /* FrontierTests.swift */; };
+		847943EA2118E61900AEFBF9 /* StatusWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847943E72118E61900AEFBF9 /* StatusWindowViewController.swift */; };
+		847943EB2118E61900AEFBF9 /* StatusWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847943E82118E61900AEFBF9 /* StatusWindowController.swift */; };
+		847943EC2118E61900AEFBF9 /* StatusWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847943E92118E61900AEFBF9 /* StatusWindow.swift */; };
 		8481D3491EA9A343008DBA8A /* FrontierData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84553AC21EA9A320002FC299 /* FrontierData.framework */; };
 		8481D34A1EA9A343008DBA8A /* FrontierData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84553AC21EA9A320002FC299 /* FrontierData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849023CE1E9EC24C002D1BA7 /* FrontierCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84ECA7B01E9DC21000CB76EC /* FrontierCore.framework */; };
@@ -39,11 +44,6 @@
 		84EEF8481EA84F8F0061A312 /* ScriptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8471EA84F8F0061A312 /* ScriptViewController.swift */; };
 		84EEF84B1EA84FB70061A312 /* OPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF84A1EA84FB70061A312 /* OPViewController.swift */; };
 		84EEF84E1EA84FE20061A312 /* WPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF84D1EA84FE20061A312 /* WPViewController.swift */; };
-		84EEF8531EA8502B0061A312 /* MainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8501EA8502B0061A312 /* MainWindow.swift */; };
-		84EEF8541EA8502B0061A312 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8511EA8502B0061A312 /* MainWindowController.swift */; };
-		84EEF8551EA8502B0061A312 /* MainWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8521EA8502B0061A312 /* MainWindowViewController.swift */; };
-		84EEF8571EA8504C0061A312 /* ShellWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8561EA8504C0061A312 /* ShellWindowController.swift */; };
-		84EEF8591EA850700061A312 /* ShellWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF8581EA850700061A312 /* ShellWindow.xib */; };
 		84EEF85B1EA850830061A312 /* JumpWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EEF85A1EA850830061A312 /* JumpWindow.xib */; };
 		84EEF85D1EA8513E0061A312 /* DBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF85C1EA8513E0061A312 /* DBViewController.swift */; };
 		84EEF8611EA8540A0061A312 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EEF8601EA8540A0061A312 /* PreferencesWindowController.swift */; };
@@ -296,6 +296,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		84443E532118E64E0060889E /* MainWindow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainWindow.storyboard; sourceTree = "<group>"; };
+		84443E542118E64E0060889E /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		844CB7691EB66FE200ED569C /* WPView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WPView.xib; path = Frontier/WP/WPView.xib; sourceTree = "<group>"; };
 		844CB76B1EB6714700ED569C /* DBView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DBView.xib; path = Frontier/DB/DBView.xib; sourceTree = "<group>"; };
 		844CB76D1EB6726900ED569C /* QuickScriptWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuickScriptWindowController.swift; path = Frontier/QuickScript/QuickScriptWindowController.swift; sourceTree = SOURCE_ROOT; };
@@ -311,6 +313,9 @@
 		846188681E9D707A00A56F84 /* FrontierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrontierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8461886C1E9D707A00A56F84 /* FrontierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontierTests.swift; sourceTree = "<group>"; };
 		8461886E1E9D707A00A56F84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847943E72118E61900AEFBF9 /* StatusWindowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusWindowViewController.swift; sourceTree = "<group>"; };
+		847943E82118E61900AEFBF9 /* StatusWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusWindowController.swift; sourceTree = "<group>"; };
+		847943E92118E61900AEFBF9 /* StatusWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusWindow.swift; sourceTree = "<group>"; };
 		849024011E9EC3D9002D1BA7 /* UserTalk.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserTalk.xcodeproj; path = UserTalk/UserTalk.xcodeproj; sourceTree = "<group>"; };
 		84E726272064C495001DAA09 /* RSCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSCore.xcodeproj; path = submodules/RSCore/RSCore.xcodeproj; sourceTree = "<group>"; };
 		84E726382064C4A1001DAA09 /* RSDatabase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSDatabase.xcodeproj; path = submodules/RSDatabase/RSDatabase.xcodeproj; sourceTree = "<group>"; };
@@ -323,11 +328,6 @@
 		84EEF8471EA84F8F0061A312 /* ScriptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScriptViewController.swift; path = Frontier/Script/ScriptViewController.swift; sourceTree = "<group>"; };
 		84EEF84A1EA84FB70061A312 /* OPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OPViewController.swift; path = Frontier/OP/OPViewController.swift; sourceTree = "<group>"; };
 		84EEF84D1EA84FE20061A312 /* WPViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WPViewController.swift; path = Frontier/WP/WPViewController.swift; sourceTree = "<group>"; };
-		84EEF8501EA8502B0061A312 /* MainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindow.swift; path = Frontier/MainWindow/MainWindow.swift; sourceTree = "<group>"; };
-		84EEF8511EA8502B0061A312 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowController.swift; path = Frontier/MainWindow/MainWindowController.swift; sourceTree = "<group>"; };
-		84EEF8521EA8502B0061A312 /* MainWindowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainWindowViewController.swift; path = Frontier/MainWindow/MainWindowViewController.swift; sourceTree = "<group>"; };
-		84EEF8561EA8504C0061A312 /* ShellWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShellWindowController.swift; path = Frontier/ShellWindow/ShellWindowController.swift; sourceTree = "<group>"; };
-		84EEF8581EA850700061A312 /* ShellWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ShellWindow.xib; path = Frontier/ShellWindow/ShellWindow.xib; sourceTree = "<group>"; };
 		84EEF85A1EA850830061A312 /* JumpWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JumpWindow.xib; path = Frontier/JumpWindow/JumpWindow.xib; sourceTree = "<group>"; };
 		84EEF85C1EA8513E0061A312 /* DBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DBViewController.swift; path = Frontier/DB/DBViewController.swift; sourceTree = "<group>"; };
 		84EEF8601EA8540A0061A312 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -364,6 +364,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84443E522118E64E0060889E /* MainWindow */ = {
+			isa = PBXGroup;
+			children = (
+				84443E532118E64E0060889E /* MainWindow.storyboard */,
+				84443E542118E64E0060889E /* MainWindowController.swift */,
+			);
+			name = MainWindow;
+			path = Frontier/MainWindow;
+			sourceTree = "<group>";
+		};
 		844CB76F1EB6726C00ED569C /* QuickScript */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,8 +409,8 @@
 				8461885E1E9D707A00A56F84 /* Assets.xcassets */,
 				846188601E9D707A00A56F84 /* Main.storyboard */,
 				8461885A1E9D707A00A56F84 /* AppDelegate.swift */,
-				84B50C3C1EA7069500C7D1A3 /* MainWindow */,
-				84EEF8411EA7FD670061A312 /* ShellWindow */,
+				847943E62118E61900AEFBF9 /* StatusWindow */,
+				84443E522118E64E0060889E /* MainWindow */,
 				84EEF85E1EA851440061A312 /* DB */,
 				84EEF8491EA84F940061A312 /* Script */,
 				84EEF84C1EA84FBB0061A312 /* OP */,
@@ -442,6 +452,17 @@
 			path = FrontierTests;
 			sourceTree = "<group>";
 		};
+		847943E62118E61900AEFBF9 /* StatusWindow */ = {
+			isa = PBXGroup;
+			children = (
+				847943E72118E61900AEFBF9 /* StatusWindowViewController.swift */,
+				847943E82118E61900AEFBF9 /* StatusWindowController.swift */,
+				847943E92118E61900AEFBF9 /* StatusWindow.swift */,
+			);
+			name = StatusWindow;
+			path = Frontier/StatusWindow;
+			sourceTree = "<group>";
+		};
 		849024021E9EC3D9002D1BA7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,16 +470,6 @@
 				849024091E9EC3D9002D1BA7 /* UserTalkTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		84B50C3C1EA7069500C7D1A3 /* MainWindow */ = {
-			isa = PBXGroup;
-			children = (
-				84EEF8501EA8502B0061A312 /* MainWindow.swift */,
-				84EEF8511EA8502B0061A312 /* MainWindowController.swift */,
-				84EEF8521EA8502B0061A312 /* MainWindowViewController.swift */,
-			);
-			name = MainWindow;
 			sourceTree = "<group>";
 		};
 		84E726282064C495001DAA09 /* Products */ = {
@@ -525,15 +536,6 @@
 				84ECA7E81E9EC20A00CB76EC /* FrontierVerbsTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		84EEF8411EA7FD670061A312 /* ShellWindow */ = {
-			isa = PBXGroup;
-			children = (
-				84EEF8581EA850700061A312 /* ShellWindow.xib */,
-				84EEF8561EA8504C0061A312 /* ShellWindowController.swift */,
-			);
-			name = ShellWindow;
 			sourceTree = "<group>";
 		};
 		84EEF8461EA7FFDE0061A312 /* JumpWindow */ = {
@@ -879,8 +881,8 @@
 				84EEF86A1EA94FF70061A312 /* OPView.xib in Resources */,
 				844CB7711EB6728800ED569C /* QuickScriptWindow.xib in Resources */,
 				844CB7731EB6747D00ED569C /* ErrorWindow.xib in Resources */,
-				84EEF8591EA850700061A312 /* ShellWindow.xib in Resources */,
 				8461885F1E9D707A00A56F84 /* Assets.xcassets in Resources */,
+				84443E622118E64E0060889E /* MainWindow.storyboard in Resources */,
 				84EEF85B1EA850830061A312 /* JumpWindow.xib in Resources */,
 				84EEF8681EA94D0D0061A312 /* ScriptView.xib in Resources */,
 				844CB76A1EB66FE200ED569C /* WPView.xib in Resources */,
@@ -903,20 +905,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847943EB2118E61900AEFBF9 /* StatusWindowController.swift in Sources */,
+				847943EA2118E61900AEFBF9 /* StatusWindowViewController.swift in Sources */,
 				844CB7761EB674A700ED569C /* ErrorWindowController.swift in Sources */,
-				84EEF8551EA8502B0061A312 /* MainWindowViewController.swift in Sources */,
 				84EEF8611EA8540A0061A312 /* PreferencesWindowController.swift in Sources */,
 				84EEF8451EA7FFDA0061A312 /* JumpWindowController.swift in Sources */,
-				84EEF8531EA8502B0061A312 /* MainWindow.swift in Sources */,
 				8461885B1E9D707A00A56F84 /* AppDelegate.swift in Sources */,
 				84EEF8661EA86D5C0061A312 /* DefaultsKey.swift in Sources */,
+				847943EC2118E61900AEFBF9 /* StatusWindow.swift in Sources */,
 				84EEF8481EA84F8F0061A312 /* ScriptViewController.swift in Sources */,
-				84EEF8541EA8502B0061A312 /* MainWindowController.swift in Sources */,
 				844CB76E1EB6726900ED569C /* QuickScriptWindowController.swift in Sources */,
 				84EEF84E1EA84FE20061A312 /* WPViewController.swift in Sources */,
-				84EEF8571EA8504C0061A312 /* ShellWindowController.swift in Sources */,
 				84EEF85D1EA8513E0061A312 /* DBViewController.swift in Sources */,
 				84EEF84B1EA84FB70061A312 /* OPViewController.swift in Sources */,
+				84443E632118E64E0060889E /* MainWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

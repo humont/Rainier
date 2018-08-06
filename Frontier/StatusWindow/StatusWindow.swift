@@ -1,5 +1,5 @@
 //
-//  MainWindow.swift
+//  StatusWindow.swift
 //  Frontier
 //
 //  Created by Brent Simmons on 4/18/17.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainWindow: NSWindow {
+class StatusWindow: NSWindow {
 
 	override init(contentRect: NSRect, styleMask style: NSWindowStyleMask, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
 		

@@ -1,5 +1,5 @@
 //
-//  MainWindowViewController.swift
+//  StatusWindowViewController.swift
 //  Frontier
 //
 //  Created by Brent Simmons on 4/11/17.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class MainWindowViewController: NSViewController {
+class StatusWindowViewController: NSViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
