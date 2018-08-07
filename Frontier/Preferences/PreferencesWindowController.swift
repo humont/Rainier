@@ -23,7 +23,7 @@ class PreferencesWindowController : NSWindowController, NSToolbarDelegate {
 	fileprivate var viewControllers = [String: NSViewController]()
 	fileprivate let toolbarItemSpecs: [PreferencesToolbarItemSpec] = {
 		var specs = [PreferencesToolbarItemSpec]()
-		specs += [PreferencesToolbarItemSpec(identifier: toolbarItemIdentifierGeneral, name: NSLocalizedString("General", comment: "Preferences"), imageName: NSImageNamePreferencesGeneral)]
+		specs += [PreferencesToolbarItemSpec(identifier: toolbarItemIdentifierGeneral, name: NSLocalizedString("General", comment: "Preferences"), imageName: NSImage.preferencesGeneralName)]
 		return specs
 	}()
 
@@ -35,7 +35,7 @@ class PreferencesWindowController : NSWindowController, NSToolbarDelegate {
 		toolbar.autosavesConfiguration = false
 		toolbar.allowsUserCustomization = false
 		toolbar.displayMode = .iconAndLabel
-		toolbar.selectedItemIdentifier = toolbarItemSpecs.first!.identifier
+		toolbar.selectedItemIdentifier = NSToolbarItem.Identifier(rawValue: toolbarItemSpecs.first!.identifier)
 
 		window?.showsToolbarButton = false
 		window?.toolbar = toolbar
@@ -54,7 +54,7 @@ class PreferencesWindowController : NSWindowController, NSToolbarDelegate {
 
 	// MARK: NSToolbarDelegate
 
-	func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: String, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
+	func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
 
 		guard let toolbarItemSpec = toolbarItemSpecs.first(where: { $0.identifier == itemIdentifier }) else {
 			return nil
@@ -70,17 +70,17 @@ class PreferencesWindowController : NSWindowController, NSToolbarDelegate {
 		return toolbarItem
 	}
 
-	func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [String] {
+	func toolbarDefaultItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
 
 		return toolbarItemSpecs.map { $0.identifier }
 	}
 
-	func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [String] {
+	func toolbarAllowedItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
 
 		return toolbarDefaultItemIdentifiers(toolbar)
 	}
 
-	func toolbarSelectableItemIdentifiers(_ toolbar: NSToolbar) -> [String] {
+	func toolbarSelectableItemIdentifiers(_ toolbar: NSToolbar) -> [NSToolbarItem.Identifier] {
 
 		return toolbarDefaultItemIdentifiers(toolbar)
 	}
