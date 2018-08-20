@@ -1,0 +1,891 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		840E596E212A77D4001E08F7 /* DB5.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840E5935212A77A1001E08F7 /* DB5.framework */; };
+		840E596F212A77D4001E08F7 /* DB5.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840E5935212A77A1001E08F7 /* DB5.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		840E5973212A77DB001E08F7 /* RSCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840E593F212A77A8001E08F7 /* RSCore.framework */; };
+		840E5974212A77DB001E08F7 /* RSCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840E593F212A77A8001E08F7 /* RSCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		840E5977212A77E8001E08F7 /* RSDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840E594B212A77AD001E08F7 /* RSDatabase.framework */; };
+		840E5978212A77E8001E08F7 /* RSDatabase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840E594B212A77AD001E08F7 /* RSDatabase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		840E597B212A77F0001E08F7 /* RSParser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840E5956212A77B1001E08F7 /* RSParser.framework */; };
+		840E597C212A77F0001E08F7 /* RSParser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840E5956212A77B1001E08F7 /* RSParser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		840E597F212A77FB001E08F7 /* RSTree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840E595F212A77B8001E08F7 /* RSTree.framework */; };
+		840E5980212A77FB001E08F7 /* RSTree.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840E595F212A77B8001E08F7 /* RSTree.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		840E5983212A7802001E08F7 /* RSWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840E5969212A77BE001E08F7 /* RSWeb.framework */; };
+		840E5984212A7802001E08F7 /* RSWeb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840E5969212A77BE001E08F7 /* RSWeb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84BD97E1212A753B00070672 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD97E0212A753B00070672 /* AppDelegate.swift */; };
+		84BD97E3212A753B00070672 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD97E2212A753B00070672 /* ViewController.swift */; };
+		84BD97E5212A753C00070672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BD97E4212A753C00070672 /* Assets.xcassets */; };
+		84BD97E8212A753C00070672 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD97E6212A753C00070672 /* Main.storyboard */; };
+		84BD97F4212A753C00070672 /* RainierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD97F3212A753C00070672 /* RainierTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		840E5934212A77A1001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E592F212A77A1001E08F7 /* DB5.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84F22BD11B52DC2E000060CE;
+			remoteInfo = DB5;
+		};
+		840E5936212A77A1001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E592F212A77A1001E08F7 /* DB5.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84F22BDB1B52DC2E000060CE;
+			remoteInfo = DB5Tests;
+		};
+		840E593E212A77A8001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5938212A77A8001E08F7 /* RSCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84CFF4F41AC3C69700CEA6C8;
+			remoteInfo = RSCore;
+		};
+		840E5940212A77A8001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5938212A77A8001E08F7 /* RSCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84CFF4FF1AC3C69700CEA6C8;
+			remoteInfo = RSCoreTests;
+		};
+		840E5942212A77A8001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5938212A77A8001E08F7 /* RSCore.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 842DD7BC1E14993900E061EB;
+			remoteInfo = RSCoreiOS;
+		};
+		840E594A212A77AD001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5944212A77AC001E08F7 /* RSDatabase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84F22C551B52E0D9000060CE;
+			remoteInfo = RSDatabase;
+		};
+		840E594C212A77AD001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5944212A77AC001E08F7 /* RSDatabase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84F22C5F1B52E0D9000060CE;
+			remoteInfo = RSDatabaseTests;
+		};
+		840E594E212A77AD001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5944212A77AC001E08F7 /* RSDatabase.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8400ABF71E0CFBD800AA7C57;
+			remoteInfo = RSDatabaseiOS;
+		};
+		840E5955212A77B1001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5950212A77B0001E08F7 /* RSParser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84FF5F841EFA285800C15A01;
+			remoteInfo = RSParser;
+		};
+		840E5957212A77B1001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5950212A77B0001E08F7 /* RSParser.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 84FF5F8D1EFA285800C15A01;
+			remoteInfo = RSParserTests;
+		};
+		840E595E212A77B8001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5959212A77B8001E08F7 /* RSTree.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 842A0BE11CFCB9BC00BF746C;
+			remoteInfo = RSTree;
+		};
+		840E5960212A77B8001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5959212A77B8001E08F7 /* RSTree.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 842A0BEB1CFCB9BC00BF746C;
+			remoteInfo = RSTreeTests;
+		};
+		840E5968212A77BE001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5962212A77BE001E08F7 /* RSWeb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 849C08B61E0CAC85006B03FA;
+			remoteInfo = RSWeb;
+		};
+		840E596A212A77BE001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5962212A77BE001E08F7 /* RSWeb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 849C08BF1E0CAC86006B03FA;
+			remoteInfo = RSWebTests;
+		};
+		840E596C212A77BE001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5962212A77BE001E08F7 /* RSWeb.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 849C08D51E0CACA3006B03FA;
+			remoteInfo = RSWebiOS;
+		};
+		840E5970212A77D4001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E592F212A77A1001E08F7 /* DB5.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F22BD01B52DC2E000060CE;
+			remoteInfo = DB5;
+		};
+		840E5975212A77DB001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5938212A77A8001E08F7 /* RSCore.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84CFF4F31AC3C69700CEA6C8;
+			remoteInfo = RSCore;
+		};
+		840E5979212A77E8001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5944212A77AC001E08F7 /* RSDatabase.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F22C541B52E0D9000060CE;
+			remoteInfo = RSDatabase;
+		};
+		840E597D212A77F0001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5950212A77B0001E08F7 /* RSParser.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 84FF5F831EFA285800C15A01;
+			remoteInfo = RSParser;
+		};
+		840E5981212A77FB001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5959212A77B8001E08F7 /* RSTree.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 842A0BE01CFCB9BC00BF746C;
+			remoteInfo = RSTree;
+		};
+		840E5985212A7802001E08F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 840E5962212A77BE001E08F7 /* RSWeb.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 849C08B51E0CAC85006B03FA;
+			remoteInfo = RSWeb;
+		};
+		84BD97F0212A753C00070672 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84BD97D5212A753B00070672 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84BD97DC212A753B00070672;
+			remoteInfo = Rainier;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		840E5972212A77D4001E08F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				840E5984212A7802001E08F7 /* RSWeb.framework in Embed Frameworks */,
+				840E597C212A77F0001E08F7 /* RSParser.framework in Embed Frameworks */,
+				840E5978212A77E8001E08F7 /* RSDatabase.framework in Embed Frameworks */,
+				840E5974212A77DB001E08F7 /* RSCore.framework in Embed Frameworks */,
+				840E5980212A77FB001E08F7 /* RSTree.framework in Embed Frameworks */,
+				840E596F212A77D4001E08F7 /* DB5.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		840E591D212A7690001E08F7 /* Technotes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Technotes; sourceTree = "<group>"; };
+		840E592E212A76DE001E08F7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		840E592F212A77A1001E08F7 /* DB5.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DB5.xcodeproj; path = submodules/DB5/DB5.xcodeproj; sourceTree = "<group>"; };
+		840E5938212A77A8001E08F7 /* RSCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSCore.xcodeproj; path = submodules/RSCore/RSCore.xcodeproj; sourceTree = "<group>"; };
+		840E5944212A77AC001E08F7 /* RSDatabase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSDatabase.xcodeproj; path = submodules/RSDatabase/RSDatabase.xcodeproj; sourceTree = "<group>"; };
+		840E5950212A77B0001E08F7 /* RSParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSParser.xcodeproj; path = submodules/RSParser/RSParser.xcodeproj; sourceTree = "<group>"; };
+		840E5959212A77B8001E08F7 /* RSTree.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSTree.xcodeproj; path = submodules/RSTree/RSTree.xcodeproj; sourceTree = "<group>"; };
+		840E5962212A77BE001E08F7 /* RSWeb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSWeb.xcodeproj; path = submodules/RSWeb/RSWeb.xcodeproj; sourceTree = "<group>"; };
+		84BD97DD212A753B00070672 /* Rainier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rainier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BD97E0212A753B00070672 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		84BD97E2212A753B00070672 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		84BD97E4212A753C00070672 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84BD97E7212A753C00070672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84BD97E9212A753C00070672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BD97EA212A753C00070672 /* Rainier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rainier.entitlements; sourceTree = "<group>"; };
+		84BD97EF212A753C00070672 /* RainierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RainierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84BD97F3212A753C00070672 /* RainierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainierTests.swift; sourceTree = "<group>"; };
+		84BD97F5212A753C00070672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84BD97DA212A753B00070672 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				840E5983212A7802001E08F7 /* RSWeb.framework in Frameworks */,
+				840E597B212A77F0001E08F7 /* RSParser.framework in Frameworks */,
+				840E5977212A77E8001E08F7 /* RSDatabase.framework in Frameworks */,
+				840E5973212A77DB001E08F7 /* RSCore.framework in Frameworks */,
+				840E597F212A77FB001E08F7 /* RSTree.framework in Frameworks */,
+				840E596E212A77D4001E08F7 /* DB5.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD97EC212A753C00070672 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		840E5930212A77A1001E08F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				840E5935212A77A1001E08F7 /* DB5.framework */,
+				840E5937212A77A1001E08F7 /* DB5Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		840E5939212A77A8001E08F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				840E593F212A77A8001E08F7 /* RSCore.framework */,
+				840E5941212A77A8001E08F7 /* RSCoreTests.xctest */,
+				840E5943212A77A8001E08F7 /* RSCore.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		840E5945212A77AC001E08F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				840E594B212A77AD001E08F7 /* RSDatabase.framework */,
+				840E594D212A77AD001E08F7 /* RSDatabaseTests.xctest */,
+				840E594F212A77AD001E08F7 /* RSDatabase.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		840E5951212A77B0001E08F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				840E5956212A77B1001E08F7 /* RSParser.framework */,
+				840E5958212A77B1001E08F7 /* RSParserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		840E595A212A77B8001E08F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				840E595F212A77B8001E08F7 /* RSTree.framework */,
+				840E5961212A77B8001E08F7 /* RSTreeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		840E5963212A77BE001E08F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				840E5969212A77BE001E08F7 /* RSWeb.framework */,
+				840E596B212A77BE001E08F7 /* RSWebTests.xctest */,
+				840E596D212A77BE001E08F7 /* RSWeb.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84BD97D4212A753B00070672 = {
+			isa = PBXGroup;
+			children = (
+				840E592E212A76DE001E08F7 /* README.md */,
+				840E591D212A7690001E08F7 /* Technotes */,
+				84BD97DF212A753B00070672 /* Sources */,
+				84BD97F2212A753C00070672 /* RainierTests */,
+				84BD97DE212A753B00070672 /* Products */,
+				840E592F212A77A1001E08F7 /* DB5.xcodeproj */,
+				840E5938212A77A8001E08F7 /* RSCore.xcodeproj */,
+				840E5944212A77AC001E08F7 /* RSDatabase.xcodeproj */,
+				840E5950212A77B0001E08F7 /* RSParser.xcodeproj */,
+				840E5959212A77B8001E08F7 /* RSTree.xcodeproj */,
+				840E5962212A77BE001E08F7 /* RSWeb.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		84BD97DE212A753B00070672 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84BD97DD212A753B00070672 /* Rainier.app */,
+				84BD97EF212A753C00070672 /* RainierTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84BD97DF212A753B00070672 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				84BD97E0212A753B00070672 /* AppDelegate.swift */,
+				84BD97E2212A753B00070672 /* ViewController.swift */,
+				84BD97E4212A753C00070672 /* Assets.xcassets */,
+				84BD97E6212A753C00070672 /* Main.storyboard */,
+				84BD97E9212A753C00070672 /* Info.plist */,
+				84BD97EA212A753C00070672 /* Rainier.entitlements */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		84BD97F2212A753C00070672 /* RainierTests */ = {
+			isa = PBXGroup;
+			children = (
+				84BD97F3212A753C00070672 /* RainierTests.swift */,
+				84BD97F5212A753C00070672 /* Info.plist */,
+			);
+			path = RainierTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84BD97DC212A753B00070672 /* Rainier */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BD97F8212A753C00070672 /* Build configuration list for PBXNativeTarget "Rainier" */;
+			buildPhases = (
+				84BD97D9212A753B00070672 /* Sources */,
+				84BD97DA212A753B00070672 /* Frameworks */,
+				84BD97DB212A753B00070672 /* Resources */,
+				840E5972212A77D4001E08F7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				840E5971212A77D4001E08F7 /* PBXTargetDependency */,
+				840E5976212A77DB001E08F7 /* PBXTargetDependency */,
+				840E597A212A77E8001E08F7 /* PBXTargetDependency */,
+				840E597E212A77F0001E08F7 /* PBXTargetDependency */,
+				840E5982212A77FB001E08F7 /* PBXTargetDependency */,
+				840E5986212A7802001E08F7 /* PBXTargetDependency */,
+			);
+			name = Rainier;
+			productName = Rainier;
+			productReference = 84BD97DD212A753B00070672 /* Rainier.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84BD97EE212A753C00070672 /* RainierTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84BD97FB212A753C00070672 /* Build configuration list for PBXNativeTarget "RainierTests" */;
+			buildPhases = (
+				84BD97EB212A753C00070672 /* Sources */,
+				84BD97EC212A753C00070672 /* Frameworks */,
+				84BD97ED212A753C00070672 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84BD97F1212A753C00070672 /* PBXTargetDependency */,
+			);
+			name = RainierTests;
+			productName = RainierTests;
+			productReference = 84BD97EF212A753C00070672 /* RainierTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84BD97D5212A753B00070672 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Ranchero Software, LLC";
+				TargetAttributes = {
+					84BD97DC212A753B00070672 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					84BD97EE212A753C00070672 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 84BD97DC212A753B00070672;
+					};
+				};
+			};
+			buildConfigurationList = 84BD97D8212A753B00070672 /* Build configuration list for PBXProject "Rainier" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84BD97D4212A753B00070672;
+			productRefGroup = 84BD97DE212A753B00070672 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 840E5930212A77A1001E08F7 /* Products */;
+					ProjectRef = 840E592F212A77A1001E08F7 /* DB5.xcodeproj */;
+				},
+				{
+					ProductGroup = 840E5939212A77A8001E08F7 /* Products */;
+					ProjectRef = 840E5938212A77A8001E08F7 /* RSCore.xcodeproj */;
+				},
+				{
+					ProductGroup = 840E5945212A77AC001E08F7 /* Products */;
+					ProjectRef = 840E5944212A77AC001E08F7 /* RSDatabase.xcodeproj */;
+				},
+				{
+					ProductGroup = 840E5951212A77B0001E08F7 /* Products */;
+					ProjectRef = 840E5950212A77B0001E08F7 /* RSParser.xcodeproj */;
+				},
+				{
+					ProductGroup = 840E595A212A77B8001E08F7 /* Products */;
+					ProjectRef = 840E5959212A77B8001E08F7 /* RSTree.xcodeproj */;
+				},
+				{
+					ProductGroup = 840E5963212A77BE001E08F7 /* Products */;
+					ProjectRef = 840E5962212A77BE001E08F7 /* RSWeb.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				84BD97DC212A753B00070672 /* Rainier */,
+				84BD97EE212A753C00070672 /* RainierTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		840E5935212A77A1001E08F7 /* DB5.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DB5.framework;
+			remoteRef = 840E5934212A77A1001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E5937212A77A1001E08F7 /* DB5Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DB5Tests.xctest;
+			remoteRef = 840E5936212A77A1001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E593F212A77A8001E08F7 /* RSCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSCore.framework;
+			remoteRef = 840E593E212A77A8001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E5941212A77A8001E08F7 /* RSCoreTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSCoreTests.xctest;
+			remoteRef = 840E5940212A77A8001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E5943212A77A8001E08F7 /* RSCore.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSCore.framework;
+			remoteRef = 840E5942212A77A8001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E594B212A77AD001E08F7 /* RSDatabase.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSDatabase.framework;
+			remoteRef = 840E594A212A77AD001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E594D212A77AD001E08F7 /* RSDatabaseTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSDatabaseTests.xctest;
+			remoteRef = 840E594C212A77AD001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E594F212A77AD001E08F7 /* RSDatabase.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSDatabase.framework;
+			remoteRef = 840E594E212A77AD001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E5956212A77B1001E08F7 /* RSParser.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSParser.framework;
+			remoteRef = 840E5955212A77B1001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E5958212A77B1001E08F7 /* RSParserTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSParserTests.xctest;
+			remoteRef = 840E5957212A77B1001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E595F212A77B8001E08F7 /* RSTree.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSTree.framework;
+			remoteRef = 840E595E212A77B8001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E5961212A77B8001E08F7 /* RSTreeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSTreeTests.xctest;
+			remoteRef = 840E5960212A77B8001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E5969212A77BE001E08F7 /* RSWeb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSWeb.framework;
+			remoteRef = 840E5968212A77BE001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E596B212A77BE001E08F7 /* RSWebTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RSWebTests.xctest;
+			remoteRef = 840E596A212A77BE001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		840E596D212A77BE001E08F7 /* RSWeb.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RSWeb.framework;
+			remoteRef = 840E596C212A77BE001E08F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84BD97DB212A753B00070672 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD97E5212A753C00070672 /* Assets.xcassets in Resources */,
+				84BD97E8212A753C00070672 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD97ED212A753C00070672 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84BD97D9212A753B00070672 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD97E3212A753B00070672 /* ViewController.swift in Sources */,
+				84BD97E1212A753B00070672 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84BD97EB212A753C00070672 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84BD97F4212A753C00070672 /* RainierTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		840E5971212A77D4001E08F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DB5;
+			targetProxy = 840E5970212A77D4001E08F7 /* PBXContainerItemProxy */;
+		};
+		840E5976212A77DB001E08F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSCore;
+			targetProxy = 840E5975212A77DB001E08F7 /* PBXContainerItemProxy */;
+		};
+		840E597A212A77E8001E08F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSDatabase;
+			targetProxy = 840E5979212A77E8001E08F7 /* PBXContainerItemProxy */;
+		};
+		840E597E212A77F0001E08F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSParser;
+			targetProxy = 840E597D212A77F0001E08F7 /* PBXContainerItemProxy */;
+		};
+		840E5982212A77FB001E08F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSTree;
+			targetProxy = 840E5981212A77FB001E08F7 /* PBXContainerItemProxy */;
+		};
+		840E5986212A7802001E08F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RSWeb;
+			targetProxy = 840E5985212A7802001E08F7 /* PBXContainerItemProxy */;
+		};
+		84BD97F1212A753C00070672 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84BD97DC212A753B00070672 /* Rainier */;
+			targetProxy = 84BD97F0212A753C00070672 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		84BD97E6212A753C00070672 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84BD97E7212A753C00070672 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		84BD97F6212A753C00070672 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84BD97F7212A753C00070672 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		84BD97F9212A753C00070672 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Rainier.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9C84TZ7Q6Z;
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.Rainier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		84BD97FA212A753C00070672 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sources/Rainier.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 9C84TZ7Q6Z;
+				INFOPLIST_FILE = Sources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.Rainier;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		84BD97FC212A753C00070672 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				INFOPLIST_FILE = RainierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RainierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rainier.app/Contents/MacOS/Rainier";
+			};
+			name = Debug;
+		};
+		84BD97FD212A753C00070672 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = M8L2WTLA8W;
+				INFOPLIST_FILE = RainierTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.RainierTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rainier.app/Contents/MacOS/Rainier";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84BD97D8212A753B00070672 /* Build configuration list for PBXProject "Rainier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD97F6212A753C00070672 /* Debug */,
+				84BD97F7212A753C00070672 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BD97F8212A753C00070672 /* Build configuration list for PBXNativeTarget "Rainier" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD97F9212A753C00070672 /* Debug */,
+				84BD97FA212A753C00070672 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84BD97FB212A753C00070672 /* Build configuration list for PBXNativeTarget "RainierTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84BD97FC212A753C00070672 /* Debug */,
+				84BD97FD212A753C00070672 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84BD97D5212A753B00070672 /* Project object */;
+}
