@@ -1,3 +1,0 @@
-# System Database Organization
-
-
