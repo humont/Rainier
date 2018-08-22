@@ -18,7 +18,9 @@ These also include a few verbs that aren’t in subtables: `defined`, `typeOf`, 
 
 ## Constants: system.constants
 
-This contains values such as `maxInteger` that can be useful.
+This contains key/value pairs such as `maxInteger` that can be useful.
+
+This may include subtables — for instance, it would be useful to place the standard http result codes in a table at `system.constants.httpResult`.
 
 ## Environment: system.environment
 
@@ -28,8 +30,20 @@ This contains information about the operating system and machine where Rainier i
 
 This table includes information about files — suites, user data — that are mounted as part of the database.
 
+## Errors: system.errors
+
+The names are numbers — error codes — and the value of each is a string describing the error.
+
 ## Search Paths: system.paths
 
 This provides paths to use when resolving an address, in search order. For instance, @system.verbs and @system.constants are included, so you can refer to `file.readWholeFile` instead of having to type `system.verbs.file.readWholeFile`.
 
+The list looks like this:
+
+@root
+@system.verbs
+@system.constants
+@system.errors
+@system.environment
+@suites
 

@@ -28,10 +28,14 @@ An empty table generated at runtime, available for use by any scripts. Does not 
 
 ## scratchpad
 
-Like temp, but persistent. Stored in scratchpad.rainier on disk.
+Like temp, but persistent. Stored in `Scratchpad.rainier` on disk.
 
 ## user
 
-Data stored by Rainier itself are stored at `user.Rainier` and are stored at `~/Documents/Rainier/User/Rainier.rainier`.
+Data stored by Rainier itself are stored at `user.Rainier` and are stored on disk at `~/Documents/Rainier/User/UserRainier.rainier`.
 
-Each suite automatically gets a data file created (if needed), and they’re mounted at `user.suiteName`, and are also stored in `~/Documents/Rainier/User/`.
+Data used for workspace scripts is stored at `user.workspace` and is stored on disk at `~/Documents/Rainier/User/UserWorkspace.rainier`.
+
+Each suite automatically gets a data file created (on demand), and they’re mounted at `user.suiteName`, and are also stored in `~/Documents/Rainier/User/`, and the filename is `UserSuiteName.rainier.`
+
+(The reason we start the file name with `User`, even though the folder is also called User, is just in case somebody passes one of these around or they get moved accidentally. That way we still know they’re user tables.)
