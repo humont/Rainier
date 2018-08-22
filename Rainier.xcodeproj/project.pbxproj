@@ -19,10 +19,9 @@
 		840E5980212A77FB001E08F7 /* RSTree.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840E595F212A77B8001E08F7 /* RSTree.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		840E5983212A7802001E08F7 /* RSWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840E5969212A77BE001E08F7 /* RSWeb.framework */; };
 		840E5984212A7802001E08F7 /* RSWeb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840E5969212A77BE001E08F7 /* RSWeb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		84BD97E1212A753B00070672 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD97E0212A753B00070672 /* AppDelegate.swift */; };
-		84BD97E3212A753B00070672 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD97E2212A753B00070672 /* ViewController.swift */; };
-		84BD97E5212A753C00070672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84BD97E4212A753C00070672 /* Assets.xcassets */; };
-		84BD97E8212A753C00070672 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84BD97E6212A753C00070672 /* Main.storyboard */; };
+		84ACDC9F212D0A5A001A0F39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ACDC9E212D0A5A001A0F39 /* AppDelegate.swift */; };
+		84ACDCA2212D0A71001A0F39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84ACDCA1212D0A71001A0F39 /* Assets.xcassets */; };
+		84ACDCA5212D0A83001A0F39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84ACDCA3212D0A83001A0F39 /* Main.storyboard */; };
 		84BD97F4212A753C00070672 /* RainierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BD97F3212A753C00070672 /* RainierTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -211,13 +210,12 @@
 		840E5950212A77B0001E08F7 /* RSParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSParser.xcodeproj; path = submodules/RSParser/RSParser.xcodeproj; sourceTree = "<group>"; };
 		840E5959212A77B8001E08F7 /* RSTree.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSTree.xcodeproj; path = submodules/RSTree/RSTree.xcodeproj; sourceTree = "<group>"; };
 		840E5962212A77BE001E08F7 /* RSWeb.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSWeb.xcodeproj; path = submodules/RSWeb/RSWeb.xcodeproj; sourceTree = "<group>"; };
+		84ACDC9E212D0A5A001A0F39 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Sources/AppDelegate.swift; sourceTree = "<group>"; };
+		84ACDCA1212D0A71001A0F39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Sources/Assets.xcassets; sourceTree = "<group>"; };
+		84ACDCA4212D0A83001A0F39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Sources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		84ACDCA6212D0A8F001A0F39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/Info.plist; sourceTree = "<group>"; };
+		84ACDCA7212D0A98001A0F39 /* Rainier.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = Rainier.entitlements; path = Sources/Rainier.entitlements; sourceTree = "<group>"; };
 		84BD97DD212A753B00070672 /* Rainier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rainier.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		84BD97E0212A753B00070672 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		84BD97E2212A753B00070672 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		84BD97E4212A753C00070672 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		84BD97E7212A753C00070672 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		84BD97E9212A753C00070672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84BD97EA212A753C00070672 /* Rainier.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Rainier.entitlements; sourceTree = "<group>"; };
 		84BD97EF212A753C00070672 /* RainierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RainierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84BD97F3212A753C00070672 /* RainierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainierTests.swift; sourceTree = "<group>"; };
 		84BD97F5212A753C00070672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -304,12 +302,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		84ACDCAA212D0AA4001A0F39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84ACDCA7212D0A98001A0F39 /* Rainier.entitlements */,
+				84ACDCA6212D0A8F001A0F39 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		84BD97D4212A753B00070672 = {
 			isa = PBXGroup;
 			children = (
 				840E592E212A76DE001E08F7 /* README.md */,
 				840E591D212A7690001E08F7 /* Technotes */,
-				84BD97DF212A753B00070672 /* Sources */,
+				84ACDCA1212D0A71001A0F39 /* Assets.xcassets */,
+				84ACDCA3212D0A83001A0F39 /* Main.storyboard */,
+				84ACDC9E212D0A5A001A0F39 /* AppDelegate.swift */,
+				84ACDCAA212D0AA4001A0F39 /* Resources */,
 				84BD97F2212A753C00070672 /* RainierTests */,
 				84BD97DE212A753B00070672 /* Products */,
 				840E592F212A77A1001E08F7 /* DB5.xcodeproj */,
@@ -328,19 +338,6 @@
 				84BD97EF212A753C00070672 /* RainierTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		84BD97DF212A753B00070672 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				84BD97E0212A753B00070672 /* AppDelegate.swift */,
-				84BD97E2212A753B00070672 /* ViewController.swift */,
-				84BD97E4212A753C00070672 /* Assets.xcassets */,
-				84BD97E6212A753C00070672 /* Main.storyboard */,
-				84BD97E9212A753C00070672 /* Info.plist */,
-				84BD97EA212A753C00070672 /* Rainier.entitlements */,
-			);
-			path = Sources;
 			sourceTree = "<group>";
 		};
 		84BD97F2212A753C00070672 /* RainierTests */ = {
@@ -409,6 +406,7 @@
 				TargetAttributes = {
 					84BD97DC212A753B00070672 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 					84BD97EE212A753C00070672 = {
 						CreatedOnToolsVersion = 10.0;
@@ -574,8 +572,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BD97E5212A753C00070672 /* Assets.xcassets in Resources */,
-				84BD97E8212A753C00070672 /* Main.storyboard in Resources */,
+				84ACDCA2212D0A71001A0F39 /* Assets.xcassets in Resources */,
+				84ACDCA5212D0A83001A0F39 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,8 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BD97E3212A753B00070672 /* ViewController.swift in Sources */,
-				84BD97E1212A753B00070672 /* AppDelegate.swift in Sources */,
+				84ACDC9F212D0A5A001A0F39 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,10 +644,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		84BD97E6212A753C00070672 /* Main.storyboard */ = {
+		84ACDCA3212D0A83001A0F39 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				84BD97E7212A753C00070672 /* Base */,
+				84ACDCA4212D0A83001A0F39 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -778,6 +775,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Sources/Rainier.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -789,6 +787,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ranchero.Rainier;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -798,6 +797,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Sources/Rainier.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
