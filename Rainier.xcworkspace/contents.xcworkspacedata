@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "absolute:/Users/brent/Projects/Rainier/Rainier.xcodeproj">
+      location = "container:Rainier.xcodeproj">
    </FileRef>
 </Workspace>
