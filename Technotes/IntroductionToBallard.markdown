@@ -56,7 +56,7 @@ A given variable — or object in the database — can change its type just by a
 
 Functions don’t declare types in their parameter lists; functions don't declare a return type.
 
-Ballard supports the following types: booleans, nil, integers, doubles, dates, strings, binary data, arrays, tables, outlines, and scripts.
+Ballard supports the following types: booleans, nil, integers, doubles, dates, strings, odb addresses, binary data, arrays, tables, outlines, and scripts.
 
 ### Most things are passed by value
 
@@ -112,7 +112,7 @@ The way to remember the difference: simple values (dates, numbers, strings) and 
 
 Here’s the full list:
 
-Value types: nil, integer, double, boolean, date, string, array<br />
+Value types: nil, integer, double, boolean, date, string, address, array<br />
 Reference types: table, script, outline, menu, binary
 
 ### Semicolons and curly braces
