@@ -134,7 +134,7 @@ That does *not* mean that Ballard looks at whitespace the way Python does. It ju
 
 Since you are most likely to write code in Rainier’s editor, this guide leaves out the braces. If you’re writing code in another editor, you might need to add braces. (They go in the logical places.)
 
-Note: as you’re reading this, Rainier might not exist yet. If you’re using BSE (Ballard Script Editor) — which is a text-view-based editor — you *do* need to include the semicolons. (BSE might not exist yet either.)
+Note: as you’re reading this, Rainier might not exist yet. If you’re using BSE (Ballard Script Editor) — which is a text-view-based editor — you *do* need to include the braces. (BSE might not exist yet either.)
 
 ### Variables
 
