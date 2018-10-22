@@ -18,7 +18,7 @@ These also include a few verbs that aren’t in subtables: `defined`, `typeOf`, 
 
 This contains key/value pairs such as `maxInteger` that can be useful.
 
-This may include subtables — for instance, the standard http result codes live in a table at `system.constants.httpResultCode`.
+This also includes subtables — for instance, the standard http result codes live in a table at `system.constants.httpResultCode`.
 
 ## Environment: system.environment
 
@@ -30,7 +30,7 @@ The names are numbers — error codes — and the value of each is a string de
 
 ## Search Paths: system.paths
 
-This provides paths to use when resolving an address, in search order. For instance, @system.verbs and @system.constants are included, so you can refer to `file.readWholeFile` instead of having to type `system.verbs.file.readWholeFile`.
+This provides paths to use when resolving an address, in search order. Importantly, @system.verbs and @system.constants are included, so you can refer to `file.readWholeFile` instead of having to type `system.verbs.file.readWholeFile`. You can refer to `httpResultCode.ok` instead of `system.constants.httpResultCode.ok`, etc.
 
 The list looks like this:
 
