@@ -34,9 +34,9 @@ This provides paths to use when resolving an address, in search order. Important
 
 The list looks like this:
 
-@system.verbs
-@system.constants
-@system
+* @system.verbs
+* @system.constants
+* @system
 
 If a path can’t be resolved by checking these paths first, then it looks at top-level tables until it resolves (or fails to resolve).
 
