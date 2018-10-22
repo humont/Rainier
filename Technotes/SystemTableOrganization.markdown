@@ -1,14 +1,12 @@
 # System Table Organization
 
-The system — root.system — can’t be edited by the user.
+The system table can’t be edited by the user.
 
-It’s entirely virtual: it’s created by the app at runtime, resides entirely in memory, and is never altered.
+It’s entirely virtual: it’s created by the app at runtime and resides entirely in memory.
 
 To attempt to change it via a script throws an error.
 
-This policy provides a guarantee that the system cannot change until there’s a new version of the app. This means we sidestep the problem that Frontier sometimes had, where a user would edit the system and then an update from UserLand would overwrite their changes.
-
-Better to just be explicit and enforce a policy that the system can’t be changed.
+This policy provides a guarantee that the system cannot change until there’s a new version of the app.
 
 ## Standard Library: system.verbs
 
@@ -20,15 +18,11 @@ These also include a few verbs that aren’t in subtables: `defined`, `typeOf`, 
 
 This contains key/value pairs such as `maxInteger` that can be useful.
 
-This may include subtables — for instance, it would be useful to place the standard http result codes in a table at `system.constants.httpResult`.
+This may include subtables — for instance, the standard http result codes live in a table at `system.constants.httpResultCode`.
 
 ## Environment: system.environment
 
 This contains information about the operating system and machine where Rainier is running.
-
-## Mounts: system.mounts
-
-This table includes information about files — suites, user data — that are mounted as part of the database.
 
 ## Errors: system.errors
 
@@ -40,10 +34,9 @@ This provides paths to use when resolving an address, in search order. For insta
 
 The list looks like this:
 
-@root
 @system.verbs
 @system.constants
-@system.errors
-@system.environment
-@suites
+@system
+
+If a path can’t be resolved by checking these paths first, then it looks at top-level tables until it resolves (or fails to resolve).
 
