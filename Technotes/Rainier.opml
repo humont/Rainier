@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="2.0">
+  <head><!-- <editor scale-mac="1.25">
+      <sidebar width="203"/>
+      <column name="text" width="1121"/>
+    </editor> -->
+    <title>Rainier</title>
+    <dateCreated>Thu, 08 Nov 2018 21:17:20 GMT</dateCreated>
+    <expansionState>0,1,2,4,5,20,25,36,37,42,44,48,49,53,58,60,72,77,80,82,83,86,87,92,93,103,107,111,112,116</expansionState>
+    <vertScrollState>74</vertScrollState>
+    <windowTop>1058</windowTop>
+    <windowLeft>40</windowLeft>
+    <windowRight>1187</windowRight>
+    <windowBottom>2342</windowBottom>
+  </head>
+  <body>
+    <outline text="App">
+      <outline text="User Interface">
+        <outline text="Menu">
+          <outline text="Rainier"/>
+          <outline text="File">
+            <outline text="New">
+              <outline text="Database"/>
+              <outline text="Script"/>
+              <outline text="Outline"/>
+              <outline text="Menubar"/>
+              <outline text="Table"/>
+              <outline text="String"/>
+              <outline text="Date"/>
+              <outline text="Int"/>
+              <outline text="Double"/>
+              <outline text="Boolean"/>
+              <outline text="Address"/>
+            </outline>
+            <outline text="Jump"/>
+            <outline text="Export"/>
+            <outline text="Quit"/>
+          </outline>
+          <outline text="Edit">
+            <outline text="Copy"/>
+            <outline text="Cut"/>
+            <outline text="Paste"/>
+            <outline text="Delete"/>
+          </outline>
+          <outline text="Format">
+            <outline text="Change font/size"/>
+          </outline>
+          <outline text="View"/>
+          <outline text="Table"/>
+          <outline text="Swappable based on what’s in detail view (need menu swapper manager thing)">
+            <outline text="Outline"/>
+            <outline text="Script"/>
+            <outline text="Menubar"/>
+            <outline text="Text"/>
+          </outline>
+          <outline text="Window"/>
+        </outline>
+        <outline text="Window controller">
+          <outline text="Toolbar">
+            <outline text="Status/message area">
+              <outline text="Last message"/>
+              <outline text="Number of running scripts"/>
+            </outline>
+            <outline text="Back/forward"/>
+            <outline text="Jump"/>
+          </outline>
+          <outline text="Sidebar (left pane)">
+            <outline text="Bookmarks"/>
+            <outline text="Databases">
+              <outline text="System"/>
+              <outline text="Other open databases (suites)"/>
+            </outline>
+          </outline>
+          <outline text="Database browser (middle pane)"/>
+          <outline text="Detail view (right pane)">
+            <outline text="Script">
+              <outline text="Syntax coloring"/>
+              <outline text="Autocomplete"/>
+              <outline text="Debugger"/>
+              <outline text="Controls">
+                <outline text="Run"/>
+                <outline text="Compile"/>
+              </outline>
+            </outline>
+            <outline text="Outline"/>
+            <outline text="Menubar"/>
+            <outline text="Binary data">
+              <outline text="Image preview"/>
+            </outline>
+            <outline text="String">
+              <outline text="Text editor"/>
+              <outline text="Markdown syntax coloring"/>
+            </outline>
+            <outline text="Array editor"/>
+            <outline text="Simple types: int, double, float, date"/>
+          </outline>
+        </outline>
+        <outline text="Inspector"/>
+        <outline text="Jump (open quickly) dialog"/>
+        <outline text="ScriptError window">
+          <outline text="Error text"/>
+          <outline text="Stack list, jump to location in stack"/>
+        </outline>
+        <outline text="Preferences window">
+          <outline text="General pane"/>
+        </outline>
+      </outline>
+      <outline text="Startup">
+        <outline text="Open databases"/>
+        <outline text="Open main window"/>
+        <outline text="Add Rainier library to system.paths"/>
+      </outline>
+      <outline text="Threads/queues"/>
+      <outline text="Rainier library (verbs specific to Rainier, such as outline manipulation)">
+        <outline text="Separate pseudo-database like the system database"/>
+        <outline text="Verb implementations"/>
+      </outline>
+      <outline text="Database delegate">
+        <outline text="Custom objects to app objects (script, outline, menubar) — and vice versa"/>
+      </outline>
+    </outline>
+    <outline text="Ballard.framework">
+      <outline text="Language Compiler">
+        <outline text="Tokenizer"/>
+        <outline text="Parser — turn code into AST"/>
+      </outline>
+      <outline text="Language Runtime">
+        <outline text="Evaluator — run AST">
+          <outline text="Manage stack"/>
+          <outline text="Resolve identifiers"/>
+          <outline text="Throw script errors"/>
+          <outline text="Debugger support"/>
+        </outline>
+        <outline text="System table">
+          <outline text="system.verbs - Standard library">
+            <outline text="defined"/>
+            <outline text="addressOf"/>
+            <outline text="typeOf"/>
+            <outline text="file"/>
+            <outline text="string"/>
+            <outline text="date"/>
+            <outline text="table"/>
+            <outline text="etc."/>
+          </outline>
+          <outline text="system.paths"/>
+          <outline text="system.constants">
+            <outline text="Types: tableType, outlineType, intType, etc."/>
+            <outline text="Limits: maxInt, etc."/>
+          </outline>
+        </outline>
+        <outline text="Verb implementations"/>
+        <outline text="Types">
+          <outline text="Table"/>
+          <outline text="Values (string, int, double, bool, date, binary, address)"/>
+          <outline text="Coercions"/>
+        </outline>
+      </outline>
+    </outline>
+    <outline text="ODBManager.framework">
+      <outline text="Database Manager">
+        <outline text="Uses low-level ODB implementation (RSDatabase/SQLite)"/>
+        <outline text="In-memory cache: save changes at end of runloop"/>
+        <outline text="Collection of ODBs"/>
+        <outline text="Delegate of Ballard runtime">
+          <outline text="Path resolution"/>
+        </outline>
+      </outline>
+    </outline>
+  </body>
+</opml>
